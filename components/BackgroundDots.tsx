@@ -8,7 +8,6 @@ type Dot = {
   y: number;
   size: number;
   color: string;
-  speed: number;
 };
 
 export default function BackgroundDots() {
@@ -17,25 +16,24 @@ export default function BackgroundDots() {
   useEffect(() => {
     const colors = ["#4fc3ff", "#7c7cff", "#38bdf8", "#60a5fa"];
 
-    const newDots: Dot[] = Array.from({ length: 50 }).map((_, i) => ({
+    const newDots: Dot[] = Array.from({ length: 60 }).map((_, i) => ({
       id: i,
       x: Math.random() * 100,
       y: Math.random() * 100,
       size: Math.random() * 4 + 2,
       color: colors[Math.floor(Math.random() * colors.length)],
-      speed: Math.random() * 20 + 20,
     }));
 
     setDots(newDots);
   }, []);
 
   return (
-    <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+    <div className="fixed inset-0 -z-10 overflow-hidden">
 
       {dots.map((dot) => (
         <span
           key={dot.id}
-          className="absolute rounded-full opacity-70"
+          className="absolute rounded-full opacity-70 animate-pulse"
           style={{
             left: `${dot.x}%`,
             top: `${dot.y}%`,
@@ -43,19 +41,10 @@ export default function BackgroundDots() {
             height: dot.size,
             backgroundColor: dot.color,
             boxShadow: `0 0 12px ${dot.color}`,
-            animation: `float ${dot.speed}s linear infinite`,
           }}
         />
       ))}
 
-      {/* Animation CSS */}
-      <style jsx global>{`
-        @keyframes float {
-          0% {
-            transform: translateY(0px);
-          }
-          50% {
-            transform: translateY(-40px);
-          }
-          100% {
-            transform: tr
+    </div>
+  );
+}
