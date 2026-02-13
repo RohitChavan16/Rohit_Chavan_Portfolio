@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import InfiniteGrid from "@/components/InfiniteGrid";
 import BackgroundDots from "@/components/BackgroundDots";
+import CursorGlow from "@/components/CursorGlow";
+import CursorParticles from "@/components/CursorParticles";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,7 +30,8 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      ><CursorGlow />
+      <CursorParticles/>
         {children}
         <BackgroundDots/>
       </body>
