@@ -23,8 +23,8 @@ const Footer = () => {
   };
 
   const socialLinks = [
-    { icon: Github, href: 'https://github.com/yourusername', label: 'GitHub' },
-    { icon: Linkedin, href: 'https://linkedin.com/in/yourusername', label: 'LinkedIn' },
+    { icon: Github, href: 'https://github.com/RohitChavan16', label: 'GitHub' },
+    { icon: Linkedin, href: 'https://linkedin.com/in/rohit-chavan16', label: 'LinkedIn' },
     { icon: Twitter, href: 'https://twitter.com/yourusername', label: 'Twitter' },
     { icon: Instagram, href: 'https://instagram.com/yourusername', label: 'Instagram' },
     { icon: Youtube, href: 'https://youtube.com/@yourusername', label: 'YouTube' },
@@ -40,12 +40,12 @@ const Footer = () => {
   ];
 
   const services = [
-    'Web Development',
-    'UI/UX Design',
-    'Mobile Apps',
-    'API Development',
-    'Consulting',
-    'Code Review',
+    'Competitive Programmer',
+    'C++ System Developer',
+    'Web Developer',
+    'Full Stack Developer',
+    'Backend First',
+    'Code Review and team collaboration',
   ];
 
   return (
@@ -134,7 +134,7 @@ const Footer = () => {
               <div className="flex items-center gap-2 text-gray-300">
                 <Mail className="w-4 h-4 text-cyan-400" />
                 <a href="mailto:your.email@example.com" className="hover:text-cyan-400 transition-colors text-sm">
-                  your.email@example.com
+                  approachrohit16@gmail.com
                 </a>
               </div>
             </div>
@@ -166,7 +166,7 @@ const Footer = () => {
           {/* Copyright */}
           <div className="text-center md:text-left">
             <p className="text-gray-300 flex items-center gap-2 flex-wrap justify-center md:justify-start">
-              <span>© {currentYear} YourName. Made with</span>
+              <span>© {currentYear} Rohit Chavan. Made with</span>
               <Heart className="w-4 h-4 text-red-500 animate-pulse" />
               <span>and</span>
               <Coffee className="w-4 h-4 text-amber-400" />
