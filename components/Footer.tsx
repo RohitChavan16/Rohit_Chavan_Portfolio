@@ -49,7 +49,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="relative bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-hidden">
+    <footer className="relative bg-gradient-to-br z-0 from-slate-900 via-purple-900 to-slate-900 text-white overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse"></div>
@@ -65,7 +65,7 @@ const Footer = () => {
             {/* Brand Section */}
             <div className="lg:col-span-1">
               <h3 className="text-3xl font-bold mb-4 bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-                YourName
+                Rohit Chavan
               </h3>
               <p className="text-gray-300 mb-6 leading-relaxed">
                 Full Stack Developer & Creative Designer crafting digital experiences that make a difference.

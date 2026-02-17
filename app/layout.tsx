@@ -30,10 +30,10 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      ><CursorGlow />
-      <CursorParticles/>
-        {children}
+      >
         <BackgroundDots/>
+        <CursorGlow />
+        {children}
         <Footer/>
       </body>
     </html>
