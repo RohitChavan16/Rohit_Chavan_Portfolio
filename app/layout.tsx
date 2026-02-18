@@ -5,6 +5,11 @@ import BackgroundDots from "@/components/BackgroundDots";
 import CursorGlow from "@/components/CursorGlow";
 import CursorParticles from "@/components/CursorParticles";
 import Footer from "@/components/Footer";
+import About from "@/components/About";
+import Skills from "@/components/Skills";
+import Work from "@/components/Work";
+import Experience from "@/components/Experience";
+import Contact from "@/components/Contact";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,6 +39,11 @@ export default function RootLayout({
         <BackgroundDots/>
         <CursorGlow />
         {children}
+        <About />
+        <Skills />
+        <Work />
+        <Experience />
+        <Contact />
         <Footer/>
       </body>
     </html>

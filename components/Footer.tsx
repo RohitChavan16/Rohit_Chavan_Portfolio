@@ -126,7 +126,7 @@ const Footer = () => {
                     placeholder="Enter your email"
                     className="flex-1 px-4 py-2 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400 text-white placeholder-gray-400 backdrop-blur-sm"
                   />
-                  <button className="px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg hover:from-purple-600 hover:to-pink-600 transition-all duration-300 font-semibold">
+                  <button className="px-4 py-2 cursor-pointer bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg hover:from-purple-600 hover:to-pink-600 transition-all duration-300 font-semibold">
                     Join
                   </button>
                 </div>
@@ -143,7 +143,7 @@ const Footer = () => {
 
         {/* Bottom Section */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-          
+        
           {/* Social Links */}
           <div className="flex items-center gap-4">
             {socialLinks.map((social) => (
@@ -155,8 +155,8 @@ const Footer = () => {
                 aria-label={social.label}
                 className="group relative"
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 rounded-lg blur opacity-0 group-hover:opacity-75 transition-opacity duration-300"></div>
-                <div className="relative p-3 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20 hover:bg-white/20 transition-all duration-300 group-hover:scale-110">
+                <div className="absolute inset-0 bg-gradient-to-r from-[#e19704] via-[#ff03ee] to-[#e5032c] rounded-lg blur opacity-20 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="relative p-3 backdrop-blur-sm rounded-lg border border-white/20 transition-all duration-300 group-hover:scale-110">
                   <social.icon className="w-5 h-5" />
                 </div>
               </a>
@@ -179,11 +179,11 @@ const Footer = () => {
           {/* Scroll to Top Button */}
           <button
             onClick={scrollToTop}
-            className="group relative"
+            className="group relative animate-bounce bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg hover:from-purple-600 hover:to-pink-600"
             aria-label="Scroll to top"
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 rounded-lg blur opacity-0 group-hover:opacity-75 transition-opacity duration-300"></div>
-            <div className="relative p-3 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20 hover:bg-white/20 transition-all duration-300 group-hover:scale-110 group-hover:-translate-y-1">
+            <div className="absolute inset-0 rounded-lg blur opacity-0 group-hover:opacity-75 transition-opacity duration-300"></div>
+            <div className="cursor-pointer relative p-3  border-white/20 transition-all duration-300 group-hover:scale-110 group-hover:-translate-y-1">
               <ArrowUp className="w-5 h-5" />
             </div>
           </button>

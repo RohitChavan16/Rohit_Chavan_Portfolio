@@ -31,7 +31,7 @@ export default function NotFound() {
 
         {/* Go Home */}
         <Link href="/">
-          <button className="flex items-center gap-2 bg-cyan-500 hover:bg-cyan-600 px-6 py-3 rounded-lg font-medium transition">
+          <button className="flex cursor-pointer items-center gap-2 bg-cyan-500 hover:bg-cyan-600 px-6 py-3 rounded-lg font-medium transition">
             <Home size={18} />
             Go Home
           </button>
@@ -39,7 +39,7 @@ export default function NotFound() {
 
         {/* Projects */}
         <Link href="/projects">
-          <button className="flex items-center gap-2 border border-gray-600 hover:border-cyan-400 px-6 py-3 rounded-lg font-medium transition">
+          <button className="flex cursor-pointer items-center gap-2 border border-gray-600 hover:border-cyan-400 px-6 py-3 rounded-lg font-medium transition">
             <FolderKanban size={18} />
             View Projects
           </button>
@@ -47,7 +47,7 @@ export default function NotFound() {
 
         {/* Contact */}
         <Link href="/contact">
-          <button className="flex items-center gap-2 border border-gray-600 hover:border-cyan-400 px-6 py-3 rounded-lg font-medium transition">
+          <button className="flex cursor-pointer items-center gap-2 border border-gray-600 hover:border-cyan-400 px-6 py-3 rounded-lg font-medium transition">
             <Mail size={18} />
             Contact Me
           </button>
@@ -56,7 +56,7 @@ export default function NotFound() {
         {/* Go Back */}
         <button
           onClick={() => router.back()}
-          className="flex items-center gap-2 border border-gray-600 hover:border-cyan-400 px-6 py-3 rounded-lg font-medium transition"
+          className="flex items-center gap-2 cursor-pointer border border-gray-600 hover:border-cyan-400 px-6 py-3 rounded-lg font-medium transition"
         >
           <ArrowLeft size={18} />
           Go Back
