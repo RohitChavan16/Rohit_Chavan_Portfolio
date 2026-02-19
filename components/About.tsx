@@ -34,10 +34,10 @@ export default function About() {
                 {/* Name overlay */}
                 <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-[#0a0a0a] to-transparent">
                   <p className="text-[#e8ff47] font-mono text-xs tracking-[0.2em] uppercase">
-                    Alex Rivera
+                    Rohit Chavan
                   </p>
                   <p className="text-[#444] font-mono text-xs tracking-widest uppercase mt-1">
-                    Full Stack Dev
+                    Full Stack Developer
                   </p>
                 </div>
               </div>
@@ -63,7 +63,7 @@ export default function About() {
             </h2>
 
             <p className="text-[#888] leading-relaxed text-base">
-              Hey! I'm Alex — a Full Stack Developer with 5+ years of experience
+              Hey! I'm Ro-Hitman — a Full Stack Developer with 5+ years of experience
               turning complex ideas into clean, performant, and beautiful web
               applications. I started coding at 16, fell in love with the craft,
               and never looked back.
@@ -71,7 +71,7 @@ export default function About() {
 
             <p className="text-[#888] leading-relaxed text-base">
               My stack centers around{" "}
-              <span className="text-white">React, Next.js, Node.js,</span> and{" "}
+              <span className="text-white">React, Next.js, Node.js, SQL</span> and{" "}
               <span className="text-white">TypeScript</span> — but I'm
               comfortable across the full spectrum, from pixel-perfect UI to
               scalable backend architecture and database design.
