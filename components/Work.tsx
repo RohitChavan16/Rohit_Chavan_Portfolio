@@ -5,12 +5,12 @@ import { useState } from "react";
 const projects = [
   {
     id: "01",
-    title: "Nexus Dashboard",
-    category: "SaaS / Full Stack",
+    title: "SynapTalk",
+    category: "SaaS /Full Stack",
     description:
-      "A real-time analytics dashboard for SaaS companies. Built with Next.js, WebSockets, and PostgreSQL. Handles 10K+ concurrent users with sub-100ms latency.",
-    tags: ["Next.js", "TypeScript", "PostgreSQL", "WebSocket", "Tailwind"],
-    year: "2024",
+      "SynapTalk 🌐 is a next-generation platform that unifies real-time chat, HD video calls, screen sharing, AI-powered assistance, and social media management — all in one place. Built with end-to-end encryption, low-latency infrastructure, and modern web technologies, it ensures fast, secure, and seamless communication for users.",
+    tags: ["Mongo DB", "JavaScript", "Node js", "WebSocket", "Tailwind"],
+    year: "2026",
     color: "#e8ff47",
     link: "#",
     live: "#",
