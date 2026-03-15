@@ -17,8 +17,8 @@ const projects = [
   },
   {
     id: "02",
-    title: "Petal — E-Commerce",
-    category: "E-Commerce / UI",
+    title: "ScreenFlow",
+    category: "Movie Booking",
     description:
       "A luxury flower subscription platform with custom CMS, Stripe integration, and a headless Shopify backend. Increased conversions by 42%.",
     tags: ["React", "Shopify", "Stripe", "Node.js", "GSAP"],
@@ -29,7 +29,7 @@ const projects = [
   },
   {
     id: "03",
-    title: "AuraAI",
+    title: "PrepNex",
     category: "AI / Web App",
     description:
       "An AI-powered mood journaling app that analyzes sentiment and suggests wellness activities. Integrates OpenAI GPT-4 with a Flutter mobile frontend.",
@@ -41,7 +41,7 @@ const projects = [
   },
   {
     id: "04",
-    title: "DevSync",
+    title: "Custom RAG ChatBot",
     category: "Dev Tool / API",
     description:
       "A CLI + web tool for syncing environment variables across dev teams. Built with Node.js, encrypted storage, and a minimal React dashboard.",
