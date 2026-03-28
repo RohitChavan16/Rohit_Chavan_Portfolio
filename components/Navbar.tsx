@@ -9,12 +9,11 @@ export default function Navbar() {
   const [active, setActive] = useState("home");
   const [scrolled, setScrolled] = useState(false);
 
-  // Detect scroll
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
 
-      const sections = ["home", "about", "projects", "contact"];
+      const sections = ["home", "about", "skills", "projects", "experience", "contact"];
       sections.forEach((sec) => {
         const element = document.getElementById(sec);
         if (element) {
@@ -33,8 +32,9 @@ export default function Navbar() {
   const navLinks = [
     { name: "Home", href: "#home", id: "home" },
     { name: "About", href: "#about", id: "about" },
-    { name: "Skills", href: "#skills", id: "skill" },
+    { name: "Skills", href: "#skills", id: "skills" },
     { name: "Projects", href: "#projects", id: "projects" },
+    { name: "Experience", href: "#experience", id: "experience" },
     { name: "Contact", href: "#contact", id: "contact" },
   ];
 
@@ -42,21 +42,18 @@ export default function Navbar() {
     <header
       className={`fixed w-full z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white/5 backdrop-blur-md border-b border-white/10 shadow-lg"
+          ? "bg-[#091228]/80 backdrop-blur-md border-b border-white/10 shadow-lg"
           : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-[8%] py-4 flex justify-between items-center">
-        
-        {/* Logo */}
         <Link
           href="#home"
-          className="text-2xl font-bold bg-gradient-to-r from-sky-400 to-blue-600 bg-clip-text text-transparent hover:scale-110 transition-transform duration-300"
+          className="text-2xl font-bold bg-gradient-to-r from-[#f4d03f] via-white to-[#9fbef4] bg-clip-text text-transparent hover:scale-105 transition-transform duration-300"
         >
-          Rohit.dev
+          Rohit Chavan
         </Link>
 
-        {/* Desktop Nav */}
         <nav className="hidden md:flex items-center space-x-8">
           {navLinks.map((link) => (
             <Link
@@ -64,31 +61,27 @@ export default function Navbar() {
               href={link.href}
               className={`relative transition duration-300 ${
                 active === link.id
-                  ? "text-sky-400"
-                  : "text-white/80 hover:text-sky-400"
+                  ? "text-[#f4d03f]"
+                  : "text-white/80 hover:text-[#f4d03f]"
               }`}
             >
               {link.name}
-
-              {/* Animated underline */}
               <span
-                className={`absolute left-0 -bottom-1 h-[2px] bg-sky-400 transition-all duration-300 ${
+                className={`absolute left-0 -bottom-1 h-[2px] bg-[#f4d03f] transition-all duration-300 ${
                   active === link.id ? "w-full" : "w-0"
                 }`}
-              ></span>
+              />
             </Link>
           ))}
 
-          {/* CTA Button */}
           <Link
             href="#contact"
-            className="px-5 py-2 rounded-full bg-gradient-to-r from-sky-500 to-blue-600 hover:scale-105 hover:shadow-lg hover:shadow-sky-500/30 transition-all duration-300"
+            className="portfolio-btn portfolio-btn-primary"
           >
-            Hire Me
+            Let's Build
           </Link>
         </nav>
 
-        {/* Mobile Button */}
         <button
           className="md:hidden text-white"
           onClick={() => setIsOpen(!isOpen)}
@@ -97,16 +90,15 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-black/90 backdrop-blur-lg border-t border-white/10">
+        <div className="md:hidden bg-[#050a15]/95 backdrop-blur-lg border-t border-white/10">
           <nav className="flex flex-col items-center py-6 space-y-6">
             {navLinks.map((link) => (
               <Link
                 key={link.id}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className="text-lg hover:text-sky-400 transition"
+                className="text-lg hover:text-[#f4d03f] transition"
               >
                 {link.name}
               </Link>
@@ -115,9 +107,9 @@ export default function Navbar() {
             <Link
               href="#contact"
               onClick={() => setIsOpen(false)}
-              className="px-6 py-2 rounded-full bg-sky-500 hover:bg-sky-600 transition"
+              className="portfolio-btn portfolio-btn-primary"
             >
-              Hire Me
+              Let's Build
             </Link>
           </nav>
         </div>

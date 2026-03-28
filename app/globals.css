@@ -1,55 +1,170 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg-0: #03050b;
+  --bg-1: #071527;
+  --bg-2: #0d2240;
+  --surface: rgba(10, 16, 30, 0.78);
+  --surface-strong: rgba(13, 24, 43, 0.92);
+  --border: rgba(255, 255, 255, 0.12);
+  --text: #f8fafc;
+  --muted: #a7b2c5;
+  --muted-2: #7d8797;
+  --accent: #f4d03f;
+  --accent-soft: #ffeaa0;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  scroll-behavior: smooth;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html,
+body {
+  overflow-x: hidden;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  color: var(--text);
+  font-family: var(--font-geist-sans), "Segoe UI", sans-serif;
+  background: radial-gradient(circle at 15% 10%, #103664 0%, transparent 42%),
+    radial-gradient(circle at 85% 12%, rgba(244, 208, 63, 0.18) 0%, transparent 36%),
+    linear-gradient(140deg, var(--bg-0) 0%, var(--bg-1) 45%, var(--bg-2) 100%);
 }
 
-/* app/globals.css */
-@keyframes grid-move {
-  from { transform: translateY(0); }
-  to { transform: translateY(50px); } /* Should match your grid size */
+.section-shell {
+  position: relative;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  backdrop-filter: blur(6px);
 }
 
-.animate-grid-move {
-  animation: grid-move 2s linear infinite;
+.section-title {
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1;
 }
-@layer utilities {
-  @keyframes grid-move {
-    from { transform: translateY(0); }
-    to { transform: translateY(50px); }
-  }
 
-  @keyframes scanline {
-    from { transform: translateY(-100%); }
-    to { transform: translateY(100%); }
-  }
+.section-label {
+  color: var(--accent);
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
 
-  .animate-grid-move {
-    animation: grid-move 2s linear infinite;
-  }
+.muted {
+  color: var(--muted);
+}
 
-  .animate-scanline {
-    animation: scanline 8s linear infinite;
+.muted-soft {
+  color: var(--muted-2);
+}
+
+.accent-text {
+  color: var(--accent);
+}
+
+.portfolio-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.25rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  transition: all 220ms ease;
+  font-weight: 600;
+}
+
+.portfolio-btn-primary {
+  background: linear-gradient(120deg, #f4d03f 0%, #f8e58f 100%);
+  color: #081121;
+}
+
+.portfolio-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(244, 208, 63, 0.28);
+}
+
+.portfolio-btn-secondary {
+  border-color: rgba(244, 208, 63, 0.45);
+  color: #f8fafc;
+}
+
+.portfolio-btn-secondary:hover {
+  border-color: var(--accent);
+  background: rgba(244, 208, 63, 0.12);
+}
+
+.float-card {
+  animation: float-card 6s ease-in-out infinite;
+}
+
+@keyframes float-card {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes slow-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse-ring {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.35;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 0.6;
+  }
+}
+
+@keyframes ticker {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-ticker {
+  animation: ticker 22s linear infinite;
+}
+
+.decor-ring {
+  animation: pulse-ring 5s ease-in-out infinite;
+}
+
+.decor-spin {
+  animation: slow-spin 18s linear infinite;
+}
+
+.reveal-up {
+  animation: reveal-up 560ms ease forwards;
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

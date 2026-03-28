@@ -1,17 +1,23 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import About from "@/components/About";
+import Skills from "@/components/Skills";
+import Work from "@/components/Work";
+import Experience from "@/components/Experience";
+import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main
-      className="min-h-screen text-white
-                 bg-gradient-to-br
-                 from-[#02324b] via-[#040b2f] to-[#020024]"
-    >
-
+    <main className="min-h-screen text-white">
       <Navbar />
       <Hero />
-
+      <About />
+      <Skills />
+      <Work />
+      <Experience />
+      <Contact />
+      <Footer />
     </main>
   );
 }

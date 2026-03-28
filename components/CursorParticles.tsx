@@ -2,243 +2,156 @@
 
 import { useEffect, useRef } from "react";
 
-interface Particle {
+type DotParticle = {
   x: number;
   y: number;
   vx: number;
   vy: number;
-  size: number;
-  opacity: number;
   life: number;
   maxLife: number;
+  size: number;
   color: string;
-  angle: number;
-  rotationSpeed: number;
-}
+};
 
-const COLORS = [
-  "rgba(6, 182, 212,",   // cyan
-  "rgba(147, 51, 234,",  // purple
-  "rgba(236, 72, 153,",  // pink
-  "rgba(59, 130, 246,",  // blue
-  "rgba(168, 85, 247,",  // violet
+const colors = [
+  "rgba(244,208,63,",
+  "rgba(255,255,255,",
+  "rgba(130,176,245,",
 ];
 
-export default function CursorCanvasParticles() {
+export default function CursorParticles() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
-  const particlesRef = useRef<Particle[]>([]);
-  const animationFrameRef = useRef<number | null>(null);
-  const lastFrameTime = useRef<number>(performance.now());
+  const particlesRef = useRef<DotParticle[]>([]);
+  const trailRef = useRef<{ x: number; y: number }[]>([]);
+  const targetRef = useRef({ x: -100, y: -100 });
+  const currentRef = useRef({ x: -100, y: -100 });
+  const frameRef = useRef<number | null>(null);
+  const timeRef = useRef<number>(performance.now());
 
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-
-    const ctx = canvas.getContext("2d", { alpha: true });
+    const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    // Proper DPI scaling
-    const resizeCanvas = () => {
+    const resize = () => {
       const dpr = window.devicePixelRatio || 1;
-
-      const width = window.innerWidth;
-      const height = window.innerHeight;
-
-      canvas.width = width * dpr;
-      canvas.height = height * dpr;
-
-      canvas.style.width = `${width}px`;
-      canvas.style.height = `${height}px`;
-
+      canvas.width = window.innerWidth * dpr;
+      canvas.height = window.innerHeight * dpr;
+      canvas.style.width = `${window.innerWidth}px`;
+      canvas.style.height = `${window.innerHeight}px`;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     };
 
-    resizeCanvas();
-
-    window.addEventListener("resize", resizeCanvas);
-
-    // Create particle (radial emission in all directions)
-    const createParticle = (x: number, y: number): Particle => {
+    const spawn = (x: number, y: number, speed: number) => {
       const angle = Math.random() * Math.PI * 2;
-      const speed = 0.5 + Math.random() * 3;
-
-      return {
+      const velocity = 0.6 + Math.random() * 1.7 + speed * 0.03;
+      particlesRef.current.push({
         x,
         y,
-        vx: Math.cos(angle) * speed,
-        vy: Math.sin(angle) * speed,
-        size: 10 + Math.random() * 20,
-        opacity: 0.7 + Math.random() * 0.3,
+        vx: Math.cos(angle) * velocity,
+        vy: Math.sin(angle) * velocity,
         life: 0,
-        maxLife: 60 + Math.random() * 60,
-        color: COLORS[Math.floor(Math.random() * COLORS.length)],
-        angle: Math.random() * Math.PI * 2,
-        rotationSpeed: (Math.random() - 0.5) * 0.05,
-      };
+        maxLife: 44 + Math.random() * 36,
+        size: 1 + Math.random() * 2.8,
+        color: colors[Math.floor(Math.random() * colors.length)],
+      });
     };
 
-    // Draw organic liquid shape
-    const drawParticle = (p: Particle) => {
-      ctx.save();
-
-      ctx.translate(p.x, p.y);
-      ctx.rotate(p.angle);
-
-      const lifeRatio = p.life / p.maxLife;
-      const alpha = p.opacity * (1 - lifeRatio);
-
-      // Outer glow gradient
-      const gradient = ctx.createRadialGradient(
-        0,
-        0,
-        0,
-        0,
-        0,
-        p.size
-      );
-
-      gradient.addColorStop(0, `${p.color}${alpha})`);
-      gradient.addColorStop(0.4, `${p.color}${alpha * 0.6})`);
-      gradient.addColorStop(1, `${p.color}0)`);
-
-      ctx.fillStyle = gradient;
-
-      // Organic blob shape
-      ctx.beginPath();
-
-      const points = 7;
-
-      for (let i = 0; i <= points; i++) {
-        const angle = (i / points) * Math.PI * 2;
-
-        const radius =
-          p.size *
-          (0.7 +
-            Math.sin(angle * 3 + p.life * 0.05) * 0.3);
-
-        const x = Math.cos(angle) * radius;
-        const y = Math.sin(angle) * radius;
-
-        if (i === 0) ctx.moveTo(x, y);
-        else ctx.lineTo(x, y);
-      }
-
-      ctx.closePath();
-      ctx.fill();
-
-      ctx.restore();
-    };
-
-    // Update particles with deltaTime
-    const updateParticles = (deltaTime: number) => {
-      const particles = particlesRef.current;
-
+    const animate = (time: number) => {
+      const dt = (time - timeRef.current) / 16.67;
+      timeRef.current = time;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      for (let i = particles.length - 1; i >= 0; i--) {
-        const p = particles[i];
+      currentRef.current.x += (targetRef.current.x - currentRef.current.x) * 0.15;
+      currentRef.current.y += (targetRef.current.y - currentRef.current.y) * 0.15;
 
-        // Motion
-        p.x += p.vx * deltaTime;
-        p.y += p.vy * deltaTime;
+      trailRef.current.push({ x: currentRef.current.x, y: currentRef.current.y });
+      if (trailRef.current.length > 24) trailRef.current.shift();
 
-        // Smooth friction
-        const friction = 0.97;
-        p.vx *= Math.pow(friction, deltaTime);
-        p.vy *= Math.pow(friction, deltaTime);
+      if (trailRef.current.length > 1) {
+        for (let i = 1; i < trailRef.current.length; i += 1) {
+          const prev = trailRef.current[i - 1];
+          const point = trailRef.current[i];
+          const ratio = i / trailRef.current.length;
+          ctx.beginPath();
+          ctx.strokeStyle = `rgba(244,208,63,${ratio * 0.24})`;
+          ctx.lineWidth = ratio * 3;
+          ctx.lineCap = "round";
+          ctx.moveTo(prev.x, prev.y);
+          ctx.lineTo(point.x, point.y);
+          ctx.stroke();
+        }
+      }
 
-        // Life update
-        p.life += deltaTime;
-
-        // Rotation
-        p.angle += p.rotationSpeed * deltaTime;
-
-        // Size evolution
-        if (p.life < p.maxLife * 0.3)
-          p.size *= 1.01;
-        else p.size *= 0.99;
-
+      ctx.globalCompositeOperation = "lighter";
+      for (let i = particlesRef.current.length - 1; i >= 0; i -= 1) {
+        const p = particlesRef.current[i];
+        p.life += dt;
         if (p.life >= p.maxLife) {
-          particles.splice(i, 1);
+          particlesRef.current.splice(i, 1);
           continue;
         }
 
-        drawParticle(p);
+        p.x += p.vx * dt;
+        p.y += p.vy * dt;
+        p.vx *= 0.973;
+        p.vy *= 0.973;
+
+        const alpha = 1 - p.life / p.maxLife;
+        ctx.fillStyle = `${p.color}${alpha})`;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx.fill();
       }
+      ctx.globalCompositeOperation = "source-over";
+
+      frameRef.current = requestAnimationFrame(animate);
     };
 
-    // Animation loop
-    const animate = (time: number) => {
-      const deltaTime =
-        (time - lastFrameTime.current) / 16.67;
-
-      lastFrameTime.current = time;
-
-      updateParticles(deltaTime);
-
-      animationFrameRef.current =
-        requestAnimationFrame(animate);
-    };
-
-    animationFrameRef.current =
-      requestAnimationFrame(animate);
-
-    // Mouse interaction
-    let lastEmitTime = 0;
-
-    const handleMouseMove = (e: MouseEvent) => {
+    let lastEmit = 0;
+    const onMouseMove = (event: MouseEvent) => {
       const now = performance.now();
+      const dx = event.clientX - targetRef.current.x;
+      const dy = event.clientY - targetRef.current.y;
+      const speed = Math.min(40, Math.hypot(dx, dy));
+      targetRef.current = { x: event.clientX, y: event.clientY };
 
-      if (now - lastEmitTime < 16) return;
+      if (now - lastEmit < 16) return;
+      lastEmit = now;
 
-      lastEmitTime = now;
-
-      const x = e.clientX;
-      const y = e.clientY;
-
-      const count = 2 + Math.floor(Math.random() * 3);
-
-      for (let i = 0; i < count; i++) {
-        particlesRef.current.push(
-          createParticle(
-            x + (Math.random() - 0.5) * 10,
-            y + (Math.random() - 0.5) * 10
-          )
+      const count = 3 + Math.floor(speed / 8);
+      for (let i = 0; i < count; i += 1) {
+        spawn(
+          event.clientX + (Math.random() - 0.5) * (8 + speed * 0.4),
+          event.clientY + (Math.random() - 0.5) * (8 + speed * 0.4),
+          speed,
         );
       }
 
-      // Limit particles for performance
-      if (particlesRef.current.length > 400) {
-        particlesRef.current =
-          particlesRef.current.slice(-400);
+      if (particlesRef.current.length > 700) {
+        particlesRef.current = particlesRef.current.slice(-700);
       }
     };
 
-    window.addEventListener("mousemove", handleMouseMove);
+    resize();
+    window.addEventListener("resize", resize);
+    window.addEventListener("mousemove", onMouseMove);
+    frameRef.current = requestAnimationFrame(animate);
 
-    // Cleanup
     return () => {
-      window.removeEventListener(
-        "mousemove",
-        handleMouseMove
-      );
-
-      window.removeEventListener(
-        "resize",
-        resizeCanvas
-      );
-
-      if (animationFrameRef.current !== null)
-        cancelAnimationFrame(animationFrameRef.current);
-
+      window.removeEventListener("resize", resize);
+      window.removeEventListener("mousemove", onMouseMove);
+      if (frameRef.current) cancelAnimationFrame(frameRef.current);
       particlesRef.current = [];
+      trailRef.current = [];
     };
   }, []);
 
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 pointer-events-none z-0"
+      className="fixed inset-0 z-[9998] pointer-events-none hidden md:block"
     />
   );
 }
