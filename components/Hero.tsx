@@ -8,18 +8,18 @@ export default function Hero() {
       <div className="absolute bottom-16 right-10 w-44 h-44 rounded-full bg-[#4a8ce5]/25 blur-3xl pointer-events-none" />
 
       <div className="max-w-2xl reveal-up">
-        <p className="section-label mb-4">Rohit Chavan | Full Stack Developer</p>
-
+        <p className="mb-4 text-xl md:text-2xl font-semibold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-cyan-400 drop-shadow-[0_0_8px_rgba(99,102,241,0.6)]">
+  Rohit Chavan | Turning Complexity into Business Impact
+</p>
         <h1 className="text-5xl lg:text-7xl font-extrabold leading-[1.05] mb-6">
           Building high-impact
-          <span className="block accent-text">web products</span>
+          <span className="block accent-text">software products</span>
           with clean systems.
         </h1>
 
         <p className="muted text-lg leading-relaxed mb-10 max-w-xl">
-          I craft responsive apps with Next.js, TypeScript, and Node.js, focused on
-          performance, reliability, and polished UI. From idea to launch, I enjoy
-          turning product vision into practical, scalable software.
+          I build scalable systems with a focus on problem solving, algorithms, and clean design.
+          From breaking down complex problems to delivering reliable products, I care about performance, clarity, and real-world impact.
         </p>
 
         <div className="flex flex-wrap gap-4">
