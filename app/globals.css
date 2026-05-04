@@ -168,3 +168,48 @@ body {
     transform: translateY(0);
   }
 }
+
+
+@keyframes float {
+  0%   { transform: translateY(0px); }
+  50%  { transform: translateY(-6px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+
+
+/* for the about box fusstack, backend, etc*/
+
+@keyframes verticalLoop {
+  0%   { transform: translateY(0); }
+  20%  { transform: translateY(-100%); }
+  40%  { transform: translateY(-200%); }
+  60%  { transform: translateY(-300%); }
+  80%  { transform: translateY(-400%); }
+  100% { transform: translateY(0); }
+}
+
+.animate-verticalLoop {
+  display: flex;
+  flex-direction: column;
+  animation: verticalLoop 8s ease-in-out infinite;
+}
+
+@keyframes profile-caret-blink {
+  0%,
+  45% {
+    opacity: 1;
+  }
+  46%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.profile-caret {
+  animation: profile-caret-blink 0.85s steps(1, end) infinite;
+}
