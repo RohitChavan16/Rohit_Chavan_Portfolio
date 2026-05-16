@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import ImageSlider from "./ImageSilder";
+import AchivementSlider from "./AchivementSlider";
 
 export default function About() {
   const profileRoles = useMemo(
@@ -78,6 +79,106 @@ export default function About() {
       glow: "hover:shadow-[0_0_28px_rgba(217,70,239,0.45)]",
       bg: "from-fuchsia-500/18 via-slate-900/95 to-slate-950",
     },
+  ];
+  const conceptStyles = [
+    {
+      bg: "from-cyan-500/18 to-slate-950/80",
+      border: "border-cyan-300/35 hover:border-cyan-200",
+      text: "text-cyan-100",
+      glow: "hover:shadow-[0_0_18px_rgba(34,211,238,0.42)]",
+    },
+    {
+      bg: "from-amber-400/18 to-slate-950/80",
+      border: "border-amber-300/40 hover:border-amber-200",
+      text: "text-amber-100",
+      glow: "hover:shadow-[0_0_18px_rgba(251,191,36,0.42)]",
+    },
+    {
+      bg: "from-fuchsia-500/18 to-slate-950/80",
+      border: "border-fuchsia-300/35 hover:border-fuchsia-200",
+      text: "text-fuchsia-100",
+      glow: "hover:shadow-[0_0_18px_rgba(217,70,239,0.42)]",
+    },
+    {
+      bg: "from-emerald-500/18 to-slate-950/80",
+      border: "border-emerald-300/35 hover:border-emerald-200",
+      text: "text-emerald-100",
+      glow: "hover:shadow-[0_0_18px_rgba(52,211,153,0.42)]",
+    },
+    {
+      bg: "from-sky-500/18 to-slate-950/80",
+      border: "border-sky-300/35 hover:border-sky-200",
+      text: "text-sky-100",
+      glow: "hover:shadow-[0_0_18px_rgba(56,189,248,0.42)]",
+    },
+    {
+      bg: "from-violet-500/18 to-slate-950/80",
+      border: "border-violet-300/35 hover:border-violet-200",
+      text: "text-violet-100",
+      glow: "hover:shadow-[0_0_18px_rgba(139,92,246,0.42)]",
+    },
+    {
+      bg: "from-rose-500/18 to-slate-950/80",
+      border: "border-rose-300/35 hover:border-rose-200",
+      text: "text-rose-100",
+      glow: "hover:shadow-[0_0_18px_rgba(251,113,133,0.42)]",
+    },
+    {
+      bg: "from-lime-400/18 to-slate-950/80",
+      border: "border-lime-300/35 hover:border-lime-200",
+      text: "text-lime-100",
+      glow: "hover:shadow-[0_0_18px_rgba(190,242,100,0.36)]",
+    },
+    {
+      bg: "from-orange-400/18 to-slate-950/80",
+      border: "border-orange-300/35 hover:border-orange-200",
+      text: "text-orange-100",
+      glow: "hover:shadow-[0_0_18px_rgba(251,146,60,0.38)]",
+    },
+    {
+      bg: "from-blue-500/18 to-slate-950/80",
+      border: "border-blue-300/35 hover:border-blue-200",
+      text: "text-blue-100",
+      glow: "hover:shadow-[0_0_18px_rgba(96,165,250,0.42)]",
+    },
+    {
+      bg: "from-teal-500/18 to-slate-950/80",
+      border: "border-teal-300/35 hover:border-teal-200",
+      text: "text-teal-100",
+      glow: "hover:shadow-[0_0_18px_rgba(45,212,191,0.42)]",
+    },
+    {
+      bg: "from-pink-500/18 to-slate-950/80",
+      border: "border-pink-300/35 hover:border-pink-200",
+      text: "text-pink-100",
+      glow: "hover:shadow-[0_0_18px_rgba(244,114,182,0.42)]",
+    },
+  ];
+  const conceptCards = [
+    "Payment Integration",
+    "AI Integration",
+    "Rate Limiter",
+    "API Gateway",
+    "WebSockets",
+    "Real-Time Chat Systems",
+    "Image Processing",
+    "Object-Oriented Programming",
+    "Load Balancing",
+    "Authentication & Authorization",
+    "Role-Based Access Control",
+    "OAuth Integration",
+    "RAG Pipelines",
+    "LLM Integration",
+    "Vector Search",
+    "Prompt Engineering",
+    "Streaming Responses",
+    "File Upload Pipelines",
+    "Webhook Systems",
+    "Caching Strategies",
+    "Database Indexing",
+    "Queue Workers",
+    "Microservices",
+    "Observability",
   ];
 
   return (
@@ -181,8 +282,24 @@ export default function About() {
             ))}
           </div>
 
-          <div className="col-span-1 md:col-span-2 md:row-span-3 rounded-2xl p-4 bg-gradient-to-br from-[#1e1b4b] to-[#020617] text-white">
-            Skills → Tech stack (React, Node, OpenCV, etc.)
+          <div className="col-span-1 md:col-span-2 md:row-span-3 rounded-2xl border border-white/10 bg-gradient-to-br from-[#1e1b4b] via-[#0f172a] to-[#020617] p-4 text-white overflow-hidden">
+            <p className="mb-3 text-[0.62rem] font-semibold tracking-[0.22em] text-indigo-200/80">
+              CONCEPTS
+            </p>
+            <div className="flex flex-wrap items-start gap-x-2.5 gap-y-3">
+              {conceptCards.map((concept, index) => {
+                const style = conceptStyles[index % conceptStyles.length];
+
+                return (
+                <div
+                  key={concept}
+                  className={`inline-flex w-fit rounded-xl border bg-gradient-to-br px-3 py-2 text-[0.72rem] font-semibold leading-none backdrop-blur-md transition duration-300 hover:-translate-y-0.5 hover:scale-[1.03] ${style.bg} ${style.border} ${style.text} ${style.glow}`}
+                >
+                  {concept}
+                </div>
+                );
+              })}
+            </div>
           </div>
 
           <div className="col-span-2 md:col-span-2 md:row-span-3 rounded-2xl p-4 bg-gradient-to-br from-[#020617] to-[#1e293b] text-white">
@@ -190,14 +307,14 @@ export default function About() {
           </div>
 
 
-          <div className="col-span-1 md:col-span-2 md:row-span-2 rounded-2xl p-4 bg-gradient-to-br from-[#0f172a] to-[#1e293b] text-white">
-            Proj1 → ScreenFlow (highlight)
+          <div className="col-span-1 md:col-span-2 md:row-span-2 rounded-2xl bg-gradient-to-br from-[#0f172a] to-[#1e293b] text-white">
+            <AchivementSlider />
           </div>
 
           
 
           <div className="col-span-2 md:col-span-3 rounded-2xl p-4 bg-gradient-to-br from-[#020617] to-[#312e81] text-white">
-            Philosophy → "I build production-ready systems, not just projects"
+            Philosophy → &quot;I build production-ready systems, not just projects&quot;
           </div>
 
           <div className="col-span-1 md:col-span-2 rounded-2xl p-4 bg-gradient-to-br from-[#1e1b4b] to-[#0f172a] text-white">

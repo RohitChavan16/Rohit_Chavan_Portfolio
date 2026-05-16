@@ -1,0 +1,19 @@
+
+> portfolio@0.1.0 dev
+> next dev --port 4012
+
+   ▲ Next.js 16.0.8 (Turbopack)
+   - Local:         http://localhost:4012
+   - Network:       http://10.230.211.46:4012
+   - Environments: .env.local
+
+ ✓ Starting...
+Creating turbopack project { dir: 'E:\\NextJS Projects\\portfolio', testMode: true }
+ ✓ Ready in 1116ms
+ ○ Compiling / ...
+ GET / 200 in 4.8s (compile: 4.6s, render: 264ms)
+ GET / 200 in 70ms (compile: 6ms, render: 64ms)
+ ✓ Compiled in 872ms
+ ✓ Compiled in 593ms
+ ✓ Compiled in 76ms
+ ✓ Compiled in 82ms

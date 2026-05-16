@@ -1,0 +1,129 @@
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+ ⨯ ./app/layout.tsx:5:1
+Module not found: Can't resolve '@/components/CursorGlow'
+[0m [90m 3 |[39m [36mimport[39m [32m"./globals.css"[39m[33m;[39m
+ [90m 4 |[39m [36mimport[39m [33mBackgroundDots[39m [36mfrom[39m [32m"@/components/BackgroundDots"[39m[33m;[39m
+[31m[1m>[22m[39m[90m 5 |[39m [36mimport[39m [33mCursorGlow[39m [36mfrom[39m [32m"@/components/CursorGlow"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 6 |[39m [36mimport[39m [33mCursorParticles[39m [36mfrom[39m [32m"@/components/CursorParticles"[39m[33m;[39m
+ [90m 7 |[39m
+ [90m 8 |[39m [36mconst[39m geistSans [33m=[39m [33mGeist[39m({[0m
+
+Import map: aliased to relative './components/CursorGlow' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./app/layout.tsx:5:1
+Module not found: Can't resolve '@/components/CursorGlow'
+[0m [90m 3 |[39m [36mimport[39m [32m"./globals.css"[39m[33m;[39m
+ [90m 4 |[39m [36mimport[39m [33mBackgroundDots[39m [36mfrom[39m [32m"@/components/BackgroundDots"[39m[33m;[39m
+[31m[1m>[22m[39m[90m 5 |[39m [36mimport[39m [33mCursorGlow[39m [36mfrom[39m [32m"@/components/CursorGlow"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 6 |[39m [36mimport[39m [33mCursorParticles[39m [36mfrom[39m [32m"@/components/CursorParticles"[39m[33m;[39m
+ [90m 7 |[39m
+ [90m 8 |[39m [36mconst[39m geistSans [33m=[39m [33mGeist[39m({[0m
+
+Import map: aliased to relative './components/CursorGlow' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./app/layout.tsx:6:1
+Module not found: Can't resolve '@/components/CursorParticles'
+[0m [90m 4 |[39m [36mimport[39m [33mBackgroundDots[39m [36mfrom[39m [32m"@/components/BackgroundDots"[39m[33m;[39m
+ [90m 5 |[39m [36mimport[39m [33mCursorGlow[39m [36mfrom[39m [32m"@/components/CursorGlow"[39m[33m;[39m
+[31m[1m>[22m[39m[90m 6 |[39m [36mimport[39m [33mCursorParticles[39m [36mfrom[39m [32m"@/components/CursorParticles"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 7 |[39m
+ [90m 8 |[39m [36mconst[39m geistSans [33m=[39m [33mGeist[39m({
+ [90m 9 |[39m   variable[33m:[39m [32m"--font-geist-sans"[39m[33m,[39m[0m
+
+Import map: aliased to relative './components/CursorParticles' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./app/layout.tsx:6:1
+Module not found: Can't resolve '@/components/CursorParticles'
+[0m [90m 4 |[39m [36mimport[39m [33mBackgroundDots[39m [36mfrom[39m [32m"@/components/BackgroundDots"[39m[33m;[39m
+ [90m 5 |[39m [36mimport[39m [33mCursorGlow[39m [36mfrom[39m [32m"@/components/CursorGlow"[39m[33m;[39m
+[31m[1m>[22m[39m[90m 6 |[39m [36mimport[39m [33mCursorParticles[39m [36mfrom[39m [32m"@/components/CursorParticles"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 7 |[39m
+ [90m 8 |[39m [36mconst[39m geistSans [33m=[39m [33mGeist[39m({
+ [90m 9 |[39m   variable[33m:[39m [32m"--font-geist-sans"[39m[33m,[39m[0m
+
+Import map: aliased to relative './components/CursorParticles' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./app/layout.tsx:6:1
+Module not found: Can't resolve '@/components/CursorParticles'
+[0m [90m 4 |[39m [36mimport[39m [33mBackgroundDots[39m [36mfrom[39m [32m"@/components/BackgroundDots"[39m[33m;[39m
+ [90m 5 |[39m [36mimport[39m [33mCursorGlow[39m [36mfrom[39m [32m"@/components/CursorGlow"[39m[33m;[39m
+[31m[1m>[22m[39m[90m 6 |[39m [36mimport[39m [33mCursorParticles[39m [36mfrom[39m [32m"@/components/CursorParticles"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 7 |[39m
+ [90m 8 |[39m [36mconst[39m geistSans [33m=[39m [33mGeist[39m({
+ [90m 9 |[39m   variable[33m:[39m [32m"--font-geist-sans"[39m[33m,[39m[0m
+
+Import map: aliased to relative './components/CursorParticles' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./app/layout.tsx:6:1
+Module not found: Can't resolve '@/components/CursorParticles'
+[0m [90m 4 |[39m [36mimport[39m [33mBackgroundDots[39m [36mfrom[39m [32m"@/components/BackgroundDots"[39m[33m;[39m
+ [90m 5 |[39m [36mimport[39m [33mCursorGlow[39m [36mfrom[39m [32m"@/components/CursorGlow"[39m[33m;[39m
+[31m[1m>[22m[39m[90m 6 |[39m [36mimport[39m [33mCursorParticles[39m [36mfrom[39m [32m"@/components/CursorParticles"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 7 |[39m
+ [90m 8 |[39m [36mconst[39m geistSans [33m=[39m [33mGeist[39m({
+ [90m 9 |[39m   variable[33m:[39m [32m"--font-geist-sans"[39m[33m,[39m[0m
+
+Import map: aliased to relative './components/CursorParticles' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./app/layout.tsx:5:1
+Module not found: Can't resolve '@/components/CursorGlow'
+[0m [90m 3 |[39m [36mimport[39m [32m"./globals.css"[39m[33m;[39m
+ [90m 4 |[39m [36mimport[39m [33mBackgroundDots[39m [36mfrom[39m [32m"@/components/BackgroundDots"[39m[33m;[39m
+[31m[1m>[22m[39m[90m 5 |[39m [36mimport[39m [33mCursorGlow[39m [36mfrom[39m [32m"@/components/CursorGlow"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 6 |[39m [36mimport[39m [33mCursorParticles[39m [36mfrom[39m [32m"@/components/CursorParticles"[39m[33m;[39m
+ [90m 7 |[39m
+ [90m 8 |[39m [36mconst[39m geistSans [33m=[39m [33mGeist[39m({[0m
+
+Import map: aliased to relative './components/CursorGlow' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./app/layout.tsx:5:1
+Module not found: Can't resolve '@/components/CursorGlow'
+[0m [90m 3 |[39m [36mimport[39m [32m"./globals.css"[39m[33m;[39m
+ [90m 4 |[39m [36mimport[39m [33mBackgroundDots[39m [36mfrom[39m [32m"@/components/BackgroundDots"[39m[33m;[39m
+[31m[1m>[22m[39m[90m 5 |[39m [36mimport[39m [33mCursorGlow[39m [36mfrom[39m [32m"@/components/CursorGlow"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 6 |[39m [36mimport[39m [33mCursorParticles[39m [36mfrom[39m [32m"@/components/CursorParticles"[39m[33m;[39m
+ [90m 7 |[39m
+ [90m 8 |[39m [36mconst[39m geistSans [33m=[39m [33mGeist[39m({[0m
+
+Import map: aliased to relative './components/CursorGlow' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
