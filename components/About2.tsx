@@ -156,29 +156,22 @@ export default function About() {
   ];
   const conceptCards = [
     "Payment Integration",
-    "AI Integration",
-    "Rate Limiter",
-    "API Gateway",
-    "WebSockets",
+    "RAG Pipelines",
+    "End-to-End Encryption (E2EE)",
+    "WebRTC",
+    "API Architecture",
+    "Cloud Infrastructure",
+    "LLM Integration",
+    
+    "OAuth Integration",
     "Real-Time Chat Systems",
     "Image Processing",
-    "Object-Oriented Programming",
-    "Load Balancing",
+     "AI Integration",
     "Authentication & Authorization",
+    "Event-Driven Architecture",
+    "Full-Stack Architecture",
+     "WebSockets",
     "Role-Based Access Control",
-    "OAuth Integration",
-    "RAG Pipelines",
-    "LLM Integration",
-    "Vector Search",
-    "Prompt Engineering",
-    "Streaming Responses",
-    "File Upload Pipelines",
-    "Webhook Systems",
-    "Caching Strategies",
-    "Database Indexing",
-    "Queue Workers",
-    "Microservices",
-    "Observability",
   ];
 
   return (
@@ -282,23 +275,28 @@ export default function About() {
             ))}
           </div>
 
-          <div className="col-span-1 md:col-span-2 md:row-span-3 rounded-2xl border border-white/10 bg-gradient-to-br from-[#1e1b4b] via-[#0f172a] to-[#020617] p-4 text-white overflow-hidden">
-            <p className="mb-3 text-[0.62rem] font-semibold tracking-[0.22em] text-indigo-200/80">
-              CONCEPTS
+          <div className="col-span-1 md:col-span-2 md:row-span-3 flex min-h-0 flex-col rounded-2xl border border-white/10 bg-gradient-to-br from-[#1e1b4b] via-[#0f172a] to-[#020617] p-4 text-white overflow-hidden">
+            <p className="mb-3 text-[0.79rem] font-semibold tracking-[0.12em] text-indigo-200/80">
+              Features & Systems Implemented
             </p>
-            <div className="flex flex-wrap items-start gap-x-2.5 gap-y-3">
-              {conceptCards.map((concept, index) => {
-                const style = conceptStyles[index % conceptStyles.length];
+            <div
+              className="min-h-0 flex-1 overflow-y-auto pr-1 [scrollbar-color:rgba(125,211,252,0.55)_rgba(15,23,42,0.35)] [scrollbar-width:thin]"
+              aria-label="Scrollable concepts list"
+            >
+              <div className="flex flex-wrap items-start gap-x-2.5 p-1 gap-y-3">
+                {conceptCards.map((concept, index) => {
+                  const style = conceptStyles[index % conceptStyles.length];
 
-                return (
-                <div
-                  key={concept}
-                  className={`inline-flex w-fit rounded-xl border bg-gradient-to-br px-3 py-2 text-[0.72rem] font-semibold leading-none backdrop-blur-md transition duration-300 hover:-translate-y-0.5 hover:scale-[1.03] ${style.bg} ${style.border} ${style.text} ${style.glow}`}
-                >
-                  {concept}
-                </div>
-                );
-              })}
+                  return (
+                    <div
+                      key={`${concept}-${index}`}
+                      className={`inline-flex max-w-full w-fit rounded-xl border bg-gradient-to-br px-3 py-2 text-[0.72rem] font-semibold leading-tight backdrop-blur-md transition duration-300 hover:-translate-y-0.5 hover:scale-[1.03] ${style.bg} ${style.border} ${style.text} ${style.glow}`}
+                    >
+                      {concept}
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </div>
 

@@ -1,0 +1,12 @@
+
+> portfolio@0.1.0 dev
+> next dev --port 4010
+
+   ▲ Next.js 16.0.8 (Turbopack)
+   - Local:         http://localhost:4010
+   - Network:       http://10.230.211.46:4010
+   - Environments: .env.local
+
+ ✓ Starting...
+   Suggestion: If you intended to restart next dev, terminate the other process, and then try again.
+[?25h

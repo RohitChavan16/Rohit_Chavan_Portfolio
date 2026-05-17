@@ -1,11 +1,27 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import { Github, Linkedin, Mail } from "lucide-react";
 
 const socials = [
-  { label: "GitHub", handle: "github.com/RohitChavan16", href: "https://github.com/RohitChavan16" },
-  { label: "LinkedIn", handle: "linkedin.com/in/rohit-chavan16", href: "https://linkedin.com/in/rohit-chavan16" },
-  { label: "Email", handle: "approachrohit16@gmail.com", href: "mailto:approachrohit16@gmail.com" },
+  {
+    label: "GitHub",
+    handle: "github.com/RohitChavan16",
+    href: "https://github.com/RohitChavan16",
+    icon: Github,
+  },
+  {
+    label: "LinkedIn",
+    handle: "linkedin.com/in/rohit-chavan16",
+    href: "https://linkedin.com/in/rohit-chavan16",
+    icon: Linkedin,
+  },
+  {
+    label: "Email",
+    handle: "approachrohit16@gmail.com",
+    href: "mailto:approachrohit16@gmail.com",
+    icon: Mail,
+  },
 ];
 
 type ContactFormState = {
@@ -86,10 +102,17 @@ export default function Contact() {
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block border-b border-white/15 pb-3 hover:border-[#f4d03f]/60 transition"
+                  className="group flex items-center gap-4 border-b border-white/15 pb-3 transition hover:border-[#f4d03f]/60"
                 >
-                  <p className="text-xs uppercase tracking-[0.2em] muted-soft">{item.label}</p>
-                  <p className="text-sm mt-1">{item.handle}</p>
+                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-white/15 bg-white/5 text-[#f4d03f] transition group-hover:border-[#f4d03f]/60 group-hover:bg-[#f4d03f]/10">
+                    <item.icon size={20} strokeWidth={2.2} aria-hidden="true" />
+                  </span>
+                  <span className="min-w-0">
+                    <span className="block text-xs uppercase tracking-[0.2em] muted-soft">
+                      {item.label}
+                    </span>
+                    <span className="mt-1 block truncate text-sm">{item.handle}</span>
+                  </span>
                 </a>
               ))}
             </div>
