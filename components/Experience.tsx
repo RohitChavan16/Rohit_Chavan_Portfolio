@@ -5,44 +5,61 @@ import { useState } from "react";
 const experiences = [
   {
     id: 0,
-    role: "Full Stack Developer",
-    company: "Freelance Product Teams",
-    period: "2023 - Present",
+    role: "Core Contributor",
+    company: "Software Development Club, COEP",
+    period: "2025 - Present",
     description:
-      "Built and shipped full stack applications for clients in productivity, communication, and education domains.",
+      "Actively contributing to technical discussions, collaborative engineering initiatives, and peer learning activities.",
     wins: [
-      "Launched features with measurable performance gains and cleaner UX flows.",
-      "Designed API contracts and data models to support fast iteration.",
-      "Implemented CI-based quality checks to reduce production issues.",
+      "Collaborated with peers on full-stack development and Git workflows.",
+      "Participated in engineering-focused project discussions and code reviews.",
+      "Helped build a strong developer community through teamwork and knowledge sharing.",
     ],
   },
-  {
+ {
     id: 1,
-    role: "Project Lead (Academic + Personal Products)",
-    company: "COEP Project Labs",
-    period: "2021 - 2023",
+    role: "Open Source Contributor",
+    company: "GirlScript Summer of Code (GSSoC)",
+    period: "2026 - Present",
     description:
-      "Led small teams across hackathon and capstone initiatives, focusing on delivery, code quality, and communication.",
+      "Contributing to real-world open source projects by fixing bugs, improving UI/UX flows, and collaborating through GitHub workflows.",
     wins: [
-      "Mentored peers on React, Git workflows, and deployment basics.",
-      "Delivered demo-ready products under short timelines.",
-      "Bridged UI and backend work to keep project scope cohesive.",
+      "Worked with maintainers through pull requests, code reviews, and issue discussions.",
+      "Fixed frontend and state-management related bugs in production-style codebases.",
+      "Improved understanding of scalable React architecture and collaborative development.",
     ],
   },
+
   {
     id: 2,
-    role: "Computer Vision Builder",
-    company: "Independent Builds",
-    period: "2020 - 2022",
+    role: "Backend Developer / System Design",
+    company: "HERE Technologies Mumbai Hackathon",
+    period: "2025",
     description:
-      "Created OpenCV and C++ prototypes for document detection and image enhancement pipelines.",
+      "Built GeoShop Engine, a geospatial place intelligence platform focused on resolving inconsistent POI data across multiple map sources.",
     wins: [
-      "Implemented contour-based paper detection with perspective transforms.",
-      "Improved output clarity with adaptive thresholding and contrast tuning.",
-      "Packaged prototypes for easier future productization.",
+      "Secured 2nd Runner-Up among competing teams.",
+      "Developed FastAPI + MongoDB backend with fuzzy matching and confidence scoring.",
+      "Implemented automated business classification and real-time analytics dashboard.",
     ],
   },
-];
+
+  {
+    id: 3,
+    role: "Full Stack Developer",
+    company: "FINSPARK 2025 Hackathon",
+    period: "2025",
+    description:
+      "Developed a multilingual fintech platform focused on accessibility, communication, and responsive banking experiences.",
+    wins: [
+      "Won Best UI/UX Experience Award.",
+      "Built multilingual interfaces supporting 4 languages using i18n.",
+      "Integrated WebRTC-based video calling into a functional MVP within 36 hours.",
+    ],
+  },
+
+  
+]
 
 export default function Experience() {
   const [active, setActive] = useState(0);
@@ -67,7 +84,7 @@ export default function Experience() {
               <button
                 key={item.id}
                 onClick={() => setActive(item.id)}
-                className={`text-left rounded-xl border px-4 py-3 min-w-[200px] transition ${
+                className={`text-left cursor-pointer rounded-xl border px-4 py-3 min-w-[200px] transition ${
                   active === item.id
                     ? "border-[#f4d03f]/60 bg-[#f4d03f]/10"
                     : "border-white/15 hover:border-white/35"

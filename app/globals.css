@@ -213,3 +213,61 @@ body {
 .profile-caret {
   animation: profile-caret-blink 0.85s steps(1, end) infinite;
 }
+
+.skills-aurora {
+  position: absolute;
+  inset: -30%;
+  background:
+    radial-gradient(circle at 16% 28%, rgba(124, 246, 212, 0.2), transparent 24%),
+    radial-gradient(circle at 78% 18%, rgba(255, 138, 101, 0.18), transparent 23%),
+    radial-gradient(circle at 52% 82%, rgba(177, 151, 252, 0.2), transparent 28%);
+  filter: blur(14px);
+  opacity: 0.95;
+  animation: skills-aurora-drift 16s ease-in-out infinite alternate;
+}
+
+.skill-tile {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--skill-border), transparent 34%);
+  border-radius: 8px;
+  background:
+    linear-gradient(145deg, color-mix(in srgb, var(--skill-bg), transparent 8%), rgba(7, 11, 22, 0.82)),
+    radial-gradient(circle at top right, color-mix(in srgb, var(--skill-glow), transparent 72%), transparent 46%);
+  padding: 1rem;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  isolation: isolate;
+  transition:
+    border-color 240ms ease,
+    box-shadow 240ms ease,
+    background 240ms ease;
+}
+
+.skill-tile::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.15) 45%, transparent 70%);
+  transform: translateX(-120%);
+  transition: transform 600ms ease;
+}
+
+.skill-tile:hover {
+  border-color: var(--skill-border);
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--skill-border), transparent 45%),
+    0 18px 42px color-mix(in srgb, var(--skill-glow), transparent 70%);
+}
+
+.skill-tile:hover::before {
+  transform: translateX(120%);
+}
+
+@keyframes skills-aurora-drift {
+  from {
+    transform: translate3d(-2%, -1%, 0) rotate(0deg);
+  }
+  to {
+    transform: translate3d(2%, 3%, 0) rotate(8deg);
+  }
+}
