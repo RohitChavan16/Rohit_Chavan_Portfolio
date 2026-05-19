@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 type Project = {
@@ -115,6 +116,43 @@ const projects: Project[] = [
   },
 ];
 
+const containerVariants = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.14,
+    },
+  },
+};
+
+const cardDirections = [
+  { x: -80, y: 36, rotate: -3 },
+  { x: 0, y: 90, rotate: 0 },
+  { x: 80, y: 36, rotate: 3 },
+  { x: -40, y: 72, rotate: -2 },
+];
+
+const getCardVariants = (index: number) => ({
+  hidden: {
+    opacity: 0,
+    scale: 0.92,
+    ...cardDirections[index % cardDirections.length],
+  },
+  show: {
+    opacity: 1,
+    x: 0,
+    y: 0,
+    rotate: 0,
+    scale: 1,
+    transition: {
+      type: "spring" as const,
+      stiffness: 90,
+      damping: 18,
+      mass: 0.9,
+    },
+  },
+});
+
 export default function Work() {
   const [activeSlides, setActiveSlides] = useState<number[]>(
     projects.map(() => 0),
@@ -156,13 +194,29 @@ export default function Work() {
           </a>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.18 }}
+          className="grid grid-cols-1 lg:grid-cols-3 gap-6"
+        >
           {projects.map((project, cardIndex) => (
-            <article
+            <motion.article
               key={project.id}
-              className={`relative overflow-hidden rounded-2xl border ${project.theme.border} bg-[#0a1426]/75 backdrop-blur-sm`}
+              variants={getCardVariants(cardIndex)}
+              whileHover={{
+                y: -10,
+                scale: 1.015,
+                transition: { duration: 0.22, ease: "easeOut" },
+              }}
+              className={`group relative overflow-hidden rounded-2xl border ${project.theme.border} bg-[#0a1426]/75 backdrop-blur-sm shadow-[0_18px_48px_rgba(0,0,0,0.22)] will-change-transform`}
             >
               <div className={`pointer-events-none absolute inset-0 bg-gradient-to-br ${project.theme.glow}`} />
+              <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-white/40 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+              <div className="pointer-events-none absolute -inset-12 opacity-0 blur-3xl transition-opacity duration-300 group-hover:opacity-40">
+                <div className={`h-full w-full bg-gradient-to-br ${project.theme.glow}`} />
+              </div>
 
               <div className="relative h-52 overflow-hidden border-b border-white/10">
                 <div
@@ -246,9 +300,9 @@ export default function Work() {
                   </a>
                 </div>
               </div>
-            </article>
+            </motion.article>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

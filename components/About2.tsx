@@ -1,8 +1,53 @@
 "use client";
 
+import { motion, type Variants } from "framer-motion";
 import { useEffect, useMemo, useState } from "react";
 import ImageSlider from "./ImageSilder";
 import AchivementSlider from "./AchivementSlider";
+import { X } from "lucide-react";
+
+const aboutGridVariants: Variants = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.08,
+    },
+  },
+};
+
+const boxStarts = [
+  { x: -130, y: -40, rotate: -5 },
+  { x: 80, y: -90, rotate: 4 },
+  { x: 140, y: 20, rotate: 5 },
+  { x: 120, y: 100, rotate: 4 },
+  { x: -120, y: 110, rotate: -4 },
+  { x: -90, y: 70, rotate: -3 },
+  { x: -120, y: 40, rotate: -2 },
+  { x: 100, y: 60, rotate: 3 },
+  { x: 120, y: -20, rotate: 4 },
+];
+
+const aboutBoxVariants: Variants = {
+  hidden: (index: number) => ({
+    opacity: 0,
+    scale: 0.88,
+    ...boxStarts[index % boxStarts.length],
+  }),
+  show: {
+    opacity: 1,
+    x: 0,
+    y: 0,
+    rotate: 0,
+    scale: 1,
+    transition: {
+      type: "spring",
+      stiffness: 86,
+      damping: 17,
+      mass: 0.9,
+    },
+  },
+};
 
 export default function About() {
   const profileRoles = useMemo(
@@ -18,6 +63,7 @@ export default function About() {
   const [roleIndex, setRoleIndex] = useState(0);
   const [typedRole, setTypedRole] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
+  const [isMindsetOpen, setIsMindsetOpen] = useState(false);
 
   useEffect(() => {
     const currentRole = profileRoles[roleIndex].label;
@@ -51,6 +97,11 @@ export default function About() {
   }, [isDeleting, profileRoles, roleIndex, typedRole]);
 
   const activeRole = profileRoles[roleIndex];
+  const mindsetImage = "/mindset4.jpeg";
+  const mindsetText =
+    "I build with patience, pressure, and polish. Every feature should have a reason, every interaction should feel intentional, and every system should be strong enough to grow without becoming messy.";
+  const expandedMindsetText =
+    `${mindsetText} I care about clean structure, readable code, fast feedback, and the kind of product decisions that make the final build feel confident instead of accidental. The goal is simple: think clearly, ship carefully, and keep improving the system until it feels calm under pressure.`;
   const heroCards = [
     {
       title: "Product Mindset",
@@ -177,61 +228,121 @@ export default function About() {
   return (
     <section className="w-full min-h-screen flex items-center justify-center px-4 py-6 bg-gradient-to-br from-[#020617] via-[#020617] to-[#0f172a]">
       <div className="w-full max-w-5xl">
-        <div className="grid grid-cols-2 md:grid-cols-6 gap-4 auto-rows-[110px]">
-
-          <div className="col-span-2 md:col-span-3 rounded-2xl p-5 bg-gradient-to-br from-[#1e293b] to-[#0f172a] text-white border border-white/10 overflow-hidden">
-<p className="text-xs text-gray-400 mb-4 tracking-widest">
-    CORE FLOW
-  </p>
-  <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
-
-    
-
-    {[
-      { label: "Systems", icon: "⚙️" },
-      { label: "Scale", icon: "📈" },
-      { label: "Performance", icon: "⚡" },
-      { label: "Clarity", icon: "🧠" },
-      { label: "Impact", icon: "🚀" },
-    ].map((item, i) => (
-      <div
-        key={i}
-        style={{ animationDelay: `${i * 0.2}s` }}
-        className={`group flex flex-col items-center justify-center 
-                   rounded-xl px-3 py-3 
-                   bg-white/5 border
-                   text-center backdrop-blur-md
-                   hover:scale-[1.03] 
-                   transition duration-300 animate-float
-
-                   ${i === 0 ? "border-blue-200 hover:border-blue-400 hover:shadow-[0_0_18px_rgba(59,130,246,0.5)]" : ""}
-                   ${i === 1 ? "border-purple-400 hover:border-purple-600 hover:shadow-[0_0_18px_rgba(168,85,247,0.5)]" : ""}
-                   ${i === 2 ? "border-yellow-400 hover:border-yellow-600 hover:shadow-[0_0_18px_rgba(250,204,21,0.5)]" : ""}
-                   ${i === 3 ? "border-green-400 hover:border-green-600 hover:shadow-[0_0_18px_rgba(34,197,94,0.5)]" : ""}
-                   ${i === 4 ? "border-pink-400 hover:border-pink-600 hover:shadow-[0_0_18px_rgba(236,72,153,0.5)]" : ""}
-        `}
-      >
-        <span className="text-lg mb-1">{item.icon}</span>
-
-        <span
-          className={`text-xs text-gray-300 transition 
-            ${i === 0 ? "group-hover:text-blue-300" : ""}
-            ${i === 1 ? "group-hover:text-purple-300" : ""}
-            ${i === 2 ? "group-hover:text-yellow-300" : ""}
-            ${i === 3 ? "group-hover:text-green-300" : ""}
-            ${i === 4 ? "group-hover:text-pink-300" : ""}
-          `}
+        <motion.div
+          variants={aboutGridVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+          className="grid grid-cols-2 md:grid-cols-6 gap-4 auto-rows-[110px]"
         >
-          {item.label}
-        </span>
-      </div>
-    ))}
 
-  </div>
+          <motion.div
+            custom={0}
+            variants={aboutBoxVariants}
+            className="group relative col-span-2 md:col-span-3 rounded-2xl p-[1px] text-white overflow-hidden will-change-transform"
+          >
+            <motion.div
+              className="absolute inset-0 rounded-2xl bg-[conic-gradient(from_0deg,rgba(34,211,238,0.15),rgba(244,114,182,0.8),rgba(251,191,36,0.75),rgba(34,211,238,0.85),rgba(34,211,238,0.15))]"
+              animate={{ rotate: 360 }}
+              transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+              aria-hidden="true"
+            />
+            <motion.div
+              className="absolute -inset-16 bg-[radial-gradient(circle_at_center,rgba(34,211,238,0.34),transparent_56%)] blur-3xl"
+              animate={{ x: [-28, 34, -18, -28], y: [18, -20, 28, 18], opacity: [0.45, 0.9, 0.55, 0.45] }}
+              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+              aria-hidden="true"
+            />
 
-</div>
+            <div className="relative z-10 flex h-full flex-col justify-between rounded-[15px] bg-slate-950/54 p-5 shadow-[0_0_42px_rgba(34,211,238,0.18)] backdrop-blur-md transition duration-300 group-hover:shadow-[0_0_62px_rgba(34,211,238,0.32)]">
+              <div className="pointer-events-none absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-cyan-200 to-transparent opacity-90" />
+              <motion.h2
+                initial={{ backgroundPosition: "0% 50%" }}
+                whileInView={{ backgroundPosition: "100% 50%" }}
+                animate={{ scale: [1, 1.025, 1] }}
+                transition={{
+                  backgroundPosition: { duration: 2.4, ease: "easeOut" },
+                  scale: { duration: 3.2, repeat: Infinity, ease: "easeInOut" },
+                }}
+                className="relative z-10 bg-cover bg-center text-[clamp(3rem,10vw,5.9rem)] font-black leading-[0.78] tracking-normal text-transparent bg-clip-text drop-shadow-[0_0_22px_rgba(125,211,252,0.5)]"
+                style={{
+                  backgroundImage: `linear-gradient(rgba(255,255,255,0.18), rgba(255,255,255,0.18)), url(${mindsetImage})`,
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  WebkitTextStroke: "1px rgba(226, 246, 255, 0.72)",
+                }}
+              >
+                MINDSET
+              </motion.h2>
 
-          <div className={`col-span-1 md:col-span-1 rounded-2xl p-3 sm:p-4 bg-gradient-to-br from-[#312e81] via-[#1e1b4b] to-[#020617] text-white overflow-hidden border border-white/10 shadow-lg ${activeRole.glow}`}>
+              <div className="relative mt-3 max-w-[34rem] overflow-hidden pb-9">
+                <p className="text-sm font-semibold leading-relaxed text-slate-100">
+                  {mindsetText}
+                </p>
+                <div className="pointer-events-none absolute inset-x-0 bottom-0 h-14 bg-gradient-to-b from-transparent via-[#020617]/35 to-[#020617]" />
+              </div>
+
+              <motion.button
+                type="button"
+                onClick={() => setIsMindsetOpen(true)}
+                animate={{
+                  boxShadow: [
+                    "0 0 18px rgba(34,211,238,0.34)",
+                    "0 0 34px rgba(244,114,182,0.48)",
+                    "0 0 22px rgba(251,191,36,0.42)",
+                    "0 0 18px rgba(34,211,238,0.34)",
+                  ],
+                }}
+                whileHover={{ scale: 1.06, y: -2 }}
+                whileTap={{ scale: 0.96 }}
+                transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute right-5 top-[4.8rem] z-20 border-1 border-[#06bcef] cursor-pointer rounded-full px-3 py-2 text-[0.59rem] font-black uppercase tracking-[0.22em] text-cyan-50 backdrop-blur-md transition hover:border-white/80 hover:bg-green-600/25"
+              >
+                Click me
+              </motion.button>
+            </div>
+
+            {isMindsetOpen ? (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.96, y: 12 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                transition={{ duration: 0.28, ease: "easeOut" }}
+                className="absolute inset-0 z-30 rounded-2xl border border-cyan-100/30 bg-slate-950/92 p-1 text-white shadow-[0_0_40px_rgba(34,211,238,0.35)] backdrop-blur-2xl sm:p-4"
+              >
+                <div className=" flex shrink-0 items-start justify-between gap-3">
+                  <motion.p
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.28, delay: 0.08 }}
+                    className="text-[0.62rem] font-black uppercase tracking-[0.24em] text-cyan-100"
+                  >
+                    Mindset
+                  </motion.p>
+                  <button
+                    type="button"
+                    aria-label="Close mindset details"
+                    onClick={() => setIsMindsetOpen(false)}
+                    className="grid h-6 w-6 shrink-0 cursor-pointer place-items-center rounded-full border border-white/20 bg-white/10 text-md leading-none text-white transition hover:border-cyan-100/70 hover:bg-cyan-100/15"
+                  >
+                    x
+                  </button>
+                </div>
+
+                <div className="min-h-0 flex-1 overflow-y-auto [scrollbar-color:rgba(125,211,252,0.7)_rgba(15,23,42,0.35)] [scrollbar-width:thin]">
+                  <p className="text-[0.82rem] font-semibold leading-relaxed text-white sm:text-sm">
+                    {expandedMindsetText}
+                  </p>
+                </div>
+              </motion.div>
+            ) : null}
+
+</motion.div>
+
+          <motion.div
+            custom={1}
+            variants={aboutBoxVariants}
+            className={`col-span-1 md:col-span-1 rounded-2xl p-3 sm:p-4 bg-gradient-to-br from-[#312e81] via-[#1e1b4b] to-[#020617] text-white overflow-hidden border border-white/10 shadow-lg will-change-transform ${activeRole.glow}`}
+          >
             <p className="text-[0.62rem] sm:text-xs text-indigo-200/90 mb-1 tracking-[0.22em] font-semibold">
               PROFILE
             </p>
@@ -245,14 +356,18 @@ export default function About() {
                 <span className="profile-caret ml-0.5 inline-block h-[1em] w-[2px] translate-y-[2px] rounded-full bg-current" />
               </p>
             </div>
-          </div>
+          </motion.div>
 
 
 
 
 
 
-          <div className="group relative col-span-2 md:col-span-2 md:row-span-2 rounded-2xl bg-gradient-to-br from-[#0f172a] via-[#111827] to-[#020617] text-white overflow-hidden border border-white/10">
+          <motion.div
+            custom={2}
+            variants={aboutBoxVariants}
+            className="group relative col-span-2 md:col-span-2 md:row-span-2 rounded-2xl bg-gradient-to-br from-[#0f172a] via-[#111827] to-[#020617] text-white overflow-hidden border border-white/10 will-change-transform"
+          >
             <div className="absolute inset-x-0 top-8 z-30 px-4 pt-4 text-center transition-all duration-500 ease-out group-hover:top-0">
               <p className="text-lg sm:text-xl font-black leading-none tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-cyan-200 via-amber-200 to-fuchsia-200">
                 College Activities
@@ -273,9 +388,13 @@ export default function About() {
                 </p>
               </div>
             ))}
-          </div>
+          </motion.div>
 
-          <div className="col-span-1 md:col-span-2 md:row-span-3 flex min-h-0 flex-col rounded-2xl border border-white/10 bg-gradient-to-br from-[#1e1b4b] via-[#0f172a] to-[#020617] p-4 text-white overflow-hidden">
+          <motion.div
+            custom={3}
+            variants={aboutBoxVariants}
+            className="col-span-1 md:col-span-2 md:row-span-3 flex min-h-0 flex-col rounded-2xl border border-white/10 bg-gradient-to-br from-[#1e1b4b] via-[#0f172a] to-[#020617] p-4 text-white overflow-hidden will-change-transform"
+          >
             <p className="mb-3 text-[0.79rem] font-semibold tracking-[0.12em] text-indigo-200/80">
               Features & Systems Implemented
             </p>
@@ -298,32 +417,52 @@ export default function About() {
                 })}
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="col-span-2 md:col-span-2 md:row-span-3 rounded-2xl p-4 bg-gradient-to-br from-[#020617] to-[#1e293b] text-white">
+          <motion.div
+            custom={4}
+            variants={aboutBoxVariants}
+            className="col-span-2 md:col-span-2 md:row-span-3 rounded-2xl p-4 bg-gradient-to-br from-[#020617] to-[#1e293b] text-white will-change-transform"
+          >
             <ImageSlider />
-          </div>
+          </motion.div>
 
 
-          <div className="col-span-1 md:col-span-2 md:row-span-2 rounded-2xl bg-gradient-to-br from-[#0f172a] to-[#1e293b] text-white">
+          <motion.div
+            custom={5}
+            variants={aboutBoxVariants}
+            className="col-span-1 md:col-span-2 md:row-span-2 rounded-2xl bg-gradient-to-br from-[#0f172a] to-[#1e293b] text-white will-change-transform"
+          >
             <AchivementSlider />
-          </div>
+          </motion.div>
 
           
 
-          <div className="col-span-2 md:col-span-3 rounded-2xl p-4 bg-gradient-to-br from-[#020617] to-[#312e81] text-white">
+          <motion.div
+            custom={6}
+            variants={aboutBoxVariants}
+            className="col-span-2 md:col-span-3 rounded-2xl p-4 bg-gradient-to-br from-[#020617] to-[#312e81] text-white will-change-transform"
+          >
             Philosophy → &quot;I build production-ready systems, not just projects&quot;
-          </div>
+          </motion.div>
 
-          <div className="col-span-1 md:col-span-2 rounded-2xl p-4 bg-gradient-to-br from-[#1e1b4b] to-[#0f172a] text-white">
+          <motion.div
+            custom={7}
+            variants={aboutBoxVariants}
+            className="col-span-1 md:col-span-2 rounded-2xl p-4 bg-gradient-to-br from-[#1e1b4b] to-[#0f172a] text-white will-change-transform"
+          >
             Journey → C++ → Web → AI growth
-          </div>
+          </motion.div>
 
-          <div className="col-span-1 md:col-span-1 md:row-span-1 rounded-2xl p-4 bg-gradient-to-br from-[#020617] to-[#1e293b] text-white">
+          <motion.div
+            custom={8}
+            variants={aboutBoxVariants}
+            className="col-span-1 md:col-span-1 md:row-span-1 rounded-2xl p-4 bg-gradient-to-br from-[#020617] to-[#1e293b] text-white will-change-transform"
+          >
             Contact → GitHub / LinkedIn / Email
-          </div>
+          </motion.div>
 
-        </div>
+        </motion.div>
       </div>
     </section>
   );
