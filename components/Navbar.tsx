@@ -78,7 +78,7 @@ export default function Navbar() {
             href="#contact"
             className="portfolio-btn portfolio-btn-primary"
           >
-            Let's Build
+            Let&apos;s Build
           </Link>
         </nav>
 
@@ -109,7 +109,7 @@ export default function Navbar() {
               onClick={() => setIsOpen(false)}
               className="portfolio-btn portfolio-btn-primary"
             >
-              Let's Build
+              Let&apos;s Build
             </Link>
           </nav>
         </div>

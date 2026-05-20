@@ -26,13 +26,14 @@ export default function CursorParticles() {
   const targetRef = useRef({ x: -100, y: -100 });
   const currentRef = useRef({ x: -100, y: -100 });
   const frameRef = useRef<number | null>(null);
-  const timeRef = useRef<number>(performance.now());
+  const timeRef = useRef<number>(0);
 
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
+    timeRef.current = performance.now();
 
     const resize = () => {
       const dpr = window.devicePixelRatio || 1;

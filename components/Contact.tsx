@@ -127,7 +127,7 @@ export default function Contact() {
                 <p className="text-xl font-semibold mt-4">Message queued.</p>
                 <p className="muted mt-2">Thanks for reaching out. I will connect soon.</p>
                 <button
-                  className="portfolio-btn portfolio-btn-secondary mt-5"
+                  className="cursor-pointer portfolio-btn portfolio-btn-secondary mt-5"
                   onClick={() => setSent(false)}
                 >
                   Send Another
@@ -182,7 +182,7 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full portfolio-btn portfolio-btn-primary disabled:opacity-70 disabled:cursor-not-allowed"
+                  className="w-full cursor-pointer portfolio-btn portfolio-btn-primary disabled:opacity-70 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? "Sending..." : "Send Message"}
                 </button>

@@ -307,7 +307,7 @@ export default function About() {
                 initial={{ opacity: 0, scale: 0.96, y: 12 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 transition={{ duration: 0.28, ease: "easeOut" }}
-                className="absolute inset-0 z-30 rounded-2xl border border-cyan-100/30 bg-slate-950/92 p-1 text-white shadow-[0_0_40px_rgba(34,211,238,0.35)] backdrop-blur-2xl sm:p-4"
+                className="absolute inset-0 z-30 flex flex-col rounded-2xl border border-cyan-100/30 bg-slate-950/92 px-1 pt-1 pb-0 text-white shadow-[0_0_40px_rgba(34,211,238,0.35)] backdrop-blur-2xl sm:px-4 sm:pt-4 sm:pb-0"
               >
                 <div className=" flex shrink-0 items-start justify-between gap-3">
                   <motion.p
@@ -324,12 +324,12 @@ export default function About() {
                     onClick={() => setIsMindsetOpen(false)}
                     className="grid h-6 w-6 shrink-0 cursor-pointer place-items-center rounded-full border border-white/20 bg-white/10 text-md leading-none text-white transition hover:border-cyan-100/70 hover:bg-cyan-100/15"
                   >
-                    x
+                    <X className="h-3.5 w-3.5" />
                   </button>
                 </div>
 
-                <div className="min-h-0 flex-1 overflow-y-auto [scrollbar-color:rgba(125,211,252,0.7)_rgba(15,23,42,0.35)] [scrollbar-width:thin]">
-                  <p className="text-[0.82rem] font-semibold leading-relaxed text-white sm:text-sm">
+                <div className="min-h-0 flex-1 overflow-y-auto pr-2 [scrollbar-color:rgba(125,211,252,0.7)_rgba(15,23,42,0.35)] [scrollbar-width:thin]">
+                  <p className="min-h-full text-[0.82rem] font-semibold leading-relaxed text-white sm:text-sm">
                     {expandedMindsetText}
                   </p>
                 </div>
