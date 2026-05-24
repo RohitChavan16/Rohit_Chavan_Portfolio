@@ -406,7 +406,7 @@ export default function PortfolioChatbot() {
             whileTap={{ scale: 0.92 }}
             transition={{ type: "spring", stiffness: 260, damping: 18 }}
             onClick={() => setIsOpen(true)}
-            className="chatbot-launch relative grid h-16 w-16 place-items-center rounded-full border border-cyan-100/30 bg-[#06101f]/88 text-white shadow-[0_0_34px_rgba(34,211,238,0.42),0_16px_44px_rgba(0,0,0,0.45)] backdrop-blur-xl sm:h-[4.5rem] sm:w-[4.5rem]"
+            className="chatbot-launch cursor-pointer relative grid h-16 w-16 place-items-center rounded-full border border-cyan-100/30 bg-[#06101f]/88 text-white shadow-[0_0_34px_rgba(34,211,238,0.42),0_16px_44px_rgba(0,0,0,0.45)] backdrop-blur-xl sm:h-[4.5rem] sm:w-[4.5rem]"
           >
             <span className="absolute inset-[-7px] rounded-full border border-[#f4d03f]/30" />
             <span className="absolute inset-[-14px] rounded-full border border-cyan-200/15" />

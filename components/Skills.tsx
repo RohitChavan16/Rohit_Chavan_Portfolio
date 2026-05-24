@@ -6,11 +6,17 @@ import {
   Blocks,
   BrainCircuit,
   Braces,
+  Code2,
   Cpu,
+  CreditCard,
   Database,
   GitBranch,
+  Globe,
+  Image,
+  Key,
   Network,
   Rows3,
+  Terminal,
 } from "lucide-react";
 
 type Skill = {
@@ -23,159 +29,274 @@ type Skill = {
     bg: string;
     text: string;
   };
-  size?: "wide" | "tall" | "large";
+};
+
+type SkillSection = {
+  title: string;
+  description: string;
+  icon: ComponentType<{ size?: number; className?: string }>;
+  skills: Skill[];
 };
 
 const devicon = (path: string) =>
   `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${path}/${path}-original.svg`;
 
-const skills: Skill[] = [
-
+const skillSections: SkillSection[] = [
   {
-    name: "Python",
-    icon: devicon("python"),
-    colors: { border: "#ffd166", glow: "#3776ab", bg: "#152038", text: "#fff1bf" },
-    size: "wide",
+    title: "Programming Languages",
+    description: "Core languages that power modern applications and algorithms.",
+    icon: Braces,
+    skills: [
+      {
+        name: "C++",
+        icon: devicon("cplusplus"),
+        colors: { border: "#74c0fc", glow: "#4dabf7", bg: "#081f3f", text: "#d7e9ff" },
+      },
+      {
+        name: "JavaScript",
+        icon: devicon("javascript"),
+        colors: { border: "#facc15", glow: "#fde047", bg: "#251f09", text: "#fff8c4" },
+      },
+      {
+        name: "TypeScript",
+        icon: devicon("typescript"),
+        colors: { border: "#7dd3fc", glow: "#38bdf8", bg: "#071f36", text: "#d6f5ff" },
+      },
+      {
+        name: "Python",
+        icon: devicon("python"),
+        colors: { border: "#ffd43b", glow: "#3776ab", bg: "#112039", text: "#f5f0c1" },
+      },
+      {
+        name: "Go",
+        icon: devicon("go"),
+        colors: { border: "#f97316", glow: "#fb923c", bg: "#2d1409", text: "#ffe9d9" },
+      },
+      {
+        name: "SQL",
+        Icon: Database,
+        colors: { border: "#7c3aed", glow: "#a855f7", bg: "#151336", text: "#e6dcff" },
+      },
+    ],
   },
   {
-    name: "Java",
-    icon: devicon("java"),
-    colors: { border: "#ff8a65", glow: "#f4511e", bg: "#2a120d", text: "#ffe3db" },
+    title: "Frontend Development",
+    description: "Polished interfaces, interaction systems, and responsive experiences.",
+    icon: Blocks,
+    skills: [
+      {
+        name: "React.js",
+        icon: devicon("react"),
+        colors: { border: "#7dd3fc", glow: "#38bdf8", bg: "#042735", text: "#daf5ff" },
+      },
+      {
+        name: "Next.js",
+        icon: devicon("nextjs"),
+        colors: { border: "#e2e8f0", glow: "#f8fafc", bg: "#111111", text: "#f8fafc" },
+      },
+      {
+        name: "Tailwind CSS",
+        icon: devicon("tailwindcss"),
+        colors: { border: "#38bdf8", glow: "#22d3ee", bg: "#042f3f", text: "#d9f8ff" },
+      },
+      {
+        name: "Responsive Design • Framer Motion",
+        icon: devicon("figma"),
+        colors: { border: "#60a5fa", glow: "#93c5fd", bg: "#081e31", text: "#dbeafe" },
+      },
+      {
+        name: "HTML5",
+        icon: devicon("html5"),
+        colors: { border: "#f97316", glow: "#fb923c", bg: "#2d1409", text: "#ffe9d9" },
+      },
+      {
+        name: "CSS3",
+        icon: devicon("css3"),
+        colors: { border: "#60a5fa", glow: "#93c5fd", bg: "#081e31", text: "#dbeafe" },
+      },
+    ],
   },
   {
-    name: "JavaScript",
-    icon: devicon("javascript"),
-    colors: { border: "#f7df1e", glow: "#f7df1e", bg: "#2a2404", text: "#fff7a8" },
-    size: "wide",
-  },
-  {
-    name: "TypeScript",
-    icon: devicon("typescript"),
-    colors: { border: "#7ab8ff", glow: "#3178c6", bg: "#071d36", text: "#d9ecff" },
-    size: "wide",
-  },
-  {
-    name: "HTML",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
-    colors: { border: "#ff8b5c", glow: "#e34f26", bg: "#2d140b", text: "#ffe4d6" },
-  },
-  {
+    title: "Backend Development",
+    description: "Server logic, authentication, realtime APIs, and resilient endpoints.",
+    icon: Cpu,
+    skills: [
+      {
+        name: "Node.js",
+        icon: devicon("nodejs"),
+        colors: { border: "#86efac", glow: "#4ade80", bg: "#051c11", text: "#e8ffee" },
+      },
+      {
+        name: "Express.js",
+        icon: devicon("express"),
+        colors: { border: "#cbd5e1", glow: "#94a3b8", bg: "#141926", text: "#edf2f7" },
+      },
+      {
+        name: "REST APIs",
+        Icon: Network,
+        colors: { border: "#facc15", glow: "#fbbf24", bg: "#271f05", text: "#fff7c8" },
+      },
+      {
   name: "FastAPI",
-  icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg",
-  colors: { border: "#5eead4", glow: "#009688", bg: "#06211f", text: "#d9fffb" },
-  size: "wide",
-},
+  icon: devicon("fastapi"),
+  colors: {
+    border: "#10b981",
+    glow: "#6ee7b7",
+    bg: "#06261f",
+    text: "#d1fae5"
+  },
+}, {
+        name: "Go",
+        icon: devicon("go"),
+        colors: { border: "#f97316", glow: "#fb923c", bg: "#2d1409", text: "#ffe9d9" },
+      },
+      {
+        name: "Microservices",
+        icon: devicon("docker"),
+        colors: { border: "#22d3ee", glow: "#38bdf8", bg: "#071b24", text: "#d8f7ff" },
+      },
+    ],
+  },
+  {
+    title: "Databases",
+    description: "Fast storage, strong schemas, and query-optimized persistence.",
+    icon: Database,
+    skills: [
+      {
+        name: "MongoDB",
+        icon: devicon("mongodb"),
+        colors: { border: "#86efac", glow: "#4ade80", bg: "#061f0f", text: "#e7ffec" },
+      },
+      {
+        name: "PostgreSQL",
+        icon: devicon("postgresql"),
+        colors: { border: "#93c5fd", glow: "#3b82f6", bg: "#081c31", text: "#dbeafe" },
+      },
+      {
+        name: "Mongoose",
+        icon: devicon("mongoose"),
+        colors: { border: "#fbbf24", glow: "#f59e0b", bg: "#2a1a08", text: "#fff1cc" },
+      },
+    ],
+  },
+  {
+    title: "AI & Computer Vision",
+    description: "Vision pipelines, numerical models, and next-gen API integrations.",
+    icon: BrainCircuit,
+    skills: [
+      {
+        name: "OpenCV",
+        icon: devicon("opencv"),
+        colors: { border: "#4ade80", glow: "#22c55e", bg: "#081f10", text: "#e9ffee" },
+      },
+      {
+        name: "NumPy",
+        icon: devicon("numpy"),
+        colors: { border: "#60a5fa", glow: "#3b82f6", bg: "#081d31", text: "#dbeafe" },
+      },
+      {
+        name: "RAG Systems",
+        Icon: BrainCircuit,
+        colors: { border: "#fde68a", glow: "#facc15", bg: "#2d2411", text: "#fff7d6" },
+      },
 {
-  name: "Next.js",
-  icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
-  colors: { border: "#e5e7eb", glow: "#ffffff", bg: "#111111", text: "#f9fafb" },
-  size: "wide",
+  name: "Pandas",
+  icon: devicon("pandas"),
+  colors: { border: "#60a5fa", glow: "#3b82f6", bg: "#081d31", text: "#dbeafe" },
 },
-  {
-    name: "CSS",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
-    colors: { border: "#75a7ff", glow: "#1572b6", bg: "#071a33", text: "#dcecff" },
-  },
-   {
-    name: "C++",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg",
-    colors: { border: "#78b7ff", glow: "#2f80ed", bg: "#08213f", text: "#d7ecff" },
-    size: "large",
-  },
-  {
-    name: "C",
-    icon: devicon("c"),
-    colors: { border: "#9ec7ff", glow: "#5c6bc0", bg: "#101a37", text: "#eef5ff" },
-  },
-  {
-    name: "NumPy",
-    icon: devicon("numpy"),
-    colors: { border: "#79c2ff", glow: "#4dabf7", bg: "#071f36", text: "#e0f1ff" },
-  },
-  {
-    name: "Pandas",
-    icon: devicon("pandas"),
-    colors: { border: "#b197fc", glow: "#7950f2", bg: "#160d30", text: "#ece5ff" },
-  },
-  {
-  name: "Docker",
-  icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
-  colors: { border: "#7dd3fc", glow: "#2496ed", bg: "#082f49", text: "#e0f7ff" },
-  size: "wide",
-},{
-  name: "PostgreSQL",
-  icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
-  colors: { border: "#93c5fd", glow: "#336791", bg: "#0b1d33", text: "#dbeafe" },
-  size: "wide",
+
+{
+  name: "Matplotlib",
+  icon: devicon("matplotlib"),
+  colors: { border: "#60a5fa", glow: "#3b82f6", bg: "#081d31", text: "#dbeafe" },
 },
-  
-  {
-    name: "React.js",
-    icon: devicon("react"),
-    colors: { border: "#74e2ff", glow: "#61dafb", bg: "#062230", text: "#ddf9ff" },
-    size: "large",
-  }, {
-    name: "Git",
-    icon: devicon("git"),
-    colors: { border: "#ff9671", glow: "#f05032", bg: "#2a1008", text: "#ffe5dc" },
+
+{
+  name: "Scikit-Learn",
+  icon: devicon("scikitlearn"),
+  colors: { border: "#60a5fa", glow: "#3b82f6", bg: "#081d31", text: "#dbeafe" },
+},
+    ],
   },
   {
-    name: "GitHub",
-    Icon: GitBranch,
-    colors: { border: "#d0bfff", glow: "#9775fa", bg: "#17112a", text: "#eee8ff" },
+    title: "Tools & Platforms",
+    description: "Infrastructure, collaboration, and deployment tools for real product delivery.",
+    icon: GitBranch,
+    skills: [
+      {
+        name: "Git",
+        icon: devicon("git"),
+        colors: { border: "#fb7185", glow: "#f43f5e", bg: "#2d1014", text: "#ffe6eb" },
+      },
+      {
+        name: "GitHub",
+        Icon: GitBranch,
+        colors: { border: "#e2e8f0", glow: "#cbd5e1", bg: "#161b22", text: "#e2e8f0" },
+      },
+      {
+        name: "Docker",
+        icon: devicon("docker"),
+        colors: { border: "#7dd3fc", glow: "#38bdf8", bg: "#082f49", text: "#d9f7ff" },
+      },
+      {
+        name: "Postman",
+        icon: devicon("postman"),
+        colors: { border: "#ff9f7a", glow: "#fb7185", bg: "#2d1308", text: "#ffe7d8" },
+      },
+      {
+        name: "Google Colab",
+        icon: devicon("python"),
+        colors: { border: "#f97316", glow: "#fb923c", bg: "#2d1409", text: "#ffe9d9" },
+      },
+      {
+        name: "Stripe API",
+        Icon: CreditCard,
+        colors: { border: "#38bdf8", glow: "#0ea5e9", bg: "#071d2c", text: "#d9f7ff" },
+      },
+    ],
   },
-  {
-    name: "Node.js",
-    icon: devicon("nodejs"),
-    colors: { border: "#8ce99a", glow: "#68a063", bg: "#0b2411", text: "#e2ffe8" },
-    size: "wide",
-  },
-  {
-    name: "Express.js",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
-    colors: { border: "#ced4da", glow: "#adb5bd", bg: "#15191f", text: "#f1f3f5" },
-  }, {
-    name: "MySQL",
-    icon: devicon("mysql"),
-    colors: { border: "#89d2ff", glow: "#00758f", bg: "#071d27", text: "#e0f4ff" },
-  },
-  {
-    name: "RESTful APIs",
-    Icon: Network,
-    colors: { border: "#ffdd57", glow: "#fcc419", bg: "#261f05", text: "#fff6cf" },
-    size: "wide",
-  },
-  {
-    name: "Tailwind CSS",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
-    colors: { border: "#67e8f9", glow: "#06b6d4", bg: "#06232a", text: "#d9fbff" },
-    size: "wide",
-  },
-  {
-    name: "Postman",
-    icon: devicon("postman"),
-    colors: { border: "#ff9f7a", glow: "#ff6c37", bg: "#2d1308", text: "#ffe6da" },
-  },
-  {
-    name: "OpenCV",
-    icon: devicon("opencv"),
-    colors: { border: "#9cff8a", glow: "#5ec576", bg: "#0b250d", text: "#e5ffdf" },
-    size: "wide",
-  },
-  {
-    name: "MongoDB",
-    icon: devicon("mongodb"),
-    colors: { border: "#8ce99a", glow: "#47a248", bg: "#08210c", text: "#e0ffe5" },
-    size: "wide",
-  },
- 
+  /*{
+    title: "Computer Science Fundamentals",
+    description: "Foundational systems, algorithms, and architecture every engineer uses.",
+    icon: Code2,
+    skills: [
+      {
+        name: "DSA",
+        Icon: Rows3,
+        colors: { border: "#fda4af", glow: "#fb7185", bg: "#2b1117", text: "#ffe3e7" },
+      },
+      {
+        name: "OOP",
+        Icon: Blocks,
+        colors: { border: "#a5b4fc", glow: "#818cf8", bg: "#101a36", text: "#dde2ff" },
+      },
+      {
+        name: "DBMS",
+        Icon: Database,
+        colors: { border: "#34d399", glow: "#10b981", bg: "#0c1d13", text: "#ddf7e8" },
+      },
+      {
+        name: "Operating Systems",
+        Icon: Cpu,
+        colors: { border: "#fcd34d", glow: "#fbbf24", bg: "#2c2414", text: "#fff6d5" },
+      },
+      {
+        name: "Computer Networks",
+        Icon: Globe,
+        colors: { border: "#7dd3fc", glow: "#38bdf8", bg: "#08203a", text: "#d9f7ff" },
+      },
+    ],
+  },*/
 ];
 
-const sizeClass = {
-  wide: "sm:col-span-2",
-  tall: "sm:row-span-2",
-  large: "sm:col-span-2 sm:row-span-2",
-};
+const scatterOffsets = [
+  { x: -20, y: -16, r: -8 },
+  { x: 16, y: -12, r: 10 },
+  { x: -14, y: 14, r: -6 },
+  { x: 20, y: 8, r: 8 },
+  { x: -8, y: 18, r: -3 },
+  { x: 12, y: -18, r: 12 },
+];
 
 export default function Skills() {
   return (
@@ -200,65 +321,108 @@ export default function Skills() {
             </p>
           </div>
 
-          <div className="grid auto-rows-[112px] grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-6 xl:grid-cols-7">
-            {skills.map((skill, index) => {
-              const style = {
-                "--skill-border": skill.colors.border,
-                "--skill-glow": skill.colors.glow,
-                "--skill-bg": skill.colors.bg,
-                "--skill-text": skill.colors.text,
-              } as CSSProperties;
-
-              const Icon = skill.Icon;
-
+          <div className="grid gap-6 xl:grid-cols-2">
+            {skillSections.map((section, sectionIndex) => {
+              const SectionIcon = section.icon;
               return (
-                <motion.div
-                  key={skill.name}
-                  initial={{ opacity: 0, y: 18, scale: 0.96 }}
-                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                  viewport={{ once: true, margin: "-80px" }}
-                  transition={{ duration: 0.42, delay: index * 0.025, ease: "easeOut" }}
-                  whileHover={{ y: -8, rotate: index % 2 === 0 ? 1.2 : -1.2 }}
-                  style={style}
-                  className={`skill-tile group ${skill.size ? sizeClass[skill.size] : ""}`}
+                <motion.article
+                  key={section.title}
+                  className="skill-section rounded-4xl border border-white/10 bg-slate-950/80 p-4 shadow-[0_32px_80px_rgba(0,0,0,0.22)] backdrop-blur-xl"
+                  initial={{ opacity: 0, y: 36 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-120px" }}
+                  transition={{ duration: 0.7, delay: sectionIndex * 0.08, ease: "easeOut" }}
                 >
-                  <div className="absolute inset-0 rounded-[inherit] opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                    <div className="absolute inset-x-4 top-0 h-px bg-[var(--skill-border)]" />
-                    <div className="absolute -inset-8 bg-[radial-gradient(circle,var(--skill-glow),transparent_58%)] opacity-25 blur-2xl" />
-                  </div>
+                  <div className="skill-category relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-slate-950/85 p-6 shadow-[0_28px_80px_rgba(0,0,0,0.18)]">
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.08),transparent_40%)] opacity-70 pointer-events-none" />
+                    <div className="absolute -left-12 top-4 h-24 w-24 rounded-full bg-[rgba(124,246,212,0.1)] blur-3xl" />
+                    <div className="absolute right-4 top-14 h-20 w-20 rounded-full bg-[rgba(124,231,255,0.1)] blur-3xl" />
 
-                  <div className="relative flex h-full flex-col justify-between">
-                    <div className="flex items-start justify-between gap-3">
-                      <div className="grid h-12 w-12 place-items-center rounded-lg border border-white/15 bg-white/90 p-2 shadow-[0_0_24px_rgba(255,255,255,0.1)] transition-transform duration-300 group-hover:scale-110">
-                        {skill.icon ? (
-                          <img
-                            src={skill.icon}
-                            alt=""
-                            className="h-full w-full object-contain"
-                            loading="lazy"
-                          />
-                        ) : Icon ? (
-                          <Icon
-                            size={28}
-                            strokeWidth={2.1}
-                            className="text-slate-950"
-                            aria-hidden="true"
-                          />
-                        ) : null}
+                    <div className="relative z-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                      <div>
+                        <div className="inline-flex h-12 w-12 items-center justify-center rounded-3xl border border-white/10 bg-white/10 text-white shadow-[0_20px_50px_rgba(0,0,0,0.18)]">
+                          <SectionIcon size={24} className="text-white" />
+                        </div>
+                        <h3 className="mt-5 text-2xl font-black tracking-tight text-white">
+                          {section.title}
+                        </h3>
+                        <p className="mt-3 max-w-xl text-sm leading-6 text-slate-300">
+                          {section.description}
+                        </p>
                       </div>
-                      <span className="h-2.5 w-2.5 rounded-full bg-[var(--skill-border)] shadow-[0_0_18px_var(--skill-glow)]" />
-                    </div>
-
-                    <div>
-                      <h3 className="text-balance text-base font-extrabold leading-tight text-[var(--skill-text)] sm:text-lg">
-                        {skill.name}
-                      </h3>
-                      <div className="mt-3 h-1.5 overflow-hidden rounded-full bg-white/10">
-                        <div className="h-full w-2/3 rounded-full bg-[var(--skill-border)] shadow-[0_0_14px_var(--skill-glow)] transition-all duration-500 group-hover:w-full" />
+                      <div className="rounded-3xl border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.24em] text-slate-200 shadow-[0_15px_40px_rgba(0,0,0,0.15)]">
+                        {sectionIndex + 1}/7
                       </div>
                     </div>
+
+                    <div className="mt-8 grid gap-4 sm:grid-cols-2">
+                      {section.skills.map((skill, skillIndex) => {
+                        const scatter = scatterOffsets[skillIndex % scatterOffsets.length];
+                        const style = {
+                          "--skill-border": skill.colors.border,
+                          "--skill-glow": skill.colors.glow,
+                          "--skill-bg": skill.colors.bg,
+                          "--skill-text": skill.colors.text,
+                        } as CSSProperties;
+
+                        const SkillIcon = skill.Icon;
+                        return (
+                          <motion.div
+                            key={skill.name}
+                            className="skill-card group relative overflow-hidden rounded-3xl border border-white/10 bg-slate-950/95 p-5"
+                            style={style}
+                            initial={{ opacity: 0, x: scatter.x * 0.55, y: scatter.y * 0.55, rotate: scatter.r, scale: 0.94 }}
+                            whileInView={{ opacity: 1, x: 0, y: 0, rotate: 0, scale: 1 }}
+                            viewport={{ once: true, margin: "-100px" }}
+                            transition={{ duration: 0.66, delay: sectionIndex * 0.05 + skillIndex * 0.03, ease: "easeOut" }}
+                            whileHover={{ y: -8, scale: 1.02, rotate: scatter.r / 5 }}
+                          >
+                            <div className="absolute inset-0 rounded-[inherit] bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.12),transparent_55%)] opacity-0 transition-opacity duration-300 group-hover:opacity-100 pointer-events-none" />
+                            <div className="absolute -right-8 top-3 h-20 w-20 rounded-full opacity-10 blur-3xl" style={{ backgroundColor: "var(--skill-glow)" }} />
+                            <div className="relative z-10 flex items-center justify-between gap-3">
+                              <div className="grid h-12 w-12 place-items-center rounded-3xl border border-white/10 bg-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.14)]">
+                                {skill.icon ? (
+                                  <img
+                                    src={skill.icon}
+                                    alt={skill.name}
+                                    className="h-8 w-8 object-contain"
+                                    loading="lazy"
+                                  />
+                                ) : SkillIcon ? (
+                                  <SkillIcon size={22} style={{ color: "var(--skill-glow)" }} aria-hidden="true" />
+                                ) : null}
+                              </div>
+                              <span
+                                className="h-3 w-3 rounded-full"
+                                style={{
+                                  backgroundColor: "var(--skill-border)",
+                                  boxShadow: `0 0 18px var(--skill-glow)`,
+                                }}
+                              />
+                            </div>
+                            <div className="mt-4">
+                              <h4 className="text-base font-semibold" style={{ color: "var(--skill-text)" }}>
+                                {skill.name}
+                              </h4>
+                              <p className="mt-2 text-xs text-slate-400">
+                                Pro-level mastery and system-ready integration.
+                              </p>
+                            </div>
+                            <div className="mt-4 h-1.5 overflow-hidden rounded-full bg-white/10">
+                              <div
+                                className="h-full w-4/5 rounded-full transition-all duration-500 group-hover:w-full"
+                                style={{
+                                  backgroundColor: "var(--skill-border)",
+                                  boxShadow: `0 0 18px var(--skill-glow)`,
+                                }}
+                              />
+                            </div>
+                          </motion.div>
+                        );
+                      })}
+                    </div>
                   </div>
-                </motion.div>
+                </motion.article>
               );
             })}
           </div>

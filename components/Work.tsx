@@ -45,52 +45,56 @@ const projects: Project[] = [
       imageOverlay: "from-[#120f06]/70 via-transparent to-transparent",
     },
   },
-  {
-    id: "02",
-    title: "ScreenFlow",
-    summary:
-      "Movie booking suite with seat selection, role-based dashboards, and secure INR checkout via Stripe.",
-    stack: ["React", "Node.js", "Express", "MongoDB", "Stripe"],
-    impact: "Delivered full booking lifecycle from browsing to payment reconciliation.",
-    year: "2024",
-    live: "https://screenflow-puce.vercel.app/",
-    code: "https://github.com/RohitChavan16/ScreenFlow",
-    images: [
-      "/projects/screenflow-1.jpg",
-      "/projects/screenflow-2.jpg",
-      "/projects/screenflow-3.jpg",
-      "/projects/screenflow-4.jpg",
-    ],
-    theme: {
-      glow: "from-[#7ec6ff]/30 via-[#2c7ff8]/20 to-transparent",
-      border: "border-[#7ec6ff]/35",
-      chip: "border-[#78bfff]/45 text-[#d9eeff]",
-      imageOverlay: "from-[#041427]/70 via-transparent to-transparent",
-    },
+  
+{
+  id: "02",
+  title: "BenchForge",
+  summary:
+    "Production-grade distributed benchmarking platform for stress testing trading infrastructure with telemetry-driven scaling.",
+  stack: ["Go", "Docker", "PostgreSQL", "Telemetry", "Microservices"],
+  impact:
+    "Executed distributed load simulations with realtime telemetry visualization and scalable orchestration.",
+  year: "2026",
+  live: "#",
+  code: "https://github.com/RohitChavan16/BenchForge",
+  images: [
+    "/projects/benchforge-1.jpg",
+    "/projects/benchforge-2.jpg",
+    "/projects/benchforge-3.jpg",
+    "/projects/benchforge-4.jpg",
+  ],
+  theme: {
+    glow: "from-[#ff4d6d]/30 via-[#e11d48]/20 to-transparent",
+    border: "border-[#fb7185]/35",
+    chip: "border-[#fb7185]/45 text-[#ffe1e8]",
+    imageOverlay: "from-[#26030b]/70 via-transparent to-transparent",
   },
+},
   {
-    id: "03",
-    title: "PrepNex",
-    summary:
-      "AI-driven learning assistant with prompt orchestration and adaptive topic recommendations.",
-    stack: ["FastAPI", "OpenAI API", "Next.js", "PostgreSQL"],
-    impact: "Personalized revision plan generation based on performance history.",
-    year: "2025",
-    live: "#",
-    code: "https://github.com/RohitChavan16/PrepNex",
-    images: [
-      "/projects/prepnex-1.jpg",
-      "/projects/prepnex-2.jpg",
-      "/projects/prepnex-3.jpg",
-      "/projects/prepnex-4.jpg",
-    ],
-    theme: {
-      glow: "from-[#d0b2ff]/30 via-[#6f5ef6]/20 to-transparent",
-      border: "border-[#b89ef7]/35",
-      chip: "border-[#b89ef7]/45 text-[#e9ddff]",
-      imageOverlay: "from-[#120a28]/70 via-transparent to-transparent",
-    },
+  id: "03",
+  title: "GeoShop Engine",
+  summary:
+    "Scalable geospatial intelligence platform for resolving inconsistent POI datasets using entity matching and confidence scoring.",
+  stack: ["Next.js", "FastAPI", "PostgreSQL", "Maps", "Docker"],
+  impact:
+    "Achieved accurate cross-source business matching with fuzzy similarity scoring and realtime analytics.",
+  year: "2026",
+  live: "#",
+  code: "https://github.com/RohitChavan16/Geo_Analysis",
+  images: [
+    "/projects/geoshop-1.jpg",
+    "/projects/geoshop-2.jpg",
+    "/projects/geoshop-3.jpg",
+    "/projects/geoshop-4.jpg",
+  ],
+  theme: {
+    glow: "from-[#6ef3ff]/30 via-[#0ea5e9]/20 to-transparent",
+    border: "border-[#67e8f9]/35",
+    chip: "border-[#67e8f9]/45 text-[#d9fcff]",
+    imageOverlay: "from-[#02161c]/70 via-transparent to-transparent",
   },
+},
+  
   {
     id: "04",
     title: "ScanLayer",
@@ -114,6 +118,153 @@ const projects: Project[] = [
       imageOverlay: "from-[#031f1a]/70 via-transparent to-transparent",
     },
   },
+{
+    id: "05",
+    title: "PrepNex",
+    summary:
+      "AI-driven learning assistant with prompt orchestration and adaptive topic recommendations.",
+    stack: ["FastAPI", "OpenAI API", "Next.js", "PostgreSQL"],
+    impact: "Personalized revision plan generation based on performance history.",
+    year: "2025",
+    live: "#",
+    code: "https://github.com/RohitChavan16/PrepNex",
+    images: [
+      "/projects/prepnex-1.jpg",
+      "/projects/prepnex-2.jpg",
+      "/projects/prepnex-3.jpg",
+      "/projects/prepnex-4.jpg",
+    ],
+    theme: {
+      glow: "from-[#d0b2ff]/30 via-[#6f5ef6]/20 to-transparent",
+      border: "border-[#b89ef7]/35",
+      chip: "border-[#b89ef7]/45 text-[#e9ddff]",
+      imageOverlay: "from-[#120a28]/70 via-transparent to-transparent",
+    },
+  },
+{
+  id: "06",
+  title: "NeuraRAG",
+  summary:
+    "Custom RAG chatbot with semantic retrieval, vector search, and domain-aware response generation.",
+  stack: ["FastAPI", "LangChain", "FAISS", "OpenAI", "Next.js"],
+  impact:
+    "Delivered context-aware AI responses using optimized chunking, embeddings, and retrieval pipelines.",
+  year: "2026",
+  live: "#",
+  code: "https://github.com/RohitChavan16/custom-rag-chatbot",
+  images: [
+    "/projects/neurarag-1.jpg",
+    "/projects/neurarag-2.jpg",
+    "/projects/neurarag-3.jpg",
+    "/projects/neurarag-4.jpg",
+  ],
+  theme: {
+    glow: "from-[#9b8cff]/30 via-[#7c3aed]/20 to-transparent",
+    border: "border-[#a78bfa]/35",
+    chip: "border-[#a78bfa]/45 text-[#efe7ff]",
+    imageOverlay: "from-[#140726]/70 via-transparent to-transparent",
+  },
+},
+/*
+{
+  id: "07",
+  title: "BankVerse",
+  summary:
+    "Multilingual fintech platform with AI banking support, realtime e-KYC calls, and regional-language accessibility.",
+  stack: ["Next.js", "i18n", "WebRTC", "FastAPI", "MongoDB"],
+  impact:
+    "Enabled multilingual banking workflows with realtime support and AI-powered customer assistance.",
+  year: "2025",
+  live: "#",
+  code: "https://github.com/RohitChavan16/Banking_Hackathon",
+  images: [
+    "/projects/bankverse-1.jpg",
+    "/projects/bankverse-2.jpg",
+    "/projects/bankverse-3.jpg",
+    "/projects/bankverse-4.jpg",
+  ],
+  theme: {
+    glow: "from-[#ff6ec7]/30 via-[#d946ef]/20 to-transparent",
+    border: "border-[#f472b6]/35",
+    chip: "border-[#f472b6]/45 text-[#ffe2f5]",
+    imageOverlay: "from-[#230516]/70 via-transparent to-transparent",
+  },
+},*/
+
+  {
+    id: "07",
+    title: "ScreenFlow",
+    summary:
+      "Movie booking suite with seat selection, role-based dashboards, and secure INR checkout via Stripe.",
+    stack: ["React", "Node.js", "Express", "MongoDB", "Stripe"],
+    impact: "Delivered full booking lifecycle from browsing to payment reconciliation.",
+    year: "2024",
+    live: "https://screenflow-puce.vercel.app/",
+    code: "https://github.com/RohitChavan16/ScreenFlow",
+    images: [
+      "/projects/screenflow-1.jpg",
+      "/projects/screenflow-2.jpg",
+      "/projects/screenflow-3.jpg",
+      "/projects/screenflow-4.jpg",
+    ],
+    theme: {
+      glow: "from-[#7ec6ff]/30 via-[#2c7ff8]/20 to-transparent",
+      border: "border-[#7ec6ff]/35",
+      chip: "border-[#78bfff]/45 text-[#d9eeff]",
+      imageOverlay: "from-[#041427]/70 via-transparent to-transparent",
+    },
+  },
+  
+  
+{
+  id: "08",
+  title: "FlightCove",
+  summary:
+    "Console-based airline reservation and ticket management system with booking workflows and persistent flight storage.",
+  stack: ["C++", "STL", "File I/O", "OOP"],
+  impact:
+    "Handled booking lifecycle, cancellations, and ticket history using optimized structured file storage.",
+  year: "2025",
+  live: "#",
+  code: "https://github.com/RohitChavan16/FlightCove",
+  images: [
+    "/projects/flightcove-1.jpg",
+    "/projects/flightcove-2.jpg",
+    "/projects/flightcove-3.jpg",
+    "/projects/flightcove-4.jpg",
+  ],
+  theme: {
+    glow: "from-[#ffb86c]/30 via-[#ff7b00]/20 to-transparent",
+    border: "border-[#ffb86c]/35",
+    chip: "border-[#ffb86c]/45 text-[#fff0db]",
+    imageOverlay: "from-[#221204]/70 via-transparent to-transparent",
+  },
+},
+  
+{
+  id: "9",
+  title: "NovaPortfolio",
+  summary:
+    "Interactive developer portfolio with cinematic UI, AI chatbot integration, and animated project storytelling.",
+  stack: ["Next.js", "TypeScript", "Tailwind", "FastAPI", "Framer Motion"],
+  impact:
+    "Created immersive portfolio interactions with AI-assisted navigation and performance-optimized animations.",
+  year: "2026",
+  live: "https://your-portfolio-link.vercel.app",
+  code: "https://github.com/RohitChavan16/Rohit_Chavan_Portfolio",
+  images: [
+    "/projects/portfolio-1.jpg",
+    "/projects/portfolio-2.jpg",
+    "/projects/portfolio-3.jpg",
+    "/projects/portfolio-4.jpg",
+  ],
+  theme: {
+    glow: "from-[#8aff80]/30 via-[#22c55e]/20 to-transparent",
+    border: "border-[#86efac]/35",
+    chip: "border-[#86efac]/45 text-[#e8ffe8]",
+    imageOverlay: "from-[#041d09]/70 via-transparent to-transparent",
+  },
+},
 ];
 
 const containerVariants = {
