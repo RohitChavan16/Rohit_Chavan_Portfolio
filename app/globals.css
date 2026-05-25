@@ -291,6 +291,57 @@ body {
   border-radius: 999px;
 }
 
+.scrollbar-cyan {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(56, 189, 248, 0.9) rgba(15, 23, 42, 0.35);
+}
+.scrollbar-cyan::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.scrollbar-cyan::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.35);
+  border-radius: 999px;
+}
+.scrollbar-cyan::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(56, 189, 248, 0.95), rgba(14, 165, 233, 0.7));
+  border-radius: 999px;
+}
+
+.scrollbar-amber {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(251, 191, 36, 0.9) rgba(15, 23, 42, 0.35);
+}
+.scrollbar-amber::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.scrollbar-amber::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.35);
+  border-radius: 999px;
+}
+.scrollbar-amber::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(251, 191, 36, 0.95), rgba(245, 158, 11, 0.75));
+  border-radius: 999px;
+}
+
+.scrollbar-fuchsia {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(236, 72, 153, 0.9) rgba(15, 23, 42, 0.35);
+}
+.scrollbar-fuchsia::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.scrollbar-fuchsia::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.35);
+  border-radius: 999px;
+}
+.scrollbar-fuchsia::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(236, 72, 153, 0.95), rgba(214, 51, 132, 0.75));
+  border-radius: 999px;
+}
+
 @keyframes chatbot-grid-drift {
   from {
     transform: translate3d(0, 0, 0);

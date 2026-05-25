@@ -249,7 +249,7 @@ export default function PortfolioChatbot() {
             <div className="chatbot-grid pointer-events-none absolute inset-0 opacity-[0.18]" />
             <div className="chatbot-particles pointer-events-none absolute inset-0" />
 
-            <header className="relative z-10 border-b border-white/10 bg-white/[0.03] px-4 py-4">
+            <header className="relative z-10 border-b border-cyan-200/10 bg-slate-950/60 px-4 py-4 backdrop-blur-xl">
               <div className="flex items-center justify-between gap-3">
                 <div className="flex min-w-0 items-center gap-3">
                   <motion.div
@@ -279,7 +279,7 @@ export default function PortfolioChatbot() {
                   type="button"
                   aria-label="Close portfolio chatbot"
                   onClick={() => setIsOpen(false)}
-                  className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-white/15 bg-white/10 text-white transition hover:rotate-90 hover:border-cyan-100/70 hover:bg-cyan-100/15"
+                  className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-cyan-200/15 bg-cyan-200/10 text-cyan-100 transition hover:rotate-90 hover:border-cyan-100/70 hover:bg-cyan-100/15"
                 >
                   <X className="h-4 w-4" />
                 </button>
@@ -297,10 +297,10 @@ export default function PortfolioChatbot() {
                     className={`flex ${message.role === "user" ? "justify-end" : "justify-start"}`}
                   >
                     <div
-                      className={`max-w-[86%] rounded-2xl px-4 py-3 text-sm leading-relaxed shadow-lg ${
+                      className={`max-w-[86%] rounded-[1.5rem] px-4 py-3 text-sm leading-relaxed shadow-lg ${
                         message.role === "user"
-                          ? "rounded-br-sm border border-[#f4d03f]/35 bg-gradient-to-br from-[#f4d03f]/95 to-[#f8e58f]/90 text-[#081121]"
-                          : "rounded-bl-sm border border-cyan-200/18 bg-white/[0.08] text-slate-100 backdrop-blur-md"
+                          ? "rounded-br-[0.75rem] border border-[#f4d03f]/35 bg-gradient-to-br from-[#f4d03f]/95 to-[#f8e58f]/90 text-[#081121]"
+                          : "rounded-bl-[0.75rem] border border-cyan-200/12 bg-slate-900/70 text-slate-100 backdrop-blur-xl"
                       }`}
                     >
                       {message.text}
@@ -314,7 +314,7 @@ export default function PortfolioChatbot() {
                     animate={{ opacity: 1, y: 0 }}
                     className="flex justify-start"
                   >
-                    <div className="flex items-center gap-2 rounded-2xl rounded-bl-sm border border-cyan-200/18 bg-white/[0.08] px-4 py-3 backdrop-blur-md">
+                    <div className="flex items-center gap-2 rounded-[1.5rem] rounded-bl-[0.75rem] border border-cyan-200/15 bg-slate-900/65 px-4 py-3 backdrop-blur-xl">
                       <span className="chatbot-dot" />
                       <span className="chatbot-dot [animation-delay:140ms]" />
                       <span className="chatbot-dot [animation-delay:280ms]" />
@@ -324,7 +324,7 @@ export default function PortfolioChatbot() {
                 <div ref={chatEndRef} />
               </div>
 
-              <div className="border-t border-white/10 bg-[#06101f]/72 px-4 py-3 backdrop-blur-xl">
+              <div className="border-t border-cyan-200/10 bg-[#06101f]/72 px-4 py-3 backdrop-blur-xl">
                 <div className="mb-3 flex gap-2 overflow-x-auto pb-1 chatbot-scroll">
                   {promptCards.map((card, index) => {
                     const Icon = card.icon;
@@ -339,7 +339,7 @@ export default function PortfolioChatbot() {
                         whileHover={{ scale: 1.06, y: -3, rotate: index % 2 === 0 ? -1.5 : 1.5 }}
                         whileTap={{ scale: 0.96 }}
                         onClick={() => handlePromptClick(card.prompt)}
-                        className="group inline-flex shrink-0 items-center gap-2 rounded-full border border-white/12 bg-white/[0.07] px-3 py-2 text-xs font-bold text-slate-100 shadow-[0_0_18px_rgba(34,211,238,0.08)] transition hover:border-[#f4d03f]/60 hover:bg-[#f4d03f]/12 hover:text-white"
+                        className="group inline-flex shrink-0 items-center gap-2 rounded-full border border-cyan-200/15 bg-slate-900/55 px-3 py-2 text-xs font-bold text-slate-100 shadow-[0_0_18px_rgba(34,211,238,0.08)] transition hover:border-cyan-200/30 hover:bg-cyan-500/10 hover:text-white"
                       >
                         <Icon className="h-3.5 w-3.5 text-cyan-200 transition group-hover:text-[#f4d03f]" />
                         {card.label}
@@ -349,7 +349,7 @@ export default function PortfolioChatbot() {
                 </div>
 
                 <form onSubmit={handleSubmit} className="flex items-end gap-2">
-                  <div className="flex min-h-12 flex-1 items-center gap-2 rounded-2xl border border-cyan-100/18 bg-white/[0.08] px-3 py-2 shadow-[inset_0_0_24px_rgba(34,211,238,0.05)] transition focus-within:border-[#f4d03f]/60 focus-within:shadow-[0_0_26px_rgba(244,208,63,0.16)]">
+                  <div className="flex min-h-12 flex-1 items-center gap-2 rounded-2xl border border-cyan-200/15 bg-slate-900/60 px-3 py-2 shadow-[inset_0_0_24px_rgba(34,211,238,0.08)] transition focus-within:border-[#f4d03f]/50 focus-within:shadow-[0_0_28px_rgba(244,208,63,0.12)]">
                     <button type="button" aria-label="Attach file demo" className="text-slate-300 transition hover:text-cyan-200">
                       <Paperclip className="h-4 w-4" />
                     </button>

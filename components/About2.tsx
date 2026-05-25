@@ -104,31 +104,34 @@ export default function About() {
     `${mindsetText} I care about clean structure, readable code, fast feedback, and the kind of product decisions that make the final build feel confident instead of accidental. The goal is simple: think clearly, ship carefully, and keep improving the system until it feels calm under pressure.`;
   const heroCards = [
     {
-      title: "Product Mindset",
-      body: "I shape features around real user flow, not just screens.",
+      title: "Innovation & Startup Support",
+      body: "Worked with Ignited Innovators of India to assist startups in scaling through weekly growth reviews, investor connections, mentorship, and ecosystem support.",
       position: "left-[3%] sm:left-[5%] rotate-[-7deg] z-10",
       accent: "text-cyan-200",
       border: "border-cyan-300/35 hover:border-cyan-200",
       glow: "hover:shadow-[0_0_28px_rgba(34,211,238,0.45)]",
       bg: "from-cyan-500/18 via-slate-900/95 to-slate-950",
+      scrollbar: "scrollbar-cyan",
     },
     {
-      title: "Clean Builds",
-      body: "Fast interfaces, solid APIs, and details that feel finished.",
+      title: "SDS - Developer Community",
+      body: "Contributed to technical initiatives, collaborated on development projects, and participated in building scalable software solutions within the college developer community.",
       position: "left-1/2 -translate-x-1/2 rotate-[0deg] z-20",
       accent: "text-amber-200",
       border: "border-amber-300/45 hover:border-amber-200",
       glow: "hover:shadow-[0_0_34px_rgba(251,191,36,0.5)]",
       bg: "from-amber-400/20 via-indigo-950/95 to-slate-950",
+      scrollbar: "scrollbar-amber",
     },
     {
-      title: "System Thinking",
-      body: "I connect frontend polish with backend reliability.",
+      title: "Campus Community Development",
+      body: "Developed and deployed a digital platform for the hostel block to streamline communication, event updates, notices, and student engagement activities within the college community.",
       position: "right-[3%] sm:right-[5%] rotate-[7deg] z-10",
       accent: "text-fuchsia-200",
       border: "border-fuchsia-300/35 hover:border-fuchsia-200",
       glow: "hover:shadow-[0_0_28px_rgba(217,70,239,0.45)]",
       bg: "from-fuchsia-500/18 via-slate-900/95 to-slate-950",
+      scrollbar: "scrollbar-fuchsia",
     },
   ];
   const conceptStyles = [
@@ -377,15 +380,17 @@ export default function About() {
             {heroCards.map((card) => (
               <div
                 key={card.title}
-                className={`absolute bottom-[-4.5rem] h-[11.5rem] w-[62%] max-w-[11.4rem] rounded-2xl border bg-gradient-to-br p-4 backdrop-blur-md transition-all duration-500 ease-out hover:bottom-3 hover:z-40 hover:rotate-0 hover:scale-[1.03] ${card.position} ${card.border} ${card.glow} ${card.bg}`}
+                className={`absolute bottom-[-4.5rem] h-[11.5rem] w-[62%] max-w-[11.4rem] rounded-[1.5rem] border bg-gradient-to-br p-4 backdrop-blur-xl transition-all duration-500 ease-out hover:bottom-3 hover:z-40 hover:rotate-0 hover:scale-[1.03] ${card.position} ${card.border} ${card.glow} ${card.bg} flex flex-col overflow-hidden shadow-lg`}
               >
-                <div className="mb-3 h-1 w-10 rounded-full bg-current opacity-70" />
-                <h3 className={`text-base sm:text-lg font-bold leading-tight ${card.accent}`}>
+                <div className="mb-3 h-1 w-8 rounded-full bg-current opacity-80" />
+                <h3 className={`text-sm sm:text-base font-bold leading-tight ${card.accent}`}>
                   {card.title}
                 </h3>
-                <p className="mt-2 text-xs sm:text-[0.8rem] leading-relaxed text-slate-300">
-                  {card.body}
-                </p>
+                <div className={`mt-2 min-h-0 flex-1 overflow-y-auto pr-1.5 ${card.scrollbar}`}>
+                  <p className="text-xs sm:text-[0.75rem] leading-relaxed text-slate-200">
+                    {card.body}
+                  </p>
+                </div>
               </div>
             ))}
           </motion.div>
