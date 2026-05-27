@@ -124,8 +124,8 @@ export default function About() {
       scrollbar: "scrollbar-amber",
     },
     {
-      title: "Campus Community Development",
-      body: "Developed and deployed a digital platform for the hostel block to streamline communication, event updates, notices, and student engagement activities within the college community.",
+      title: "Mindspark Core Team Member",
+      body: "Worked as a member of the Purchase & Infrastructure Department during MindSpark, one of the major technical festivals at COEP. Contributed to event execution by managing procurement activities, coordinating logistics, handling infrastructure requirements, and supporting smooth on-ground operations for multiple events and activities.",
       position: "right-[3%] sm:right-[5%] rotate-[7deg] z-10",
       accent: "text-fuchsia-200",
       border: "border-fuchsia-300/35 hover:border-fuchsia-200",

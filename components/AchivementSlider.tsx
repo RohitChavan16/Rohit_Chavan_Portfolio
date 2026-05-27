@@ -7,57 +7,62 @@ import { useEffect, useState } from "react";
 const achievements = [
   {
     image: "/images/img1.jpg",
-    title: "Hackathon Finalist",
-    text: "Built a working product prototype under pressure, connected the core user flow, and presented the complete idea with a practical roadmap for scaling it later.",
+    title: "HERE Technologies Mumbai Hackathon",
+    text: "Achieved 2nd Runner-Up at the HERE Technologies Mumbai Hackathon by building GeoShop Engine, a place intelligence platform that resolves inconsistencies across multi-source POI datasets using geospatial matching, fuzzy similarity scoring, and confidence-based entity resolution.",
     accent: "cyan",
     glow: "shadow-[0_0_30px_rgba(34,211,238,0.34)] group-hover:shadow-[0_0_48px_rgba(34,211,238,0.58)]",
     border: "border-cyan-300/35",
     textColor: "text-cyan-100",
     button: "border-cyan-200/50 text-cyan-100 hover:bg-cyan-300/15",
+    scrollbar: "scrollbar-cyan",
     gradient: "from-cyan-500/45 via-slate-950/45 to-slate-950/90",
   },
   {
     image: "/images/img2.jpg",
-    title: "Campus Leadership",
-    text: "Coordinated a small team through planning, communication, and execution while keeping the experience smooth for participants and stakeholders.",
+    title: "FINSPARK Banking Hackathon",
+    text: "Won the UI/UX Excellence Award at FINSPARK 2025, a 36-hour banking innovation hackathon organized by Bank of Maharashtra, DFS, and COEP Tech, by developing an inclusive fintech solution focused on bridging language barriers in Indian banking through intuitive UI/UX, rapid prototyping, and scalable system integration.",
     accent: "amber",
     glow: "shadow-[0_0_30px_rgba(251,191,36,0.32)] group-hover:shadow-[0_0_48px_rgba(251,191,36,0.56)]",
     border: "border-amber-300/40",
     textColor: "text-amber-100",
     button: "border-amber-200/50 text-amber-100 hover:bg-amber-300/15",
+    scrollbar: "scrollbar-amber",
     gradient: "from-amber-400/42 via-indigo-950/45 to-slate-950/90",
   },
   {
     image: "/images/img3.jpg",
-    title: "Project Showcase",
-    text: "Presented a polished web application with clean interface details, reliable backend wiring, and clear product thinking around the final user outcome.",
+    title: "CodeUnCode CP Contest (COEP Regional)",
+    text: "Secured a Top 10 position in the CodeUnCode Competitive Programming Contest (COEP Regional) by solving algorithmic and problem-solving challenges under time constraints, demonstrating strong skills in data structures, algorithms, and competitive programming",
     accent: "fuchsia",
     glow: "shadow-[0_0_30px_rgba(217,70,239,0.32)] group-hover:shadow-[0_0_48px_rgba(217,70,239,0.56)]",
     border: "border-fuchsia-300/35",
     textColor: "text-fuchsia-100",
     button: "border-fuchsia-200/50 text-fuchsia-100 hover:bg-fuchsia-300/15",
+    scrollbar: "scrollbar-fuchsia",
     gradient: "from-fuchsia-500/42 via-slate-950/45 to-slate-950/90",
   },
   {
     image: "/images/img4.jpg",
-    title: "Technical Workshop",
-    text: "Helped simplify a complex technical topic into approachable steps with examples, live debugging, and practical takeaways for other students.",
+    title: "GSSOC 2026",
+    text: "Selected for GSSoC 2026, contributing to open-source projects through merged pull requests, feature development, bug fixes, issue resolution, and collaborative development workflows using Git and GitHub while working with real-world codebases.",
     accent: "emerald",
     glow: "shadow-[0_0_30px_rgba(52,211,153,0.31)] group-hover:shadow-[0_0_48px_rgba(52,211,153,0.54)]",
     border: "border-emerald-300/35",
     textColor: "text-emerald-100",
     button: "border-emerald-200/50 text-emerald-100 hover:bg-emerald-300/15",
+    scrollbar: "scrollbar-emerald",
     gradient: "from-emerald-500/40 via-slate-950/45 to-slate-950/90",
   },
   {
     image: "/images/img5.jpg",
-    title: "Build Sprint",
-    text: "Turned rough ideas into a functional interface, improved details through quick feedback, and kept the final delivery focused and usable.",
+    title: "Competitive Exam Achievements",
+    text: "Secured 99.7 percentile with State Rank 807 in MHT-CET and achieved 98.80 percentile in JEE Main, demonstrating strong analytical thinking, problem-solving ability, and performance in highly competitive national-level engineering entrance examinations.",
     accent: "rose",
     glow: "shadow-[0_0_30px_rgba(251,113,133,0.31)] group-hover:shadow-[0_0_48px_rgba(251,113,133,0.54)]",
     border: "border-rose-300/35",
     textColor: "text-rose-100",
     button: "border-rose-200/50 text-rose-100 hover:bg-rose-300/15",
+    scrollbar: "scrollbar-rose",
     gradient: "from-rose-500/40 via-slate-950/45 to-slate-950/90",
   },
 ];
@@ -115,27 +120,31 @@ export default function AchivementSlider() {
 
       <div
         className={`absolute inset-x-0 bottom-0 z-10 p-4 transition-all duration-500 ${
-          isExpanded ? "inset-y-0 flex flex-col justify-center bg-slate-950/68 backdrop-blur-sm" : ""
+          isExpanded ? "inset-0 flex flex-col bg-slate-950/80 backdrop-blur-sm" : ""
         }`}
       >
-        <p className="mb-2 text-[0.62rem] font-bold uppercase tracking-[0.22em] text-white/55">
-          Achievement
-        </p>
-        <h3 className={`text-lg font-black leading-tight ${activeAchievement.textColor}`}>
-          {activeAchievement.title}
-        </h3>
-        <p
-          className={`mt-2 text-sm leading-relaxed text-slate-100/88 transition-all duration-500 ${
-            isExpanded ? "line-clamp-none" : "line-clamp-3 [mask-image:linear-gradient(180deg,#000_55%,transparent_100%)]"
-          }`}
-        >
-          {activeAchievement.text}
-        </p>
+        <div className={`${isExpanded ? "flex min-h-0 flex-col gap-4" : ""}`}>
+          <p className={`${isExpanded ? "" : "mb-2"} text-[0.62rem] font-bold uppercase tracking-[0.22em] text-white/55`}>
+            Achievement
+          </p>
+          <h3 className={`text-lg ${isExpanded ? "" : "mb-2"} font-black leading-tight ${activeAchievement.textColor}`}>
+            {activeAchievement.title}
+          </h3>
+          <div className={` ${isExpanded ? `min-h-0 max-h-[40vh] overflow-y-auto pr-2 ${activeAchievement.scrollbar}` : ""}`}>
+            <p
+              className={`text-sm leading-relaxed text-slate-100/88 transition-all duration-500 ${
+                isExpanded ? "whitespace-pre-line" : "line-clamp-3 [mask-image:linear-gradient(180deg,#000_55%,transparent_100%)]"
+              }`}
+            >
+              {activeAchievement.text}
+            </p>
+          </div>
+        </div>
 
         <button
           type="button"
           onClick={() => setIsExpanded((expanded) => !expanded)}
-          className={`mt-3 cursor-pointer inline-flex w-fit items-center rounded-full border px-3 py-1.5 text-xs font-semibold transition ${activeAchievement.button}`}
+          className={`mt-1 cursor-pointer inline-flex w-fit items-center rounded-full border px-3 py-1.5 text-xs font-semibold transition ${activeAchievement.button}`}
           aria-expanded={isExpanded}
         >
           {isExpanded ? "Show less" : "Read more"}
