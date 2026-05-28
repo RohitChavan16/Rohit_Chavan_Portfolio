@@ -4,7 +4,14 @@ import { motion, type Variants } from "framer-motion";
 import { useEffect, useMemo, useState } from "react";
 import ImageSlider from "./ImageSilder";
 import AchivementSlider from "./AchivementSlider";
-import { X } from "lucide-react";
+import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import {
+  SiLeetcode,
+  SiCodeforces,
+  SiCodechef,
+  SiHackerrank,
+  SiGithub,
+} from "react-icons/si";
 
 const aboutGridVariants: Variants = {
   hidden: {},
@@ -64,6 +71,48 @@ export default function About() {
   const [typedRole, setTypedRole] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
   const [isMindsetOpen, setIsMindsetOpen] = useState(false);
+  const [codingProfileIndex, setCodingProfileIndex] = useState(0);
+  
+const LeetCodeIcon = "/icons/leetcode.svg";
+const CodeforcesIcon =  "/icons/code-forces.svg";
+const CodeChefIcon = "/icons/codechef.svg";
+
+  const codingProfiles = useMemo(
+    () => [
+      {
+        name: "LeetCode",
+        icon: <img src={LeetCodeIcon} alt="LeetCode" className="w-8 h-8" />,
+        color: "from-orange-500 via-yellow-500 to-orange-600",
+        stats: "1700 + Rating • 700 + Problems",
+        image: "/images/img1.jpg",
+        link: "https://leetcode.com/u/RohitChavan1612/",
+      },
+      {
+        name: "CodeChef",
+        icon: <img src={CodeChefIcon} alt="CodeChef" className="w-8 h-8" />,
+        color: "from-blue-600 via-cyan-500 to-indigo-700",
+        stats: "1600 + Rating • 3⭐star",
+        image: "/images/img2.jpg",
+        link: "https://codechef.com/users/rohitchavan16",
+      },
+      {
+        name: "Codeforces",
+        icon: <img src={CodeforcesIcon} alt="Codeforces" className="w-8 h-8" />,
+        color: "from-purple-600 via-violet-500 to-purple-700",
+        stats: "1200 + • Pupil",
+        image: "/images/img3.jpg",
+        link: "https://codeforces.com/profile/RohitChavan16",
+      },
+    ],
+    []
+  );
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCodingProfileIndex((prev) => (prev + 1) % codingProfiles.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [codingProfiles.length]);
 
   useEffect(() => {
     const currentRole = profileRoles[roleIndex].label;
@@ -443,12 +492,160 @@ export default function About() {
 
           
 
+          {/* Coding Profiles Section */}
           <motion.div
             custom={6}
             variants={aboutBoxVariants}
-            className="col-span-2 md:col-span-3 rounded-2xl p-4 bg-gradient-to-br from-[#020617] to-[#312e81] text-white will-change-transform"
+            className="col-span-2 md:col-span-3 rounded-2xl overflow-hidden will-change-transform bg-gradient-to-br from-[#020617] via-[#1a1a3e] to-[#0f0f1e] border border-white/10 flex flex-row h-full"
           >
-            Philosophy → &quot;I build production-ready systems, not just projects&quot;
+            {/* Left Section - Headline */}
+            <div className="w-14 sm:w-16 flex items-center justify-center bg-gradient-to-r from-cyan-500/20 via-purple-500/20 to-fuchsia-500/20 border-r border-white/10">
+              <div className="flex flex-col items-center gap-1">
+                <p className="text-[9px] sm:text-[10px] font-black tracking-widest uppercase text-transparent bg-clip-text bg-gradient-to-b from-cyan-300 to-fuchsia-300 leading-tight text-center">
+                  CODING
+                </p>
+                <div className="w-0.5 h-4 sm:h-6 bg-gradient-to-b from-cyan-400 to-fuchsia-400 rounded-full" />
+                <p className="text-[9px] sm:text-[10px] font-black tracking-widest uppercase text-transparent bg-clip-text bg-gradient-to-b from-fuchsia-300 to-cyan-300 leading-tight text-center">
+                  PROFILE
+                </p>
+              </div>
+            </div>
+
+            {/* Middle Section - Image Slider */}
+            <motion.a
+              href={codingProfiles[codingProfileIndex].link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 relative overflow-hidden cursor-pointer group"
+            >
+              {/* Image Slider Background */}
+              <motion.div
+                key={`slider-${codingProfileIndex}`}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.6 }}
+                className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-300"
+                style={{
+                  backgroundImage: `url('${codingProfiles[codingProfileIndex].image}'), linear-gradient(135deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.4) 100%)`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                }}
+              />
+
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-br from-black/40 to-black/30 group-hover:from-black/30 group-hover:to-black/20 transition-all duration-300" />
+
+              {/* Profile Info Overlay */}
+              <div className="absolute inset-0 flex flex-col items-center justify-center p-3 sm:p-4 z-10">
+                <motion.div
+                  key={`profile-info-${codingProfileIndex}`}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4 }}
+                  className="text-center"
+                >
+                  <div className="flex items-center justify-center gap-2 mb-2">
+                    <span className="text-3xl sm:text-4xl drop-shadow-lg">
+                      {codingProfiles[codingProfileIndex].icon}
+                    </span>
+                    <h3 className="text-lg sm:text-xl font-black text-white drop-shadow-md">
+                      {codingProfiles[codingProfileIndex].name}
+                    </h3>
+                  </div>
+                  <p className="text-xs sm:text-sm text-white/95 font-bold drop-shadow-md">
+                    {codingProfiles[codingProfileIndex].stats}
+                  </p>
+                </motion.div>
+              </div>
+
+              {/* Left Arrow Button - Absolute */}
+              <motion.button
+                type="button"
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  setCodingProfileIndex((prev) => (prev - 1 + codingProfiles.length) % codingProfiles.length);
+                }}
+                whileHover={{ scale: 1.15 }}
+                whileTap={{ scale: 0.9 }}
+                className="absolute cursor-pointer left-2 sm:left-3 top-1/2 -translate-y-1/2 z-20 p-1.5 sm:p-2 rounded-full border border-white/40 bg-white/10 backdrop-blur-md text-white/80 hover:bg-white/20 hover:text-white transition"
+              >
+                <ChevronLeft className="w-4 h-4 sm:w-3 sm:h-3" />
+              </motion.button>
+
+              {/* Right Arrow Button - Absolute */}
+              <motion.button
+                type="button"
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  setCodingProfileIndex((prev) => (prev + 1) % codingProfiles.length);
+                }}
+                whileHover={{ scale: 1.15 }}
+                whileTap={{ scale: 0.9 }}
+                className="absolute cursor-pointer right-2 sm:right-3 top-1/2 -translate-y-1/2 z-20 p-1.5 sm:p-2 rounded-full border border-white/40 bg-white/10 backdrop-blur-md text-white/80 hover:bg-white/20 hover:text-white transition"
+              >
+                <ChevronRight className="w-4 h-4 sm:w-3 sm:h-3" />
+              </motion.button>
+            </motion.a>
+
+            {/* Right Section - 3D Coding Animation */}
+            <div className="w-20 sm:w-24 flex flex-col items-center justify-center px-2 sm:px-3 py-4 border-l border-white/10 bg-gradient-to-l from-cyan-500/10 to-transparent">
+              <motion.div
+                className="w-16 h-16 sm:w-20 sm:h-20 relative"
+                animate={{ rotateY: 360 }}
+                transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+                style={{ perspective: "1000px" }}
+              >
+                {/* Cube representing computer */}
+                <motion.div
+                  className="absolute inset-0 rounded-lg bg-gradient-to-br from-cyan-500/40 to-purple-600/40 border border-cyan-400/50 flex items-center justify-center text-3xl"
+                  animate={{
+                    rotateX: [0, 360],
+                    rotateZ: [0, -360],
+                  }}
+                  transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
+                >
+                  <span>💻</span>
+                </motion.div>
+
+                {/* Orbiting code particles */}
+                {[...Array(3)].map((_, i) => (
+                  <motion.div
+                    key={i}
+                    className="absolute inset-0"
+                    animate={{ rotate: 360 }}
+                    transition={{ duration: 3 + i, repeat: Infinity, ease: "linear" }}
+                  >
+                    <div
+                      className="absolute w-1.5 h-1.5 sm:w-2 sm:h-2 bg-cyan-400 rounded-full"
+                      style={{
+                        top: "50%",
+                        left: "50%",
+                        transform: `translate(-50%, -50%) translateX(${32 + i * 8}px)`,
+                      }}
+                    />
+                  </motion.div>
+                ))}
+
+                {/* Pulsing background */}
+                <motion.div
+                  className="absolute inset-0 rounded-lg bg-gradient-to-br from-cyan-500/20 to-fuchsia-500/20"
+                  animate={{ scale: [1, 1.2, 1] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                />
+              </motion.div>
+
+              {/* Coding text indicator */}
+              <motion.div
+                className="text-[8px] sm:text-[10px] font-bold text-cyan-300 opacity-60 mt-2"
+                animate={{ opacity: [0.4, 1, 0.4] }}
+                transition={{ duration: 1.5, repeat: Infinity }}
+              >
+                &lt;/&gt;
+              </motion.div>
+            </div>
           </motion.div>
 
           <motion.div
