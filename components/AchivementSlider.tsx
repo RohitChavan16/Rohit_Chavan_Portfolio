@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 
 const achievements = [
   {
-    image: "/images/img1.jpg",
+    image: "/achievement_img/img4.jpg",
     title: "HERE Technologies Mumbai Hackathon",
     text: "Achieved 2nd Runner-Up at the HERE Technologies Mumbai Hackathon by building GeoShop Engine, a place intelligence platform that resolves inconsistencies across multi-source POI datasets using geospatial matching, fuzzy similarity scoring, and confidence-based entity resolution.",
     accent: "cyan",
@@ -18,7 +18,7 @@ const achievements = [
     gradient: "from-cyan-500/45 via-slate-950/45 to-slate-950/90",
   },
   {
-    image: "/images/img2.jpg",
+    image: "/achievement_img/img2.jpg",
     title: "FINSPARK Banking Hackathon",
     text: "Won the UI/UX Excellence Award at FINSPARK 2025, a 36-hour banking innovation hackathon organized by Bank of Maharashtra, DFS, and COEP Tech, by developing an inclusive fintech solution focused on bridging language barriers in Indian banking through intuitive UI/UX, rapid prototyping, and scalable system integration.",
     accent: "amber",
@@ -30,7 +30,7 @@ const achievements = [
     gradient: "from-amber-400/42 via-indigo-950/45 to-slate-950/90",
   },
   {
-    image: "/images/img3.jpg",
+    image: "/achievement_img/img5.png",
     title: "CodeUnCode CP Contest (COEP Regional)",
     text: "Secured a Top 10 position in the CodeUnCode Competitive Programming Contest (COEP Regional) by solving algorithmic and problem-solving challenges under time constraints, demonstrating strong skills in data structures, algorithms, and competitive programming",
     accent: "fuchsia",
@@ -42,7 +42,7 @@ const achievements = [
     gradient: "from-fuchsia-500/42 via-slate-950/45 to-slate-950/90",
   },
   {
-    image: "/images/img4.jpg",
+    image: "/achievement_img/img3.png",
     title: "GSSOC 2026",
     text: "Selected for GSSoC 2026, contributing to open-source projects through merged pull requests, feature development, bug fixes, issue resolution, and collaborative development workflows using Git and GitHub while working with real-world codebases.",
     accent: "emerald",
@@ -54,7 +54,7 @@ const achievements = [
     gradient: "from-emerald-500/40 via-slate-950/45 to-slate-950/90",
   },
   {
-    image: "/images/img5.jpg",
+    image: "/achievement_img/img1.jpg",
     title: "Competitive Exam Achievements",
     text: "Secured 99.7 percentile with State Rank 807 in MHT-CET and achieved 98.80 percentile in JEE Main, demonstrating strong analytical thinking, problem-solving ability, and performance in highly competitive national-level engineering entrance examinations.",
     accent: "rose",

@@ -92,7 +92,7 @@ const CodeChefIcon = "/icons/codechef.svg";
         icon: <img src={CodeChefIcon} alt="CodeChef" className="w-8 h-8" />,
         color: "from-blue-600 via-cyan-500 to-indigo-700",
         stats: "1600 + Rating • 3⭐star",
-        image: "/images/img2.jpg",
+        image: "/achievement_img/img4.jpg",
         link: "https://codechef.com/users/rohitchavan16",
       },
       {
@@ -100,7 +100,7 @@ const CodeChefIcon = "/icons/codechef.svg";
         icon: <img src={CodeforcesIcon} alt="Codeforces" className="w-8 h-8" />,
         color: "from-purple-600 via-violet-500 to-purple-700",
         stats: "1200 + • Pupil",
-        image: "/images/img3.jpg",
+        image: "/achievement_img/img3.png",
         link: "https://codeforces.com/profile/RohitChavan16",
       },
     ],

@@ -4,10 +4,10 @@ import { useEffect, useState } from "react";
 export default function ImageSlider() {
  const images = [
   "/images/img1.jpg",
-  "/images/img2.jpg",
+  "/images/img2.png",
   "/images/img3.jpg",
-  "/images/img4.jpg",
-  "/images/img5.jpg",
+  "/images/img4.png",
+  "/images/img5.png",
 ];
 
   const [index, setIndex] = useState(0);
