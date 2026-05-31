@@ -278,8 +278,12 @@ const CodeChefIcon = "/icons/codechef.svg";
   ];
 
   return (
-    <section className="w-full min-h-screen flex items-center justify-center px-4 py-6 bg-gradient-to-br from-[#020617] via-[#020617] to-[#0f172a]">
-      <div className="w-full max-w-5xl">
+    <section id="about" className="px-[8%] py-24">
+      <div className="section-shell rounded-3xl p-8 lg:p-12">
+        <div className="flex items-center gap-4 mb-8">
+          <span className="section-label">01 About me</span>
+          <div className="h-px flex-1 bg-white/15" />
+        </div>
         <motion.div
           variants={aboutGridVariants}
           initial="hidden"

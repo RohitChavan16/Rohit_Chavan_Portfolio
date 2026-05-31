@@ -75,7 +75,7 @@ export default function Experience() {
 
         <h2 className="section-title mb-10">
           Work journey shaped by
-          <span className="block accent-text">delivery and ownership</span>
+          <span className="block text-[#7cf6d4]">delivery and ownership</span>
         </h2>
 
         <div className="grid grid-cols-1 lg:grid-cols-[260px_1fr] gap-6">

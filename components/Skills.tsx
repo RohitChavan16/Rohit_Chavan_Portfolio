@@ -351,7 +351,7 @@ export default function Skills() {
                         </p>
                       </div>
                       <div className="rounded-3xl border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.24em] text-slate-200 shadow-[0_15px_40px_rgba(0,0,0,0.15)]">
-                        {sectionIndex + 1}/7
+                        {sectionIndex + 1}/6
                       </div>
                     </div>
 
