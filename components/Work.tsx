@@ -116,7 +116,6 @@ const projects: Project[] = [
       "/scanlayer/img1.png",
       "/scanlayer/img2.png",
       "/scanlayer/img3.png",
-      "/scanlayer/img4.png",
     ],
     theme: {
       glow: "from-[#7be7cf]/30 via-[#1db892]/20 to-transparent",
@@ -213,6 +212,14 @@ const projects: Project[] = [
       "/screenflow/img2.png",
       "/screenflow/img3.png",
       "/screenflow/img4.png",
+      "/screenflow/img5.png",
+      "/screenflow/img6.png",
+      "/screenflow/img7.png",
+      "/screenflow/img8.png",
+      "/screenflow/img9.png",
+      "/screenflow/img10.png",
+      "/screenflow/img11.png",
+      "/screenflow/img12.png",
     ],
     theme: {
       glow: "from-[#7ec6ff]/30 via-[#2c7ff8]/20 to-transparent",
@@ -239,6 +246,9 @@ const projects: Project[] = [
     "/flightcove/img2.png",
     "/flightcove/img3.png",
     "/flightcove/img4.png",
+    "/flightcove/img5.png",
+    "/flightcove/img6.png",
+    "/flightcove/img7.png",
   ],
   theme: {
     glow: "from-[#ffb86c]/30 via-[#ff7b00]/20 to-transparent",
