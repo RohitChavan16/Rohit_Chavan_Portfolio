@@ -33,10 +33,17 @@ const projects: Project[] = [
     live: "https://synap-talk-kuub.vercel.app/",
     code: "https://github.com/RohitChavan16/SynapTalk",
     images: [
-      "/projects/synaptalk-1.jpg",
-      "/projects/synaptalk-2.jpg",
-      "/projects/synaptalk-3.jpg",
-      "/projects/synaptalk-4.jpg",
+      "/synaptalk/img1.png",
+      "/synaptalk/img2.png",
+      "/synaptalk/img3.png",
+      "/synaptalk/img4.png",
+      "/synaptalk/img5.png",
+      "/synaptalk/img6.png",
+      "/synaptalk/img7.png",
+      "/synaptalk/img8.png",
+      "/synaptalk/img9.png",
+      "/synaptalk/img10.png",
+      "/synaptalk/img11.png",
     ],
     theme: {
       glow: "from-[#f4d03f]/30 via-[#f39f1b]/20 to-transparent",
@@ -58,10 +65,10 @@ const projects: Project[] = [
   live: "#",
   code: "https://github.com/RohitChavan16/BenchForge",
   images: [
-    "/projects/benchforge-1.jpg",
-    "/projects/benchforge-2.jpg",
-    "/projects/benchforge-3.jpg",
-    "/projects/benchforge-4.jpg",
+    "/benchforge/img1.png",
+    "/benchforge/img2.png",
+    "/benchforge/img3.png",
+    "/benchforge/img4.png",
   ],
   theme: {
     glow: "from-[#ff4d6d]/30 via-[#e11d48]/20 to-transparent",
@@ -82,10 +89,10 @@ const projects: Project[] = [
   live: "#",
   code: "https://github.com/RohitChavan16/Geo_Analysis",
   images: [
-    "/projects/geoshop-1.jpg",
-    "/projects/geoshop-2.jpg",
-    "/projects/geoshop-3.jpg",
-    "/projects/geoshop-4.jpg",
+    "/geoshop/img1.png",
+    "/geoshop/img2.png",
+    "/geoshop/img3.png",
+    "/geoshop/img4.png",
   ],
   theme: {
     glow: "from-[#6ef3ff]/30 via-[#0ea5e9]/20 to-transparent",
@@ -106,10 +113,10 @@ const projects: Project[] = [
     live: "#",
     code: "https://github.com/RohitChavan16/ScanLayer",
     images: [
-      "/projects/scanlayer-1.jpg",
-      "/projects/scanlayer-2.jpg",
-      "/projects/scanlayer-3.jpg",
-      "/projects/scanlayer-4.jpg",
+      "/scanlayer/img1.png",
+      "/scanlayer/img2.png",
+      "/scanlayer/img3.png",
+      "/scanlayer/img4.png",
     ],
     theme: {
       glow: "from-[#7be7cf]/30 via-[#1db892]/20 to-transparent",
@@ -129,10 +136,10 @@ const projects: Project[] = [
     live: "#",
     code: "https://github.com/RohitChavan16/PrepNex",
     images: [
-      "/projects/prepnex-1.jpg",
-      "/projects/prepnex-2.jpg",
-      "/projects/prepnex-3.jpg",
-      "/projects/prepnex-4.jpg",
+      "/prepnex/img1.png",
+      "/prepnex/img2.png",
+      "/prepnex/img3.png",
+      "/prepnex/img4.png",
     ],
     theme: {
       glow: "from-[#d0b2ff]/30 via-[#6f5ef6]/20 to-transparent",
@@ -153,10 +160,10 @@ const projects: Project[] = [
   live: "#",
   code: "https://github.com/RohitChavan16/custom-rag-chatbot",
   images: [
-    "/projects/neurarag-1.jpg",
-    "/projects/neurarag-2.jpg",
-    "/projects/neurarag-3.jpg",
-    "/projects/neurarag-4.jpg",
+    "/neurarag/img1.png",
+    "/neurarag/img2.png",
+    "/neurarag/img3.png",
+    "/neurarag/img4.png",
   ],
   theme: {
     glow: "from-[#9b8cff]/30 via-[#7c3aed]/20 to-transparent",
@@ -202,10 +209,10 @@ const projects: Project[] = [
     live: "https://screenflow-puce.vercel.app/",
     code: "https://github.com/RohitChavan16/ScreenFlow",
     images: [
-      "/projects/screenflow-1.jpg",
-      "/projects/screenflow-2.jpg",
-      "/projects/screenflow-3.jpg",
-      "/projects/screenflow-4.jpg",
+      "/screenflow/img1.png",
+      "/screenflow/img2.png",
+      "/screenflow/img3.png",
+      "/screenflow/img4.png",
     ],
     theme: {
       glow: "from-[#7ec6ff]/30 via-[#2c7ff8]/20 to-transparent",
@@ -228,10 +235,10 @@ const projects: Project[] = [
   live: "#",
   code: "https://github.com/RohitChavan16/FlightCove",
   images: [
-    "/projects/flightcove-1.jpg",
-    "/projects/flightcove-2.jpg",
-    "/projects/flightcove-3.jpg",
-    "/projects/flightcove-4.jpg",
+    "/flightcove/img1.png",
+    "/flightcove/img2.png",
+    "/flightcove/img3.png",
+    "/flightcove/img4.png",
   ],
   theme: {
     glow: "from-[#ffb86c]/30 via-[#ff7b00]/20 to-transparent",
@@ -253,10 +260,10 @@ const projects: Project[] = [
   live: "https://your-portfolio-link.vercel.app",
   code: "https://github.com/RohitChavan16/Rohit_Chavan_Portfolio",
   images: [
-    "/projects/portfolio-1.jpg",
-    "/projects/portfolio-2.jpg",
-    "/projects/portfolio-3.jpg",
-    "/projects/portfolio-4.jpg",
+    "/portfolio/img1.png",
+    "/portfolio/img2.png",
+    "/portfolio/img3.png",
+    "/portfolio/img4.png",
   ],
   theme: {
     glow: "from-[#8aff80]/30 via-[#22c55e]/20 to-transparent",
@@ -371,21 +378,20 @@ export default function Work() {
 
               <div className="relative h-52 overflow-hidden border-b border-white/10">
                 <div
-                  className="h-full flex transition-transform duration-700 ease-out"
-                  style={{
-                    width: `${project.images.length * 100}%`,
-                    transform: `translateX(-${activeSlides[cardIndex] * (100 / project.images.length)}%)`,
-                  }}
-                >
+    className="flex h-full transition-transform duration-700"
+    style={{
+      transform: `translateX(-${activeSlides[cardIndex] * 100}%)`,
+    }}
+  >
                   {project.images.map((image, imageIndex) => (
-                    <div key={imageIndex} className="h-full w-full relative flex-shrink-0">
+                    <div key={imageIndex} className="relative h-full min-w-full">
                       <div
                         className="absolute inset-0 bg-cover bg-center"
                         style={{
-                          backgroundImage: `linear-gradient(120deg, rgba(13,24,42,0.45), rgba(6,11,23,0.65)), url(${image})`,
+                          backgroundImage: `url(${image})`,
                         }}
                       />
-                      <div className={`absolute inset-0 bg-gradient-to-r ${project.theme.imageOverlay}`} />
+                      <div className={`absolute inset-0 ${project.theme.imageOverlay}`} />
                       <span className="absolute left-4 top-4 text-[10px] tracking-[0.2em] uppercase text-white/80 bg-black/30 px-2 py-1 rounded">
                         Project Screen {imageIndex + 1}
                       </span>
