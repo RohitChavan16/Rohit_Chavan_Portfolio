@@ -92,7 +92,6 @@ const projects: Project[] = [
     "/geoshop/img1.png",
     "/geoshop/img2.png",
     "/geoshop/img3.png",
-    "/geoshop/img4.png",
   ],
   theme: {
     glow: "from-[#6ef3ff]/30 via-[#0ea5e9]/20 to-transparent",
@@ -274,6 +273,8 @@ const projects: Project[] = [
     "/portfolio/img2.png",
     "/portfolio/img3.png",
     "/portfolio/img4.png",
+    "/portfolio/img5.png",
+    "/portfolio/img6.png",
   ],
   theme: {
     glow: "from-[#8aff80]/30 via-[#22c55e]/20 to-transparent",
