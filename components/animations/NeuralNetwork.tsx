@@ -75,7 +75,7 @@ export default function NeuralNetwork() {
 
           if (distance < 120) {
             ctx.beginPath();
-            ctx.strokeStyle = `rgba(244, 208, 63, ${0.2 - distance / 600})`; // yellow accent
+            ctx.strokeStyle = `rgba(96, 165, 250, ${0.7 - distance / 250})`; // blue accent
             ctx.lineWidth = 1;
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
@@ -99,7 +99,7 @@ export default function NeuralNetwork() {
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 w-full h-full -z-10 pointer-events-none opacity-40 mix-blend-screen"
+      className="fixed inset-0 w-screen h-screen pointer-events-none opacity-40"
     />
   );
 }

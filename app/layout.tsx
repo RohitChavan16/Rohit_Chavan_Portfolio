@@ -4,6 +4,7 @@ import "./globals.css";
 import BackgroundDots from "@/components/BackgroundDots";
 import CursorGlow from "@/components/CursorGlow";
 import CursorParticles from "@/components/CursorParticles";
+import NeuralNetwork from "@/components/animations/NeuralNetwork";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,7 +31,8 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      > 
+        <NeuralNetwork/>
         <BackgroundDots />
         <CursorGlow />
         <CursorParticles />

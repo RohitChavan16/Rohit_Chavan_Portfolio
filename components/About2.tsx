@@ -1,17 +1,11 @@
 "use client";
 
-import { motion, type Variants } from "framer-motion";
+import { motion, type Variants, AnimatePresence } from "framer-motion";
 import { useEffect, useMemo, useState } from "react";
 import ImageSlider from "./ImageSilder";
 import AchivementSlider from "./AchivementSlider";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
-import {
-  SiLeetcode,
-  SiCodeforces,
-  SiCodechef,
-  SiHackerrank,
-  SiGithub,
-} from "react-icons/si";
+import Image from "next/image";
 
 const aboutGridVariants: Variants = {
   hidden: {},
@@ -33,6 +27,23 @@ const boxStarts = [
   { x: -120, y: 40, rotate: -2 },
   { x: 100, y: 60, rotate: 3 },
   { x: 120, y: -20, rotate: 4 },
+];
+const contacts = [
+  {
+    name: "GitHub",
+    icon: "/icons/github.png",
+    href: "https://github.com/RohItChavan16",
+  },
+  {
+    name: "LinkedIn",
+    icon: "/icons/linkedin.webp",
+    href: "https://linkedin.com/in/rohit-chavan16",
+  },
+  {
+    name: "Email",
+    icon: "/icons/email.webp",
+    href: "mailto:approachrohit16@gmail.com",
+  },
 ];
 
 const aboutBoxVariants: Variants = {
@@ -107,6 +118,13 @@ const CodeChefIcon = "/icons/codechef.svg";
     []
   );
 
+const [activeIndex, setActiveIndex] = useState(0);
+
+const prevIndex =
+  (activeIndex - 1 + contacts.length) % contacts.length;
+
+const nextIndex =
+  (activeIndex + 1) % contacts.length;
   useEffect(() => {
     const interval = setInterval(() => {
       setCodingProfileIndex((prev) => (prev + 1) % codingProfiles.length);
@@ -660,13 +678,146 @@ const CodeChefIcon = "/icons/codechef.svg";
             Journey → C++ → Web → AI growth
           </motion.div>
 
-          <motion.div
-            custom={8}
-            variants={aboutBoxVariants}
-            className="col-span-1 md:col-span-1 md:row-span-1 rounded-2xl p-4 bg-gradient-to-br from-[#020617] to-[#1e293b] text-white will-change-transform"
-          >
-            Contact → GitHub / LinkedIn / Email
-          </motion.div>
+      <div className="relative h-full flex items-center justify-center">
+  <div className="relative w-[220px] h-[90px]">
+
+    {contacts.map((contact, index) => {
+      const isCenter = index === activeIndex;
+
+      const position =
+        index === activeIndex
+          ? {
+              x: 0,
+              y: 0,
+              scale: 1,
+              opacity: 1,
+              rotate: 0,
+              zIndex: 30,
+            }
+          : index === prevIndex
+          ? {
+              x: -75,
+              y: 8,
+              scale: 0.65,
+              opacity: 0.4,
+              rotate: -15,
+              zIndex: 10,
+            }
+          : {
+              x: 75,
+              y: 8,
+              scale: 0.65,
+              opacity: 0.4,
+              rotate: 15,
+              zIndex: 10,
+            };
+
+      return (
+        <motion.div
+          key={contact.name}
+          animate={position}
+          transition={{
+            type: "spring",
+            stiffness: 120,
+            damping: 14,
+            mass: 0.8,
+          }}
+          className="
+            absolute
+            left-1/2
+            top-1/2
+            -translate-x-1/2
+            -translate-y-1/2
+          "
+        >
+          {isCenter ? (
+            <motion.a
+              href={contact.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{
+                scale: 1.12,
+              }}
+              whileTap={{
+                scale: 0.95,
+              }}
+              className="
+                flex
+                flex-col
+                items-center
+                cursor-pointer
+              "
+            >
+              <motion.div
+                animate={{
+                  boxShadow: [
+                    "0 0 10px rgba(34,211,238,0.3)",
+                    "0 0 22px rgba(34,211,238,0.7)",
+                    "0 0 10px rgba(34,211,238,0.3)",
+                  ],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                }}
+                className="
+                  p-2
+                  rounded-full
+                  border
+                  border-cyan-400/40
+                  bg-cyan-500/10
+                  backdrop-blur-md
+                "
+              >
+                <Image
+                  src={contact.icon}
+                  alt={contact.name}
+                  width={38}
+                  height={38}
+                  className="select-none"
+                />
+              </motion.div>
+
+              <span className="mt-1 text-xs font-semibold text-cyan-300">
+                {contact.name}
+              </span>
+            </motion.a>
+          ) : (
+            <motion.button
+              onClick={() => setActiveIndex(index)}
+              whileHover={{
+                scale: 0.8,
+                opacity: 0.8,
+              }}
+              whileTap={{
+                scale: 0.7,
+              }}
+              className="
+                flex
+                flex-col
+                items-center
+                cursor-pointer
+              "
+            >
+              <Image
+                src={contact.icon}
+                alt={contact.name}
+                width={38}
+                height={38}
+                className="select-none"
+              />
+
+              <span className="mt-1 text-[10px] text-slate-500">
+                {contact.name}
+              </span>
+            </motion.button>
+          )}
+        </motion.div>
+      );
+    })}
+
+  </div>
+</div>
 
         </motion.div>
       </div>
