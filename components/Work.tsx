@@ -275,6 +275,7 @@ const projects: Project[] = [
     "/portfolio/img4.png",
     "/portfolio/img5.png",
     "/portfolio/img6.png",
+    "/portfolio/img7.png",
   ],
   theme: {
     glow: "from-[#8aff80]/30 via-[#22c55e]/20 to-transparent",
