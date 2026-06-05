@@ -671,15 +671,72 @@ const nextIndex =
           </motion.div>
 
           <motion.div
-            custom={7}
-            variants={aboutBoxVariants}
-            className="col-span-1 md:col-span-2 rounded-2xl p-4 bg-gradient-to-br from-[#1e1b4b] to-[#0f172a] text-white will-change-transform"
-          >
-            Journey → C++ → Web → AI growth
-          </motion.div>
+  custom={7}
+  variants={aboutBoxVariants}
+  className="col-span-1 md:col-span-2 rounded-2xl p-2 bg-gradient-to-br from-[#1e1b4b] to-[#0f172a] text-white will-change-transform"
+>
+  {/* Scrollable inner container */}
+  <div
+    className="h-full overflow-y-auto "
+    style={{
+      maxHeight: "100%",
+      scrollbarWidth: "thin",
+      scrollbarColor: "#7c3aed #1e1b4b",
+    }}
+  >
+    <style>{`
+      .contrib-scroll::-webkit-scrollbar {
+        width: 6px;
+      }
+      .contrib-scroll::-webkit-scrollbar-track {
+        background: #1e1b4b;
+        border-radius: 999px;
+      }
+      .contrib-scroll::-webkit-scrollbar-thumb {
+        background: linear-gradient(180deg, #7c3aed, #ec4899, #f59e0b);
+        border-radius: 999px;
+      }
+    `}</style>
+
+    <div className="contrib-scroll h-full overflow-y-auto pr-1 space-y-3">
+      {/* Headline */}
+      <div className="flex items-center gap-2 mb-1">
+        <span className="text-lg font-bold bg-gradient-to-r from-violet-400 via-pink-400 to-amber-400 bg-clip-text text-transparent tracking-tight">
+          Open Source Contributor
+        </span>
+        <motion.span
+          animate={{ rotate: [0, 15, -10, 15, 0] }}
+          transition={{ duration: 1.5, repeat: Infinity, repeatDelay: 3 }}
+          className="text-lg"
+        >
+          🌍
+        </motion.span>
+      </div>
+      {/* Card 1 — Testing Logic */}
+      <motion.div
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        className="rounded-xl p-3 bg-gradient-to-br from-violet-600/30 to-violet-900/40 border border-violet-500/30 backdrop-blur-sm"
+      >
+        <div className="flex items-center gap-2 mb-1.5">
+          <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-violet-500/40 text-violet-200 border border-violet-400/30">
+            🧪 gssoc:approved
+          </span>
+          <span className="text-xs px-2 py-0.5 rounded-full bg-emerald-500/30 text-emerald-300 border border-emerald-400/20">
+            ✓ Merged
+          </span>
+        </div>
+        <p className="text-xs text-slate-300 leading-relaxed">
+          Delivered contributions across multiple open-source projects built with different backend and frontend technologies. Implemented secure authentication and authorization systems, scalable REST APIs, pagination strategies, rate limiting, logging, testing frameworks, input validation, and performance enhancements. Participated in issue triaging, bug fixes, feature development, and code review processes within collaborative development environments.
+        </p>
+      </motion.div>
+    </div>
+  </div>
+</motion.div>
 
       <div className="relative h-full flex items-center justify-center">
-  <div className="relative w-[220px] h-[90px]">
+  <div className="relative w-[220px] h-[90px] rounded-2xl">
 
     {contacts.map((contact, index) => {
       const isCenter = index === activeIndex;

@@ -71,27 +71,27 @@ const responseMap = [
   {
     keys: ["about", "rohit"],
     response:
-      "Rohit is a full-stack developer who builds polished interfaces, scalable backend systems, AI workflows, and product-focused web experiences with a clean engineering mindset.",
+      "Rohit is a Full Stack Developer, Frontend Developer, Backend Developer, and System Builder. He builds with patience, pressure, and polish. Active in College Activities like Innovation & Startup Support, SDS Developer Community, and the Mindspark Core Team.",
   },
   {
     keys: ["project"],
     response:
-      "You can explore Rohit's projects in the Projects section. The strongest ones highlight full-stack architecture, AI integrations, real-time systems, payments, auth, and production-ready UI.",
+      "Rohit has built some incredible projects like SynapTalk (Unified communication platform), BenchForge (Distributed benchmarking), GeoShop Engine (Geospatial intelligence), ScanLayer (OpenCV document scanner), PrepNex (AI learning assistant), NeuraRAG (Custom RAG chatbot), and ScreenFlow (Movie booking suite).",
   },
   {
     keys: ["skill"],
     response:
-      "Rohit's core strengths include React, Next.js, TypeScript, backend APIs, MongoDB, authentication, real-time features, AI integration, system design, and sharp UI implementation.",
+      "Rohit's skills span Languages (C++, JavaScript, TypeScript, Python, Go, SQL), Frontend (React, Next.js, Tailwind), Backend (Node.js, Express, FastAPI), Databases (MongoDB, PostgreSQL), and AI/CV (OpenCV, RAG Systems, Pandas).",
   },
   {
     keys: ["tech", "stack"],
     response:
-      "His portfolio stack leans modern: Next.js, React, TypeScript, Tailwind CSS, Framer Motion, Node-style APIs, MongoDB, AI tooling, and thoughtful frontend motion systems.",
+      "His modern tech stack revolves around Next.js, React, TypeScript, FastAPI, MongoDB, PostgreSQL, Framer Motion, and AI tooling like LangChain, FAISS, and OpenCV.",
   },
   {
     keys: ["experience"],
     response:
-      "Rohit's experience is centered on building complete products: frontend polish, backend reliability, database design, integrations, and features that feel ready for real users.",
+      "Rohit is an active Open Source Contributor (merged PRs in gssoc:approved). He's built extensive features ranging from scalable REST APIs to payment integrations and WebRTC workflows.",
   },
   {
     keys: ["resume"],
@@ -101,17 +101,17 @@ const responseMap = [
   {
     keys: ["contact", "email", "hire"],
     response:
-      "The fastest path is the Contact section. You can send a message there, or connect through GitHub, LinkedIn, and email links if they are configured on the site.",
+      "The fastest path is the Contact section. You can send a message there, or connect through GitHub, LinkedIn, and email links configured on the site.",
   },
   {
     keys: ["ai"],
     response:
-      "Rohit's AI work includes AI-assisted product features, RAG-style pipelines, LLM integrations, smart automation flows, and interfaces that make complex systems easier to use.",
+      "Rohit's AI work includes NeuraRAG (Custom RAG chatbot with semantic retrieval), PrepNex (AI-driven learning assistant), and ScanLayer (OpenCV document scanner).",
   },
   {
     keys: ["achievement"],
     response:
-      "His achievements section highlights college activities, delivered projects, technical growth, and the practical systems he has implemented across the portfolio.",
+      "Rohit has a 1700+ rating on LeetCode (700+ Problems), 1600+ on CodeChef (3⭐), and 1200+ on Codeforces (Pupil). He's also delivered multiple open-source contributions.",
   },
 ];
 
@@ -181,7 +181,7 @@ export default function PortfolioChatbot() {
         },
       ]);
       setIsThinking(false);
-    }, 850);
+    }, 3000);
   };
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
@@ -190,7 +190,7 @@ export default function PortfolioChatbot() {
   };
 
   const handlePromptClick = (prompt: string) => {
-    setInput(prompt);
+    sendMessage(prompt);
   };
 
   const toggleVoice = () => {
@@ -339,7 +339,7 @@ export default function PortfolioChatbot() {
                         whileHover={{ scale: 1.06, y: -3, rotate: index % 2 === 0 ? -1.5 : 1.5 }}
                         whileTap={{ scale: 0.96 }}
                         onClick={() => handlePromptClick(card.prompt)}
-                        className="group inline-flex shrink-0 items-center gap-2 rounded-full border border-cyan-200/15 bg-slate-900/55 px-3 py-2 text-xs font-bold text-slate-100 shadow-[0_0_18px_rgba(34,211,238,0.08)] transition hover:border-cyan-200/30 hover:bg-cyan-500/10 hover:text-white"
+                        className="group inline-flex shrink-0 cursor-pointer items-center gap-2 rounded-full border border-cyan-200/15 bg-slate-900/55 px-3 py-2 text-xs font-bold text-slate-100 shadow-[0_0_18px_rgba(34,211,238,0.08)] transition hover:border-cyan-200/30 hover:bg-cyan-500/10 hover:text-white"
                       >
                         <Icon className="h-3.5 w-3.5 text-cyan-200 transition group-hover:text-[#f4d03f]" />
                         {card.label}
@@ -350,38 +350,32 @@ export default function PortfolioChatbot() {
 
                 <form onSubmit={handleSubmit} className="flex items-end gap-2">
                   <div className="flex min-h-12 flex-1 items-center gap-2 rounded-2xl border border-cyan-200/15 bg-slate-900/60 px-3 py-2 shadow-[inset_0_0_24px_rgba(34,211,238,0.08)] transition focus-within:border-[#f4d03f]/50 focus-within:shadow-[0_0_28px_rgba(244,208,63,0.12)]">
-                    <button type="button" aria-label="Attach file demo" className="text-slate-300 transition hover:text-cyan-200">
+                    <button type="button" aria-label="Attach file demo" disabled className="text-slate-300 transition disabled:cursor-not-allowed disabled:text-slate-600 hover:text-cyan-200">
                       <Paperclip className="h-4 w-4" />
                     </button>
                     <input
                       value={input}
                       onChange={(event) => setInput(event.target.value)}
-                      placeholder="Ask about Rohit..."
-                      className="min-w-0 flex-1 bg-transparent text-sm text-white outline-none placeholder:text-slate-400"
+                      placeholder="Coming soon..."
+                      disabled
+                      className="min-w-0 flex-1 bg-transparent text-sm text-white outline-none placeholder:text-slate-400 disabled:cursor-not-allowed"
                     />
-                    <button type="button" aria-label="Image upload demo" className="hidden text-slate-300 transition hover:text-cyan-200 sm:block">
+                    <button type="button" aria-label="Image upload demo" disabled className="hidden text-slate-300 transition hover:text-cyan-200 disabled:cursor-not-allowed disabled:text-slate-600 sm:block">
                       <ImagePlus className="h-4 w-4" />
                     </button>
                     <button
                       type="button"
-                      aria-label={speechSupported ? "Use voice input" : "Voice input not supported"}
-                      onClick={toggleVoice}
-                      disabled={!speechSupported}
-                      className={`transition ${
-                        isListening
-                          ? "text-emerald-200 drop-shadow-[0_0_10px_rgba(110,231,183,0.8)]"
-                          : "text-slate-300 hover:text-cyan-200 disabled:cursor-not-allowed disabled:text-slate-600"
-                      }`}
+                      aria-label="Voice input not supported"
+                      disabled
+                      className="text-slate-300 transition disabled:cursor-not-allowed disabled:text-slate-600"
                     >
-                      {isListening ? <MicOff className="h-4 w-4" /> : <Mic className="h-4 w-4" />}
+                      <Mic className="h-4 w-4" />
                     </button>
                   </div>
 
                   <motion.button
                     type="submit"
-                    whileHover={{ scale: 1.08, rotate: -4 }}
-                    whileTap={{ scale: 0.92 }}
-                    disabled={!input.trim() || isThinking}
+                    disabled={true}
                     className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-gradient-to-br from-[#f4d03f] via-cyan-200 to-[#4a8ce5] text-[#06101f] shadow-[0_0_30px_rgba(34,211,238,0.28)] transition disabled:cursor-not-allowed disabled:grayscale"
                   >
                     <Send className="h-5 w-5" />
