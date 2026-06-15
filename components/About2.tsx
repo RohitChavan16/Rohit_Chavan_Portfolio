@@ -70,8 +70,19 @@ const aboutBoxVariants: Variants = {
 export default function About() {
   const profileRoles = useMemo(
     () => [
+      {
+  label: "Software Developer",
+  color: "text-indigo-200",
+  glow: "shadow-indigo-400/30"
+},
+
+{
+  label: "AI/ML Enthusiast",
+  color: "text-sky-200",
+  glow: "shadow-sky-400/30"
+},
       { label: "Full Stack Developer", color: "text-cyan-200", glow: "shadow-cyan-400/30" },
-      { label: "Frontend Developer", color: "text-fuchsia-200", glow: "shadow-fuchsia-400/30" },
+      { label: "Competitive Programmer", color: "text-fuchsia-200", glow: "shadow-fuchsia-400/30" },
       { label: "Backend Developer", color: "text-emerald-200", glow: "shadow-emerald-400/30" },
       { label: "System Builder", color: "text-amber-200", glow: "shadow-amber-400/30" },
       { label: "Problem Solver", color: "text-rose-200", glow: "shadow-rose-400/30" },
@@ -282,14 +293,17 @@ const nextIndex =
     "WebRTC",
     "API Architecture",
     "Cloud Infrastructure",
+    "Containerization",
     "LLM Integration",
-    
+    "Distributed Systems",
     "OAuth Integration",
     "Real-Time Chat Systems",
     "Image Processing",
      "AI Integration",
+     "Concurrency Handling",
     "Authentication & Authorization",
     "Event-Driven Architecture",
+    "Geospatial Analysis",
     "Full-Stack Architecture",
      "WebSockets",
     "Role-Based Access Control",

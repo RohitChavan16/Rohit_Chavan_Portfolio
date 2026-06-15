@@ -35,7 +35,7 @@ export default function Hero() {
           {[
             { value: "15+", label: "Production Projects" },
             { value: "4+", label: "Years Building" },
-            { value: "99%", label: "Delivery Commitment" },
+            { value: "900+", label: "Algorithmic Problems Solved" },
           ].map((item) => (
             <div key={item.label} className="section-shell rounded-xl px-4 py-3">
               <p className="accent-text text-xl font-bold">{item.value}</p>
