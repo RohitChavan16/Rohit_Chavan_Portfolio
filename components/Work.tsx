@@ -342,7 +342,7 @@ export default function Work() {
   }, []);
 
   return (
-    <section id="projects" className="px-[8%] py-24">
+    <section id="projects" className="px-4 py-12 md:px-[8%] md:py-24">
       <div className="section-shell rounded-3xl p-8 lg:p-12">
         <div className="flex items-center gap-4 mb-8">
           <span className="section-label">03 Projects</span>

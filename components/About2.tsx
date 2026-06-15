@@ -177,9 +177,9 @@ const nextIndex =
   const activeRole = profileRoles[roleIndex];
   const mindsetImage = "/mindset4.jpeg";
   const mindsetText =
-    "I build with patience, pressure, and polish. Every feature should have a reason, every interaction should feel intentional, and every system should be strong enough to grow without becoming messy.";
+    "I build with patience, pressure, and polish. Every feature should have a reason, every interaction should feel intentional, and every system should be strong enough to grow without becoming messy. I care about clean structure, readable code, and fast feedback.";
   const expandedMindsetText =
-    `${mindsetText} I care about clean structure, readable code, fast feedback, and the kind of product decisions that make the final build feel confident instead of accidental. The goal is simple: think clearly, ship carefully, and keep improving the system until it feels calm under pressure.`;
+    `${mindsetText} I focus on the kind of product decisions that make the final build feel confident instead of accidental. The goal is simple: think clearly, ship carefully, and keep improving the system until it feels calm under pressure.`;
   const heroCards = [
     {
       title: "Innovation & Startup Support",
@@ -310,7 +310,7 @@ const nextIndex =
   ];
 
   return (
-    <section id="about" className="px-[8%] py-24">
+    <section id="about" className="px-4 py-12 md:px-[8%] md:py-24">
       <div className="section-shell rounded-3xl p-8 lg:p-12">
         <div className="flex items-center gap-4 mb-8">
           <span className="section-label">01 About me</span>
@@ -321,13 +321,13 @@ const nextIndex =
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.2 }}
-          className="grid grid-cols-2 md:grid-cols-6 gap-4 auto-rows-[110px]"
+          className="flex flex-col md:grid md:grid-cols-6 gap-4 md:auto-rows-[110px]"
         >
 
           <motion.div
             custom={0}
             variants={aboutBoxVariants}
-            className="group relative col-span-2 md:col-span-3 rounded-2xl p-[1px] text-white overflow-hidden will-change-transform"
+            className="group relative md:col-span-3 rounded-2xl p-[1px] text-white overflow-hidden will-change-transform min-h-[300px] md:min-h-0"
           >
             <motion.div
               className="absolute inset-0 rounded-2xl bg-[conic-gradient(from_0deg,rgba(34,211,238,0.15),rgba(244,114,182,0.8),rgba(251,191,36,0.75),rgba(34,211,238,0.85),rgba(34,211,238,0.15))]"
@@ -384,7 +384,7 @@ const nextIndex =
                 whileHover={{ scale: 1.06, y: -2 }}
                 whileTap={{ scale: 0.96 }}
                 transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute right-5 top-[4.8rem] z-20 border-1 border-[#06bcef] cursor-pointer rounded-full px-3 py-2 text-[0.59rem] font-black uppercase tracking-[0.22em] text-cyan-50 backdrop-blur-md transition hover:border-white/80 hover:bg-green-600/25"
+                className="absolute right-5 bottom-6 md:bottom-auto md:top-[4.8rem] z-20 border-1 border-[#06bcef] cursor-pointer rounded-full px-3 py-2 text-[0.59rem] font-black uppercase tracking-[0.22em] text-cyan-50 backdrop-blur-md transition hover:border-white/80 hover:bg-green-600/25"
               >
                 Click me
               </motion.button>
@@ -395,9 +395,9 @@ const nextIndex =
                 initial={{ opacity: 0, scale: 0.96, y: 12 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 transition={{ duration: 0.28, ease: "easeOut" }}
-                className="absolute inset-0 z-30 flex flex-col rounded-2xl border border-cyan-100/30 bg-slate-950/92 px-1 pt-1 pb-0 text-white shadow-[0_0_40px_rgba(34,211,238,0.35)] backdrop-blur-2xl sm:px-4 sm:pt-4 sm:pb-0"
+                className="absolute inset-0 z-30 flex flex-col rounded-2xl border border-cyan-100/30 bg-slate-950/92 px-4 pt-4 pb-4 sm:pb-0 text-white shadow-[0_0_40px_rgba(34,211,238,0.35)] backdrop-blur-2xl"
               >
-                <div className=" flex shrink-0 items-start justify-between gap-3">
+                <div className=" flex shrink-0 items-start justify-between gap-3 mb-2 sm:mb-0">
                   <motion.p
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -429,7 +429,7 @@ const nextIndex =
           <motion.div
             custom={1}
             variants={aboutBoxVariants}
-            className={`col-span-1 md:col-span-1 rounded-2xl p-3 sm:p-4 bg-gradient-to-br from-[#312e81] via-[#1e1b4b] to-[#020617] text-white overflow-hidden border border-white/10 shadow-lg will-change-transform ${activeRole.glow}`}
+            className={`md:col-span-1 rounded-2xl p-3 sm:p-4 bg-gradient-to-br from-[#312e81] via-[#1e1b4b] to-[#020617] text-white overflow-hidden border border-white/10 shadow-lg will-change-transform min-h-[120px] md:min-h-0 flex flex-col justify-center ${activeRole.glow}`}
           >
             <p className="text-[0.62rem] sm:text-xs text-indigo-200/90 mb-1 tracking-[0.22em] font-semibold">
               PROFILE
@@ -454,7 +454,7 @@ const nextIndex =
           <motion.div
             custom={2}
             variants={aboutBoxVariants}
-            className="group relative col-span-2 md:col-span-2 md:row-span-2 rounded-2xl bg-gradient-to-br from-[#0f172a] via-[#111827] to-[#020617] text-white overflow-hidden border border-white/10 will-change-transform"
+            className="group relative md:col-span-2 md:row-span-2 rounded-2xl bg-gradient-to-br from-[#0f172a] via-[#111827] to-[#020617] text-white overflow-hidden border border-white/10 shadow-lg shadow-amber-500/20 will-change-transform min-h-[250px] md:min-h-0"
           >
             <div className="absolute inset-x-0 top-8 z-30 px-4 pt-4 text-center transition-all duration-500 ease-out group-hover:top-0">
               <p className="text-lg sm:text-xl font-black leading-none tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-cyan-200 via-amber-200 to-fuchsia-200">
@@ -483,13 +483,26 @@ const nextIndex =
           <motion.div
             custom={3}
             variants={aboutBoxVariants}
-            className="col-span-1 md:col-span-2 md:row-span-3 flex min-h-0 flex-col rounded-2xl border border-white/10 bg-gradient-to-br from-[#1e1b4b] via-[#0f172a] to-[#020617] p-4 text-white overflow-hidden will-change-transform"
+            className="md:col-span-2 md:row-span-3 flex h-[300px] md:h-auto md:min-h-0 flex-col rounded-2xl border border-white/10 shadow-lg shadow-cyan-500/20 bg-gradient-to-br from-[#1e1b4b] via-[#0f172a] to-[#020617] p-4 text-white overflow-hidden will-change-transform"
           >
+            <style>{`
+              .features-scroll::-webkit-scrollbar {
+                width: 5px;
+              }
+              .features-scroll::-webkit-scrollbar-track {
+                background: rgba(15, 23, 42, 0.35);
+                border-radius: 999px;
+              }
+              .features-scroll::-webkit-scrollbar-thumb {
+                background: linear-gradient(180deg, rgba(34,211,238,0.8), rgba(56,189,248,0.8));
+                border-radius: 999px;
+              }
+            `}</style>
             <p className="mb-3 text-[0.79rem] font-semibold tracking-[0.12em] text-indigo-200/80">
               Features & Systems Implemented
             </p>
             <div
-              className="min-h-0 flex-1 overflow-y-auto pr-1 [scrollbar-color:rgba(125,211,252,0.55)_rgba(15,23,42,0.35)] [scrollbar-width:thin]"
+              className="features-scroll min-h-0 flex-1 overflow-y-auto pr-1 [scrollbar-color:rgba(34,211,238,0.8)_rgba(15,23,42,0.35)] [scrollbar-width:thin]"
               aria-label="Scrollable concepts list"
             >
               <div className="flex flex-wrap items-start gap-x-2.5 p-1 gap-y-3">
@@ -512,7 +525,7 @@ const nextIndex =
           <motion.div
             custom={4}
             variants={aboutBoxVariants}
-            className="col-span-2 md:col-span-2 md:row-span-3 rounded-2xl p-4 bg-gradient-to-br from-[#020617] to-[#1e293b] text-white will-change-transform"
+            className="hidden md:block md:col-span-2 md:row-span-3 rounded-2xl p-4 bg-gradient-to-br from-[#020617] to-[#1e293b] text-white border border-white/10 shadow-lg shadow-rose-500/20 will-change-transform min-h-[250px] md:min-h-0"
           >
             <ImageSlider />
           </motion.div>
@@ -521,7 +534,7 @@ const nextIndex =
           <motion.div
             custom={5}
             variants={aboutBoxVariants}
-            className="col-span-1 md:col-span-2 md:row-span-2 rounded-2xl bg-gradient-to-br from-[#0f172a] to-[#1e293b] text-white will-change-transform"
+            className="md:col-span-2 md:row-span-2 rounded-2xl bg-gradient-to-br from-[#0f172a] to-[#1e293b] text-white border border-white/10 shadow-lg shadow-fuchsia-500/20 will-change-transform h-[250px] md:h-auto md:min-h-0"
           >
             <AchivementSlider />
           </motion.div>
@@ -532,16 +545,16 @@ const nextIndex =
           <motion.div
             custom={6}
             variants={aboutBoxVariants}
-            className="col-span-2 md:col-span-3 rounded-2xl overflow-hidden will-change-transform bg-gradient-to-br from-[#020617] via-[#1a1a3e] to-[#0f0f1e] border border-white/10 flex flex-row h-full"
+            className="md:col-span-3 rounded-2xl overflow-hidden will-change-transform bg-gradient-to-br from-[#020617] via-[#1a1a3e] to-[#0f0f1e] border border-white/10 shadow-lg shadow-purple-500/20 flex flex-col sm:flex-row h-full min-h-[300px] md:min-h-0"
           >
             {/* Left Section - Headline */}
-            <div className="w-14 sm:w-16 flex items-center justify-center bg-gradient-to-r from-cyan-500/20 via-purple-500/20 to-fuchsia-500/20 border-r border-white/10">
-              <div className="flex flex-col items-center gap-1">
-                <p className="text-[9px] sm:text-[10px] font-black tracking-widest uppercase text-transparent bg-clip-text bg-gradient-to-b from-cyan-300 to-fuchsia-300 leading-tight text-center">
+            <div className="w-full sm:w-16 py-3 sm:py-0 flex items-center justify-center bg-gradient-to-r from-cyan-500/20 via-purple-500/20 to-fuchsia-500/20 sm:border-r border-b sm:border-b-0 border-white/10">
+              <div className="flex flex-row sm:flex-col items-center gap-3 sm:gap-1">
+                <p className="text-base sm:text-[10px] font-black tracking-[0.2em] sm:tracking-widest uppercase text-transparent bg-clip-text bg-gradient-to-r sm:bg-gradient-to-b from-cyan-300 to-fuchsia-300 leading-tight text-center">
                   CODING
                 </p>
-                <div className="w-0.5 h-4 sm:h-6 bg-gradient-to-b from-cyan-400 to-fuchsia-400 rounded-full" />
-                <p className="text-[9px] sm:text-[10px] font-black tracking-widest uppercase text-transparent bg-clip-text bg-gradient-to-b from-fuchsia-300 to-cyan-300 leading-tight text-center">
+                <div className="h-0.5 w-8 sm:w-0.5 sm:h-6 bg-gradient-to-r sm:bg-gradient-to-b from-cyan-400 to-fuchsia-400 rounded-full" />
+                <p className="text-base sm:text-[10px] font-black tracking-[0.2em] sm:tracking-widest uppercase text-transparent bg-clip-text bg-gradient-to-r sm:bg-gradient-to-b from-fuchsia-300 to-cyan-300 leading-tight text-center">
                   PROFILE
                 </p>
               </div>
@@ -552,7 +565,7 @@ const nextIndex =
               href={codingProfiles[codingProfileIndex].link}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 relative overflow-hidden cursor-pointer group"
+              className="flex-1 relative overflow-hidden cursor-pointer group min-h-[200px] sm:min-h-0"
             >
               {/* Image Slider Background */}
               <motion.div
@@ -627,7 +640,7 @@ const nextIndex =
             </motion.a>
 
             {/* Right Section - 3D Coding Animation */}
-            <div className="w-20 sm:w-24 flex flex-col items-center justify-center px-2 sm:px-3 py-4 border-l border-white/10 bg-gradient-to-l from-cyan-500/10 to-transparent">
+            <div className="hidden sm:flex w-full sm:w-24 flex-row sm:flex-col items-center justify-center px-2 sm:px-3 py-4 sm:border-l border-t sm:border-t-0 border-white/10 bg-gradient-to-t sm:bg-gradient-to-l from-cyan-500/10 to-transparent gap-4 sm:gap-0">
               <motion.div
                 className="w-16 h-16 sm:w-20 sm:h-20 relative"
                 animate={{ rotateY: 360 }}
@@ -675,7 +688,7 @@ const nextIndex =
 
               {/* Coding text indicator */}
               <motion.div
-                className="text-[8px] sm:text-[10px] font-bold text-cyan-300 opacity-60 mt-2"
+                className="text-[8px] sm:text-[10px] font-bold text-cyan-300 opacity-60 sm:mt-2"
                 animate={{ opacity: [0.4, 1, 0.4] }}
                 transition={{ duration: 1.5, repeat: Infinity }}
               >
@@ -687,7 +700,7 @@ const nextIndex =
           <motion.div
   custom={7}
   variants={aboutBoxVariants}
-  className="col-span-1 md:col-span-2 rounded-2xl p-2 bg-gradient-to-br from-[#1e1b4b] to-[#0f172a] text-white will-change-transform"
+  className="md:col-span-2 rounded-2xl p-2 bg-gradient-to-br from-[#1e1b4b] to-[#0f172a] text-white border border-white/10 shadow-lg shadow-indigo-500/20 will-change-transform h-[290px] md:h-auto md:min-h-0"
 >
   {/* Scrollable inner container */}
   <div
@@ -749,7 +762,7 @@ const nextIndex =
   </div>
 </motion.div>
 
-      <div className="relative h-full flex items-center justify-center">
+      <div className="relative h-full min-h-[160px] md:min-h-0 flex items-center justify-center md:col-span-1">
   <div className="relative w-[220px] h-[90px] rounded-2xl">
 
     {contacts.map((contact, index) => {
@@ -843,9 +856,9 @@ const nextIndex =
                 <Image
                   src={contact.icon}
                   alt={contact.name}
-                  width={38}
-                  height={38}
-                  className="select-none"
+                  width={48}
+                  height={48}
+                  className="w-[48px] h-[48px] md:w-[38px] md:h-[38px] select-none"
                 />
               </motion.div>
 
@@ -873,9 +886,9 @@ const nextIndex =
               <Image
                 src={contact.icon}
                 alt={contact.name}
-                width={38}
-                height={38}
-                className="select-none"
+                width={48}
+                height={48}
+                className="w-[48px] h-[48px] md:w-[38px] md:h-[38px] select-none"
               />
 
               <span className="mt-1 text-[10px] text-slate-500">

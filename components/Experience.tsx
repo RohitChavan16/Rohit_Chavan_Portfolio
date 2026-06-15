@@ -66,7 +66,7 @@ export default function Experience() {
   const selected = experiences[active];
 
   return (
-    <section id="experience" className="px-[8%] py-24">
+    <section id="experience" className="px-4 py-12 md:px-[8%] md:py-24">
       <div className="section-shell rounded-3xl p-8 lg:p-12">
         <div className="flex items-center gap-4 mb-8">
           <span className="section-label">04 Experience</span>
@@ -79,19 +79,19 @@ export default function Experience() {
         </h2>
 
         <div className="grid grid-cols-1 lg:grid-cols-[260px_1fr] gap-6">
-          <div className="flex lg:flex-col gap-2 overflow-x-auto lg:overflow-visible">
+          <div className="grid grid-cols-2 lg:flex lg:flex-col gap-2">
             {experiences.map((item) => (
               <button
                 key={item.id}
                 onClick={() => setActive(item.id)}
-                className={`text-left cursor-pointer rounded-xl border px-4 py-3 min-w-[200px] transition ${
+                className={`text-left cursor-pointer rounded-xl border px-3 py-3.5 sm:px-4 sm:py-3 transition ${
                   active === item.id
                     ? "border-[#f4d03f]/60 bg-[#f4d03f]/10"
                     : "border-white/15 hover:border-white/35"
                 }`}
               >
-                <p className="text-sm font-semibold">{item.company}</p>
-                <p className="text-xs muted-soft mt-1">{item.period}</p>
+                <p className="text-xs sm:text-sm font-bold truncate leading-tight">{item.company}</p>
+                <p className="text-[10px] sm:text-xs muted-soft mt-1 sm:mt-1">{item.period}</p>
               </button>
             ))}
           </div>

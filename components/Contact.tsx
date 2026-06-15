@@ -75,7 +75,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="px-[8%] py-24">
+    <section id="contact" className="px-4 py-12 md:px-[8%] md:py-24">
       <div className="section-shell rounded-3xl p-8 lg:p-12 relative overflow-hidden">
         <div className="absolute -top-16 -right-16 w-56 h-56 rounded-full bg-[#f4d03f]/12 blur-3xl pointer-events-none" />
 

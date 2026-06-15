@@ -300,7 +300,7 @@ const scatterOffsets = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="px-[8%] py-24">
+    <section id="skills" className="px-4 py-12 md:px-[8%] md:py-24">
       <div className="section-shell relative overflow-hidden rounded-3xl p-6 sm:p-8 lg:p-12">
         <div className="skills-aurora" aria-hidden="true" />
 
@@ -355,7 +355,7 @@ export default function Skills() {
                       </div>
                     </div>
 
-                    <div className="mt-8 grid gap-4 sm:grid-cols-2">
+                    <div className="mt-8 grid grid-cols-2 gap-3 sm:gap-4">
                       {section.skills.map((skill, skillIndex) => {
                         const scatter = scatterOffsets[skillIndex % scatterOffsets.length];
                         const style = {
@@ -369,7 +369,7 @@ export default function Skills() {
                         return (
                           <motion.div
                             key={skill.name}
-                            className="skill-card group relative overflow-hidden rounded-3xl border border-white/10 bg-slate-950/95 p-5"
+                            className="skill-card group relative overflow-hidden rounded-2xl sm:rounded-3xl border border-white/10 bg-[color-mix(in_srgb,var(--skill-glow)_20%,rgba(255,255,255,0.06))] sm:bg-slate-950/95 p-3 sm:p-5 flex flex-col items-center sm:items-start"
                             style={style}
                             initial={{ opacity: 0, x: scatter.x * 0.55, y: scatter.y * 0.55, rotate: scatter.r, scale: 0.94 }}
                             whileInView={{ opacity: 1, x: 0, y: 0, rotate: 0, scale: 1 }}
@@ -379,13 +379,13 @@ export default function Skills() {
                           >
                             <div className="absolute inset-0 rounded-[inherit] bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.12),transparent_55%)] opacity-0 transition-opacity duration-300 group-hover:opacity-100 pointer-events-none" />
                             <div className="absolute -right-8 top-3 h-20 w-20 rounded-full opacity-10 blur-3xl" style={{ backgroundColor: "var(--skill-glow)" }} />
-                            <div className="relative z-10 flex items-center justify-between gap-3">
-                              <div className="grid h-12 w-12 place-items-center rounded-3xl border border-white/10 bg-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.14)]">
+                            <div className="relative z-10 flex items-center justify-center sm:justify-between gap-3 w-full">
+                              <div className="grid h-10 w-10 sm:h-12 sm:w-12 place-items-center rounded-2xl sm:rounded-3xl border border-white/10 bg-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.14)]">
                                 {skill.icon ? (
                                   <img
                                     src={skill.icon}
                                     alt={skill.name}
-                                    className="h-8 w-8 object-contain"
+                                    className="h-6 w-6 sm:h-8 sm:w-8 object-contain"
                                     loading="lazy"
                                   />
                                 ) : SkillIcon ? (
@@ -393,22 +393,22 @@ export default function Skills() {
                                 ) : null}
                               </div>
                               <span
-                                className="h-3 w-3 rounded-full"
+                                className="hidden sm:block h-3 w-3 rounded-full"
                                 style={{
                                   backgroundColor: "var(--skill-border)",
                                   boxShadow: `0 0 18px var(--skill-glow)`,
                                 }}
                               />
                             </div>
-                            <div className="mt-4">
-                              <h4 className="text-base font-semibold" style={{ color: "var(--skill-text)" }}>
+                            <div className="mt-3 sm:mt-4 text-center sm:text-left w-full">
+                              <h4 className="text-[0.75rem] sm:text-base font-semibold truncate" style={{ color: "var(--skill-text)" }}>
                                 {skill.name}
                               </h4>
-                              <p className="mt-2 text-xs text-slate-400">
+                              <p className="mt-2 hidden sm:block text-xs text-slate-400">
                                 Pro-level mastery and system-ready integration.
                               </p>
                             </div>
-                            <div className="mt-4 h-1.5 overflow-hidden rounded-full bg-white/10">
+                            <div className="mt-3 sm:mt-4 w-full h-1 sm:h-1.5 overflow-hidden rounded-full bg-white/10">
                               <div
                                 className="h-full w-4/5 rounded-full transition-all duration-500 group-hover:w-full"
                                 style={{
