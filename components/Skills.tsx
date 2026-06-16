@@ -118,7 +118,7 @@ const skillSections: SkillSection[] = [
   },
   {
     title: "Backend Development",
-    description: "Server logic, authentication, realtime APIs, and resilient endpoints.",
+    description: "High-performance backend systems built for scalability, security, reliability, and seamless integrations.",
     icon: Cpu,
     skills: [
       {
@@ -159,7 +159,7 @@ const skillSections: SkillSection[] = [
   },
   {
     title: "Databases",
-    description: "Fast storage, strong schemas, and query-optimized persistence.",
+    description: "Designing efficient data architectures with scalable storage, fast retrieval, and strong consistency.",
     icon: Database,
     skills: [
       {
@@ -180,8 +180,8 @@ const skillSections: SkillSection[] = [
     ],
   },
   {
-    title: "AI & Computer Vision",
-    description: "Vision pipelines, numerical models, and next-gen API integrations.",
+    title: "AI & ML",
+    description: "Leveraging AI, machine learning, and data-driven technologies to create smart and scalable applications.",
     icon: BrainCircuit,
     skills: [
       {
@@ -315,9 +315,9 @@ export default function Skills() {
               Technical stack in a
               <span className="block text-[#7cf6d4]">living skill board</span>
             </h2>
-            <p className="muted max-w-md leading-relaxed">
-              Languages, CS fundamentals, frameworks, tools, and databases kept close
-              together so the full engineering range is visible at a glance.
+            <p className="muted max-w-md text-center leading-relaxed">
+              A comprehensive overview of the technologies and tools I use to design, develop, and deploy software solutions.
+Covering programming languages, frameworks, databases, cloud platforms, and development tools.
             </p>
           </div>
 
