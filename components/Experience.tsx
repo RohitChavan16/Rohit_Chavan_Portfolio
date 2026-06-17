@@ -42,19 +42,7 @@ const timelineColors = [
 
 export default function Experience() {
   const [active, setActive] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
-
-  const selected = experiences[active];
   const activeColorTheme = timelineColors[active % timelineColors.length];
-
-  const handleSelect = (id: number) => {
-    if (id === active || isAnimating) return;
-    setIsAnimating(true);
-    setTimeout(() => {
-      setActive(id);
-      setIsAnimating(false);
-    }, 300); // Matches the fade out duration
-  };
 
   return (
     <section id="experience" className="px-4 py-12 md:px-[8%] md:py-24">
@@ -79,12 +67,20 @@ export default function Experience() {
           {/* Left Panel: Timeline */}
           <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:flex lg:flex-col gap-4 lg:gap-0 lg:pl-10 lg:h-full">
             
-            {/* The Full Background Track Line (Thicker and Glowing) */}
-            <div className="hidden lg:block absolute left-2 top-0 bottom-0 w-1.5 rounded-full transition-all duration-700 overflow-visible"
-                 style={{ boxShadow: `0 0 20px 2px ${activeColorTheme.glow}` }}>
-               {/* Full Height Gradient Line */}
+            {/* The Full Background Track Line */}
+            <div className="hidden lg:block absolute left-1.5 top-0 bottom-0 w-2.5 rounded-full transition-all duration-700 overflow-hidden border-[1.5px] border-fuchsia-500/80"
+                 style={{ 
+                   background: 'linear-gradient(to bottom, rgba(255, 0, 128, 0.3), rgba(121, 40, 202, 0.3), rgba(0, 112, 243, 0.3), rgba(0, 223, 216, 0.3), rgba(244, 208, 63, 0.3))',
+                   boxShadow: `0 0 30px 4px ${activeColorTheme.glow}80, 0 0 10px 2px ${activeColorTheme.glow}` 
+                 }}>
+               {/* Dynamic Progress Gradient Line (Bottom to Top) */}
                <div 
-                 className="absolute inset-0 w-full h-full rounded-full bg-gradient-to-b from-[#7cf6d4] via-[#f4d03f] to-[#ff9a9e]"
+                 className="absolute left-0 bottom-0 w-full rounded-full transition-all duration-700 ease-in-out"
+                 style={{ 
+                   height: `calc(${100 - ((active + 0.5) / experiences.length) * 100}%)`,
+                   backgroundImage: `linear-gradient(to top, #ff9a9e, #f4d03f, #7cf6d4)`,
+                   boxShadow: `0 0 20px ${activeColorTheme.glow}`
+                 }}
                />
             </div>
 
@@ -117,22 +113,25 @@ export default function Experience() {
                   </div>
 
                   <button
-                     onClick={() => handleSelect(item.id)}
-                     className={`w-full text-left cursor-pointer rounded-2xl border px-5 py-4 transition-all duration-500 relative overflow-hidden ${
+                     onClick={() => setActive(item.id)}
+                     className={`w-full text-left cursor-pointer rounded-2xl border px-5 py-4 transition-all duration-500 relative overflow-hidden group/btn ${
                         isActive
-                          ? `border-opacity-50 scale-[1.02] lg:scale-100` 
-                          : "border-white/10 hover:border-white/20 hover:bg-white/[0.02]"
+                          ? `scale-[1.02] lg:scale-100` 
+                          : "hover:scale-[1.01]"
                      }`}
                      style={{
-                        borderColor: isActive ? itemColor.glow : undefined,
-                        backgroundColor: isActive ? `rgba(${itemColor.bgHex}, 0.08)` : undefined,
-                        boxShadow: isActive ? `0 10px 30px -10px rgba(${itemColor.bgHex}, 0.2)` : undefined,
+                        borderColor: isActive ? itemColor.glow : `rgba(${itemColor.bgHex}, 0.3)`,
+                        backgroundColor: isActive ? `rgba(${itemColor.bgHex}, 0.12)` : `rgba(${itemColor.bgHex}, 0.03)`,
+                        boxShadow: isActive 
+                           ? `0 0 25px rgba(${itemColor.bgHex}, 0.4), inset 0 0 15px rgba(${itemColor.bgHex}, 0.15)` 
+                           : `0 0 10px rgba(${itemColor.bgHex}, 0.1)`,
                      }}
                   >
                      {/* Background gradient hint */}
-                     {isActive && (
-                       <div className="absolute top-0 right-0 w-32 h-32 blur-3xl opacity-20 -mr-10 -mt-10 pointer-events-none transition-all duration-700" style={{ backgroundColor: itemColor.glow }} />
-                     )}
+                     <div 
+                       className={`absolute top-0 right-0 w-32 h-32 blur-3xl -mr-10 -mt-10 pointer-events-none transition-all duration-700 ${isActive ? 'opacity-30' : 'opacity-10 group-hover/btn:opacity-20'}`} 
+                       style={{ backgroundColor: itemColor.glow }} 
+                     />
 
                      <p className={`text-sm sm:text-base font-bold truncate transition-colors duration-300 relative z-10 ${isActive ? "text-white" : "text-white/70 group-hover:text-white/90"}`}>
                        {item.company}
@@ -146,7 +145,7 @@ export default function Experience() {
             )})}
           </div>
 
-          <article className="section-shell rounded-3xl p-6 lg:p-10 relative overflow-hidden min-h-[450px] flex flex-col justify-center transition-all duration-500 border"
+          <article className="section-shell rounded-3xl p-6 lg:p-10 relative overflow-hidden flex flex-col justify-center transition-all duration-500 border"
                    style={{ borderColor: `rgba(${activeColorTheme.bgHex}, 0.2)` }}>
             {/* Dynamic background glow based on active item */}
             <div 
@@ -158,22 +157,36 @@ export default function Experience() {
               style={{ backgroundColor: activeColorTheme.glow }}
             />
             
-            <div className={`relative z-10 transition-all duration-300 ease-in-out ${isAnimating ? "opacity-0 translate-y-4 scale-95" : "opacity-100 translate-y-0 scale-100"}`}>
-              <h3 className="text-2xl sm:text-3xl font-bold bg-clip-text text-transparent transition-all duration-500"
-                  style={{ backgroundImage: `linear-gradient(to right, white, ${activeColorTheme.glow})` }}>
-                {selected.role}
-              </h3>
-              <p className="mt-2 text-sm sm:text-base font-semibold transition-colors duration-500" style={{ color: activeColorTheme.glow }}>{selected.company}</p>
-              <p className="text-xs sm:text-sm uppercase tracking-[0.2em] text-white/40 mt-4 font-semibold">{selected.period}</p>
-              <p className="text-white/80 leading-relaxed mt-6 sm:mt-8 text-sm sm:text-base">{selected.description}</p>
-              <div className="mt-8 space-y-4">
-                {selected.wins.map((win, i) => (
-                  <div key={i} className="flex gap-4 text-sm sm:text-base text-white/80 leading-relaxed items-start">
-                    <span className="mt-1 shrink-0 text-lg leading-none transition-colors duration-500" style={{ color: activeColorTheme.glow }}>❖</span>
-                    <p>{win}</p>
-                  </div>
-                ))}
-              </div>
+            <div className="relative z-10 grid">
+               {experiences.map((exp) => {
+                 const isActive = active === exp.id;
+                 return (
+                   <div 
+                     key={exp.id} 
+                     className={`col-start-1 row-start-1 transition-all duration-700 ease-in-out flex flex-col justify-center ${
+                       isActive 
+                         ? "opacity-100 translate-y-0 scale-100 pointer-events-auto z-10" 
+                         : "opacity-0 translate-y-8 scale-95 pointer-events-none z-0"
+                     }`}
+                   >
+                     <h3 className="text-2xl sm:text-3xl font-bold bg-clip-text text-transparent transition-all duration-500"
+                         style={{ backgroundImage: `linear-gradient(to right, white, ${activeColorTheme.glow})` }}>
+                       {exp.role}
+                     </h3>
+                     <p className="mt-2 text-sm sm:text-base font-semibold transition-colors duration-500" style={{ color: activeColorTheme.glow }}>{exp.company}</p>
+                     <p className="text-xs sm:text-sm uppercase tracking-[0.2em] text-white/40 mt-4 font-semibold">{exp.period}</p>
+                     <p className="text-white/80 leading-relaxed mt-6 sm:mt-8 text-sm sm:text-base">{exp.description}</p>
+                     <div className="mt-8 space-y-4">
+                       {exp.wins.map((win, i) => (
+                         <div key={i} className="flex gap-4 text-sm sm:text-base text-white/80 leading-relaxed items-start">
+                           <span className="mt-1 shrink-0 text-lg leading-none transition-colors duration-500" style={{ color: activeColorTheme.glow }}>❖</span>
+                           <p>{win}</p>
+                         </div>
+                       ))}
+                     </div>
+                   </div>
+                 );
+               })}
             </div>
           </article>
         </div>
