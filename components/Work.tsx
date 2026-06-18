@@ -26,9 +26,9 @@ const projects: Project[] = [
     id: "01",
     title: "SynapTalk",
     summary:
-      "Unified communication platform with chat, HD calls, AI assistant workflows, and team-level social automation.",
-    stack: ["Next.js", "Node.js", "MongoDB", "WebSocket", "Tailwind"],
-    impact: "Handled multi-room messaging and live collaboration with low-latency sockets.",
+      "Privacy-first communication platform featuring end-to-end encrypted messaging, group chats, video calls, screen sharing, and real-time collaboration. Includes an AI assistant that joins conversations only when tagged, delivering context-aware assistance without compromising privacy.",
+    stack: ["MongoDB", "WebRTC", "E2EE", "Google Auth", "Gemini AI", "React.js", "Node.js", "Cloudinary", "Tailwind",],
+    impact: "Where encrypted messaging meets on-demand AI.",
     year: "2026",
     live: "https://synap-talk-kuub.vercel.app/",
     code: "https://github.com/RohitChavan16/SynapTalk",
@@ -208,9 +208,9 @@ const projects: Project[] = [
     id: "07",
     title: "ScreenFlow",
     summary:
-      "Movie booking suite with seat selection, role-based dashboards, and secure INR checkout via Stripe.",
+      "Cinema booking platform featuring intelligent seat recommendations, real-time seat reservation, secure online payments, QR-based ticket validation, and automated booking lifecycle management. Transforms movie ticketing into a seamless experience with smart seat selection, instant confirmations, and operational automation.",
     stack: ["React", "Node.js", "Express", "MongoDB", "Stripe"],
-    impact: "Delivered full booking lifecycle from browsing to payment reconciliation.",
+    impact: "Built for moviegoers, engineered for cinema operators.",
     year: "2024",
     live: "https://screenflow-puce.vercel.app/",
     code: "https://github.com/RohitChavan16/ScreenFlow",
@@ -331,6 +331,29 @@ const getCardVariants = (index: number) => ({
   },
 });
 
+const tagColors = [
+  "bg-blue-100 border-blue-300 text-blue-900",
+  "bg-purple-100 border-purple-300 text-purple-900",
+  "bg-emerald-100 border-emerald-300 text-emerald-900",
+  "bg-amber-100 border-amber-300 text-amber-900",
+  "bg-rose-100 border-rose-300 text-rose-900",
+  "bg-cyan-100 border-cyan-300 text-cyan-900",
+  "bg-indigo-100 border-indigo-300 text-indigo-900",
+  "bg-teal-100 border-teal-300 text-teal-900",
+  "bg-fuchsia-100 border-fuchsia-300 text-fuchsia-900",
+  "bg-orange-100 border-orange-300 text-orange-900",
+  "bg-sky-100 border-sky-300 text-sky-900",
+  "bg-lime-100 border-lime-300 text-lime-900",
+  "bg-pink-100 border-pink-300 text-pink-900",
+  "bg-yellow-100 border-yellow-300 text-yellow-900",
+  "bg-violet-100 border-violet-300 text-violet-900",
+  "bg-green-100 border-green-300 text-green-900",
+  "bg-red-100 border-red-300 text-red-900",
+  "bg-slate-100 border-slate-300 text-slate-900",
+  "bg-zinc-100 border-zinc-300 text-zinc-900",
+  "bg-neutral-100 border-neutral-300 text-neutral-900",
+];
+
 export default function Work() {
   const [activeSlides, setActiveSlides] = useState<number[]>(
     projects.map(() => 0),
@@ -448,10 +471,10 @@ export default function Work() {
                 <p className="text-sm text-white/90 mb-4">{project.impact}</p>
 
                 <div className="flex flex-wrap gap-2 mb-5">
-                  {project.stack.map((tag) => (
+                  {project.stack.map((tag, index) => (
                     <span
                       key={tag}
-                      className={`px-3 py-1 rounded-full border text-xs ${project.theme.chip}`}
+                      className={`px-3 py-1 rounded-full border text-xs ${tagColors[(cardIndex * 7 + index) % tagColors.length]}`}
                     >
                       {tag}
                     </span>
