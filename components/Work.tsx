@@ -57,10 +57,10 @@ const projects: Project[] = [
   id: "02",
   title: "BenchForge",
   summary:
-    "Production-grade distributed benchmarking platform for stress testing trading infrastructure with telemetry-driven scaling.",
-  stack: ["Go", "Docker", "PostgreSQL", "Telemetry", "Microservices"],
+    "A platform for benchmarking and analyzing trading engines under realistic market conditions using diverse trading personas and stress scenarios. Provides real-time telemetry, replay analysis, correctness validation, and leaderboard-driven performance evaluation.",
+  stack: ["Go", "Docker", "PostgreSQL", "Redis Streams", "Prometheus", "Telemetry","Distributed Systems", "Microservices"],
   impact:
-    "Executed distributed load simulations with realtime telemetry visualization and scalable orchestration.",
+    "Stress. Score. Scale. The proving ground for trading engines.",
   year: "2026",
   live: "#",
   code: "https://github.com/RohitChavan16/BenchForge",
@@ -89,10 +89,10 @@ const projects: Project[] = [
   id: "03",
   title: "GeoShop Engine",
   summary:
-    "Scalable geospatial intelligence platform for resolving inconsistent POI datasets using entity matching and confidence scoring.",
-  stack: ["Next.js", "FastAPI", "PostgreSQL", "Maps", "Docker"],
+    "GeoShop Engine is a geospatial intelligence platform that aggregates data from multiple public sources to detect new, updated, active, and likely closed commercial places. Features geospatial entity resolution, confidence scoring, synchronization workflows, operational dashboards, and explainable decision-making.",
+  stack: ["React", "FastAPI", "MongoDB", "Data Engineering", "OpenStreetMap"],
   impact:
-    "Achieved accurate cross-source business matching with fuzzy similarity scoring and realtime analytics.",
+    "Track Business Openings, Closures & Updates in Real Time",
   year: "2026",
   live: "#",
   code: "https://github.com/RohitChavan16/Geo_Analysis",
@@ -113,7 +113,7 @@ const projects: Project[] = [
     id: "04",
     title: "ScanLayer",
     summary:
-      "OpenCV document scanner that detects paper boundaries, applies perspective correction, and enhances readability.",
+      "OpenCV document scanner that detects paper boundaries, applies perspective correction, and enhances readability through adaptive thresholding and image preprocessing.",
     stack: ["C++", "OpenCV", "Image Processing"],
     impact: "Converted rough mobile captures into scanner-style outputs in seconds.",
     year: "2025",
@@ -135,8 +135,8 @@ const projects: Project[] = [
     id: "05",
     title: "PrepNex",
     summary:
-      "AI-driven learning assistant with prompt orchestration and adaptive topic recommendations.",
-    stack: ["FastAPI", "OpenAI API", "Next.js", "PostgreSQL"],
+      "PrepNex is a full-stack edtech platform built to streamline coaching institute operations, student onboarding, and academic progress tracking in one secure system.",
+    stack: ["TypeScript", "Next.js", "PostgreSQL"],
     impact: "Personalized revision plan generation based on performance history.",
     year: "2025",
     live: "#",
@@ -159,7 +159,7 @@ const projects: Project[] = [
   title: "NeuraRAG",
   summary:
     "Custom RAG chatbot with semantic retrieval, vector search, and domain-aware response generation.",
-  stack: ["FastAPI", "LangChain", "FAISS", "OpenAI", "Next.js"],
+  stack: ["FastAPI", "LangChain", "Ollama", "ChromaDB", "HuggingFace"],
   impact:
     "Delivered context-aware AI responses using optimized chunking, embeddings, and retrieval pipelines.",
   year: "2026",
@@ -208,7 +208,7 @@ const projects: Project[] = [
     id: "07",
     title: "ScreenFlow",
     summary:
-      "Cinema booking platform featuring intelligent seat recommendations, real-time seat reservation, secure online payments, QR-based ticket validation, and automated booking lifecycle management. Transforms movie ticketing into a seamless experience with smart seat selection, instant confirmations, and operational automation.",
+      "Cinema booking platform with intelligent seat recommendations, real-time reservations, Stripe payments, QR ticket validation, and automated booking management.",
     stack: ["React", "Node.js", "Express", "MongoDB", "Stripe"],
     impact: "Built for moviegoers, engineered for cinema operators.",
     year: "2024",
@@ -270,7 +270,7 @@ const projects: Project[] = [
   title: "NovaPortfolio",
   summary:
     "Interactive developer portfolio with cinematic UI, AI chatbot integration, and animated project storytelling.",
-  stack: ["Next.js", "TypeScript", "Tailwind", "FastAPI", "Framer Motion"],
+  stack: ["Next.js", "TypeScript", "Tailwind", "Framer Motion", "Mongo DB", "Three.js"],
   impact:
     "Created immersive portfolio interactions with AI-assisted navigation and performance-optimized animations.",
   year: "2026",
