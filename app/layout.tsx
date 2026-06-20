@@ -5,6 +5,7 @@ import BackgroundDots from "@/components/BackgroundDots";
 import CursorGlow from "@/components/CursorGlow";
 import CursorParticles from "@/components/CursorParticles";
 import NeuralNetwork from "@/components/animations/NeuralNetwork";
+import { Toaster } from "react-hot-toast";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,6 +38,16 @@ export default function RootLayout({
         <CursorGlow />
         <CursorParticles />
         {children}
+        <Toaster 
+          position="bottom-right"
+          toastOptions={{
+            style: {
+              background: '#0a1128',
+              color: '#fff',
+              border: '1px solid rgba(255, 255, 255, 0.1)',
+            },
+          }}
+        />
       </body>
     </html>
   );

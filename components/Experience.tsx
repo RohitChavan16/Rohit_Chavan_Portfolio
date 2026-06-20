@@ -3,21 +3,8 @@
 import { useState } from "react";
 
 const experiences = [
-  {
-    id: 0,
-    role: "Core Contributor",
-    company: "Software Development Club, COEP",
-    period: "2025 - Present",
-    description:
-      "Actively contributing to technical discussions, collaborative engineering initiatives, and peer learning activities.",
-    wins: [
-      "Collaborated with peers on full-stack development and Git workflows.",
-      "Participated in engineering-focused project discussions and code reviews.",
-      "Helped build a strong developer community through teamwork and knowledge sharing.",
-    ],
-  },
  {
-    id: 1,
+    id: 0,
     role: "Open Source Contributor",
     company: "GirlScript Summer of Code (GSSoC)",
     period: "2026 - Present",
@@ -30,7 +17,21 @@ const experiences = [
       "Built 127+ lines of backend integration testing infrastructure, automating authenticated CRUD validation across 5 REST endpoints using mock PostgreSQL query simulations and deterministic test execution.",
     ],
   },
-
+ {
+    id: 1,
+    role: "Core Contributor",
+    company: "Software Development Club, COEP",
+    period: "2025 - Present",
+    description:
+      "Actively contributing to technical discussions, collaborative engineering initiatives, and peer learning activities.",
+    wins: [
+      "Engineered backend services for SDS platforms, implementing secure authentication, authorization, and role-based access control.",
+      "Developed organizer dashboards and competition management workflows supporting registrations, quizzes, participant tracking, and result processing.",
+      "Built contest lifecycle features including event creation, submissions, leaderboards, and user management systems.",
+      "Collaborated in a cross-functional team to deliver production-ready features and improve API performance and reliability.",
+      "Troubleshot and resolved production issues, contributing to platform stability, security, and maintainability.",
+    ],
+  },
   
 ]
 

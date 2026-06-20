@@ -355,7 +355,7 @@ Covering programming languages, frameworks, databases, cloud platforms, and deve
                       </div>
                     </div>
 
-                    <div className="mt-8 grid grid-cols-2 gap-3 sm:gap-4">
+                  <div className="mt-8 grid grid-cols-2 gap-3 sm:gap-4">
                       {section.skills.map((skill, skillIndex) => {
                         const scatter = scatterOffsets[skillIndex % scatterOffsets.length];
                         const style = {
@@ -365,11 +365,24 @@ Covering programming languages, frameworks, databases, cloud platforms, and deve
                           "--skill-text": skill.colors.text,
                         } as CSSProperties;
 
+                        const vibrantMobileGradients = [
+                          "linear-gradient(135deg, rgba(236,72,153,0.3) 0%, rgba(244,63,94,0.3) 100%)", // Pink-Rose
+                          "linear-gradient(135deg, rgba(139,92,246,0.3) 0%, rgba(59,130,246,0.3) 100%)", // Violet-Blue
+                          "linear-gradient(135deg, rgba(16,185,129,0.3) 0%, rgba(20,184,166,0.3) 100%)", // Emerald-Teal
+                          "linear-gradient(135deg, rgba(245,158,11,0.3) 0%, rgba(239,68,68,0.3) 100%)", // Amber-Red
+                          "linear-gradient(135deg, rgba(6,182,212,0.3) 0%, rgba(59,130,246,0.3) 100%)", // Cyan-Blue
+                          "linear-gradient(135deg, rgba(217,70,239,0.3) 0%, rgba(139,92,246,0.3) 100%)", // Fuchsia-Violet
+                          "linear-gradient(135deg, rgba(132,204,22,0.3) 0%, rgba(34,197,94,0.3) 100%)", // Lime-Green
+                          "linear-gradient(135deg, rgba(249,115,22,0.3) 0%, rgba(234,179,8,0.3) 100%)", // Orange-Yellow
+                          "linear-gradient(135deg, rgba(14,165,233,0.3) 0%, rgba(99,102,241,0.3) 100%)", // Sky-Indigo
+                        ];
+                        const mobileGradient = vibrantMobileGradients[(sectionIndex * 10 + skillIndex) % vibrantMobileGradients.length];
+
                         const SkillIcon = skill.Icon;
                         return (
                           <motion.div
                             key={skill.name}
-                            className="skill-card group relative overflow-hidden rounded-2xl sm:rounded-3xl border border-white/10 bg-[color-mix(in_srgb,var(--skill-glow)_20%,rgba(255,255,255,0.06))] sm:bg-slate-950/95 p-3 sm:p-5 flex flex-col items-center sm:items-start"
+                            className="skill-card group relative overflow-hidden rounded-2xl sm:rounded-3xl border border-white/10 bg-[#060b18] sm:bg-slate-950/95 p-3 sm:p-5 flex flex-col items-center sm:items-start"
                             style={style}
                             initial={{ opacity: 0, x: scatter.x * 0.55, y: scatter.y * 0.55, rotate: scatter.r, scale: 0.94 }}
                             whileInView={{ opacity: 1, x: 0, y: 0, rotate: 0, scale: 1 }}
@@ -377,10 +390,16 @@ Covering programming languages, frameworks, databases, cloud platforms, and deve
                             transition={{ duration: 0.66, delay: sectionIndex * 0.05 + skillIndex * 0.03, ease: "easeOut" }}
                             whileHover={{ y: -8, scale: 1.02, rotate: scatter.r / 5 }}
                           >
+                            {/* Mobile-Only Vibrant Gradient Background */}
+                            <div 
+                              className="absolute inset-0 sm:hidden pointer-events-none"
+                              style={{ background: mobileGradient }}
+                            />
+                            
                             <div className="absolute inset-0 rounded-[inherit] bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.12),transparent_55%)] opacity-0 transition-opacity duration-300 group-hover:opacity-100 pointer-events-none" />
                             <div className="absolute -right-8 top-3 h-20 w-20 rounded-full opacity-10 blur-3xl" style={{ backgroundColor: "var(--skill-glow)" }} />
                             <div className="relative z-10 flex items-center justify-center sm:justify-between gap-3 w-full">
-                              <div className="grid h-10 w-10 sm:h-12 sm:w-12 place-items-center rounded-2xl sm:rounded-3xl border border-white/10 bg-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.14)]">
+                              <div className="grid h-10 w-10 sm:h-12 sm:w-12 place-items-center rounded-2xl sm:rounded-3xl border border-white/10 bg-black/20 sm:bg-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.14)] backdrop-blur-md">
                                 {skill.icon ? (
                                   <img
                                     src={skill.icon}

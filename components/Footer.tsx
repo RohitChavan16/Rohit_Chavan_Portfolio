@@ -22,7 +22,7 @@ const quickLinks = [
 
 export default function Footer() {
   return (
-    <footer className="relative w-full border-t border-[rgba(255,255,255,0.05)] bg-[var(--bg-1)] pt-16 pb-8 overflow-hidden mt-20">
+    <footer className="relative w-full border-t border-[rgba(255,255,255,0.05)] bg-transparent pt-16 pb-8 overflow-hidden mt-20">
       {/* Decorative background elements */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[1px] bg-gradient-to-r from-transparent via-[var(--accent)] to-transparent opacity-30" />
       <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[800px] h-[200px] bg-[var(--accent)] blur-[120px] rounded-[100%] opacity-10 pointer-events-none" />

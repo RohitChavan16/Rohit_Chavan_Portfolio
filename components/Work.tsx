@@ -63,7 +63,7 @@ const projects: Project[] = [
     "Stress. Score. Scale. The proving ground for trading engines.",
   year: "2026",
   live: "#",
-  code: "https://github.com/RohitChavan16/BenchForge",
+  code: "https://github.com/RohitChavan16/IICPC_BenchForge",
   images: [
     "/benchforge/img1.png",
     "/benchforge/img2.png",
@@ -94,7 +94,7 @@ const projects: Project[] = [
   impact:
     "Track Business Openings, Closures & Updates in Real Time",
   year: "2026",
-  live: "#",
+  live: "https://github.com/RohitChavan16/Geo_Analysis",
   code: "https://github.com/RohitChavan16/Geo_Analysis",
   images: [
     "/geoshop/img1.png",
@@ -117,7 +117,7 @@ const projects: Project[] = [
     stack: ["C++", "OpenCV", "Image Processing"],
     impact: "Converted rough mobile captures into scanner-style outputs in seconds.",
     year: "2025",
-    live: "#",
+    live: "https://github.com/RohitChavan16/ScanLayer",
     code: "https://github.com/RohitChavan16/ScanLayer",
     images: [
       "/scanlayer/img1.png",
@@ -138,14 +138,15 @@ const projects: Project[] = [
       "PrepNex is a full-stack edtech platform built to streamline coaching institute operations, student onboarding, and academic progress tracking in one secure system.",
     stack: ["TypeScript", "Next.js", "PostgreSQL"],
     impact: "Personalized revision plan generation based on performance history.",
-    year: "2025",
-    live: "#",
+    year: "2026",
+    live: "https://github.com/RohitChavan16/PrepNex",
     code: "https://github.com/RohitChavan16/PrepNex",
     images: [
       "/prepnex/img1.png",
       "/prepnex/img2.png",
       "/prepnex/img3.png",
       "/prepnex/img4.png",
+      "/prepnex/img5.png",
     ],
     theme: {
       glow: "from-[#d0b2ff]/30 via-[#6f5ef6]/20 to-transparent",
@@ -163,13 +164,14 @@ const projects: Project[] = [
   impact:
     "Delivered context-aware AI responses using optimized chunking, embeddings, and retrieval pipelines.",
   year: "2026",
-  live: "#",
+  live: "https://github.com/RohitChavan16/NeuraRAG",
   code: "https://github.com/RohitChavan16/custom-rag-chatbot",
   images: [
     "/neurarag/img1.png",
     "/neurarag/img2.png",
     "/neurarag/img3.png",
     "/neurarag/img4.png",
+    "/neurarag/img5.png",
   ],
   theme: {
     glow: "from-[#9b8cff]/30 via-[#7c3aed]/20 to-transparent",
@@ -211,7 +213,7 @@ const projects: Project[] = [
       "Cinema booking platform with intelligent seat recommendations, real-time reservations, Stripe payments, QR ticket validation, and automated booking management.",
     stack: ["React", "Node.js", "Express", "MongoDB", "Stripe"],
     impact: "Built for moviegoers, engineered for cinema operators.",
-    year: "2024",
+    year: "2025",
     live: "https://screenflow-puce.vercel.app/",
     code: "https://github.com/RohitChavan16/ScreenFlow",
     images: [
@@ -246,7 +248,7 @@ const projects: Project[] = [
   impact:
     "Handled booking lifecycle, cancellations, and ticket history using optimized structured file storage.",
   year: "2025",
-  live: "#",
+  live: "https://github.com/RohitChavan16/FlightCove",
   code: "https://github.com/RohitChavan16/FlightCove",
   images: [
     "/flightcove/img1.png",
@@ -274,7 +276,7 @@ const projects: Project[] = [
   impact:
     "Created immersive portfolio interactions with AI-assisted navigation and performance-optimized animations.",
   year: "2026",
-  live: "https://your-portfolio-link.vercel.app",
+  live: "#",
   code: "https://github.com/RohitChavan16/Rohit_Chavan_Portfolio",
   images: [
     "/portfolio/img1.png",
@@ -399,7 +401,7 @@ export default function Work() {
           variants={containerVariants}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, amount: 0.18 }}
+          viewport={{ once: true, amount: 0.02 }}
           className="grid grid-cols-1 lg:grid-cols-3 gap-6"
         >
           {projects.map((project, cardIndex) => (

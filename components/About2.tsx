@@ -320,7 +320,7 @@ const nextIndex =
           variants={aboutGridVariants}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.05 }}
           className="flex flex-col md:grid md:grid-cols-6 gap-4 md:auto-rows-[110px]"
         >
 

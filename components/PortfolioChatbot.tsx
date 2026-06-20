@@ -69,49 +69,49 @@ const promptCards = [
 
 const responseMap = [
   {
-    keys: ["about", "rohit"],
-    response:
-      "Rohit is a Full Stack Developer, Frontend Developer, Backend Developer, and System Builder. He builds with patience, pressure, and polish. Active in College Activities like Innovation & Startup Support, SDS Developer Community, and the Mindspark Core Team.",
-  },
-  {
-    keys: ["project"],
-    response:
-      "Rohit has built some incredible projects like SynapTalk (Unified communication platform), BenchForge (Distributed benchmarking), GeoShop Engine (Geospatial intelligence), ScanLayer (OpenCV document scanner), PrepNex (AI learning assistant), NeuraRAG (Custom RAG chatbot), and ScreenFlow (Movie booking suite).",
-  },
-  {
-    keys: ["skill"],
-    response:
-      "Rohit's skills span Languages (C++, JavaScript, TypeScript, Python, Go, SQL), Frontend (React, Next.js, Tailwind), Backend (Node.js, Express, FastAPI), Databases (MongoDB, PostgreSQL), and AI/CV (OpenCV, RAG Systems, Pandas).",
-  },
-  {
-    keys: ["tech", "stack"],
-    response:
-      "His modern tech stack revolves around Next.js, React, TypeScript, FastAPI, MongoDB, PostgreSQL, Framer Motion, and AI tooling like LangChain, FAISS, and OpenCV.",
-  },
-  {
     keys: ["experience"],
     response:
-      "Rohit is an active Open Source Contributor (merged PRs in gssoc:approved). He's built extensive features ranging from scalable REST APIs to payment integrations and WebRTC workflows.",
-  },
-  {
-    keys: ["resume"],
-    response:
-      "For the resume, jump to the Contact section or use the portfolio links. A dedicated resume action can be connected here when the PDF path is ready.",
-  },
-  {
-    keys: ["contact", "email", "hire"],
-    response:
-      "The fastest path is the Contact section. You can send a message there, or connect through GitHub, LinkedIn, and email links configured on the site.",
+      "Rohit's professional and open-source experience includes:\n\n• Open Source Contributor @ GSSoC (2026-Present): Developed JWT-based authentication APIs, engineered a Trending Recommendation Engine with Bayesian smoothing, and built a Supabase newsletter platform.\n\n• Core Contributor @ Software Development Club, COEP (2025-Present): Actively leading technical discussions, collaborative engineering initiatives, and peer code reviews.",
   },
   {
     keys: ["ai"],
     response:
-      "Rohit's AI work includes NeuraRAG (Custom RAG chatbot with semantic retrieval), PrepNex (AI-driven learning assistant), and ScanLayer (OpenCV document scanner).",
+      "Rohit has a strong focus on AI and Computer Vision. His key AI projects include:\n\n• SynapTalk: Features a privacy-first Gemini AI assistant that joins encrypted chats only when explicitly tagged.\n• NeuraRAG: A custom RAG (Retrieval-Augmented Generation) chatbot built for semantic document retrieval.\n• PrepNex: An AI-driven learning assistant for personalized education.\n• ScanLayer: An OpenCV-based document scanner built for high-precision edge detection and cropping.",
   },
   {
-    keys: ["achievement"],
+    keys: ["project"],
     response:
-      "Rohit has a 1700+ rating on LeetCode (700+ Problems), 1600+ on CodeChef (3⭐), and 1200+ on Codeforces (Pupil). He's also delivered multiple open-source contributions.",
+      "Rohit has built multiple high-impact systems:\n\n• SynapTalk: A unified, E2EE communication platform featuring WebRTC video calls and AI assistance.\n• BenchForge: A distributed benchmarking platform for stress-testing trading engines using Go, Docker, and PostgreSQL.\n• GeoShop Engine: A geospatial intelligence system using FastAPI and MongoDB to track business openings and closures.\n• ScreenFlow: A comprehensive movie booking suite.\n• Plus AI tools like NeuraRAG, PrepNex, and ScanLayer.",
+  },
+  {
+    keys: ["skill"],
+    response:
+      "Rohit is a versatile developer with expertise across the stack:\n\n• Languages: C++, JavaScript, TypeScript, Python, Go, SQL\n• Frontend: React, Next.js, Tailwind CSS, Framer Motion\n• Backend: Node.js, Express, FastAPI\n• Databases: MongoDB, PostgreSQL, Redis\n• AI & Data: OpenCV, RAG Systems, Pandas, LangChain, FAISS\n• Architecture: Distributed Systems, Microservices, E2EE, WebRTC",
+  },
+  {
+    keys: ["tech", "stack"],
+    response:
+      "Rohit builds scalable applications using a modern tech stack:\n\n• Core Frameworks: Next.js, React, TypeScript for robust frontends.\n• Backend Services: FastAPI, Express, and Go for high-performance microservices.\n• Database Layer: MongoDB for documents, PostgreSQL for relations, and Redis for caching.\n• UI/UX: Tailwind CSS and Framer Motion for premium aesthetics.\n• AI Tooling: LangChain, FAISS, and Gemini for intelligent features.",
+  },
+  {
+    keys: ["resume"],
+    response:
+      "You can view Rohit's complete professional profile and resume by:\n\n• Visiting the Contact section of this portfolio.\n• Checking out his LinkedIn: https://linkedin.com/in/rohit-chavan16\n• Exploring his code on GitHub: https://github.com/RohitChavan16",
+  },
+  {
+    keys: ["contact", "email", "hire"],
+    response:
+      "Rohit is currently open to new roles and exciting projects! You can reach him directly here:\n\n• Email: approachrohit16@gmail.com\n• LinkedIn: https://linkedin.com/in/rohit-chavan16\n• GitHub: https://github.com/RohitChavan16\n\nAlternatively, you can send a direct message through the Contact section on this website. He usually responds within one day.",
+  },
+  {
+    keys: ["achievement", "achievements"],
+    response:
+      "Rohit has a strong background in competitive programming and problem-solving:\n\n• LeetCode: 1700+ rating with over 700 problems solved.\n• CodeChef: 1600+ rating (3-Star Coder).\n• Codeforces: 1200+ rating (Pupil).\n• Open Source: Successfully delivered multiple production-grade features for GSSoC.",
+  },
+  {
+    keys: ["about", "rohit"],
+    response:
+      "Rohit Chavan is a Full Stack Developer, Backend Engineer, and System Builder.\n\n• He specializes in building scalable APIs, distributed systems, and modern web apps with a focus on patience, pressure, and polish.\n• He is an active Open Source Contributor and a Core Member of the SDS Developer Community and Mindspark.\n• He loves integrating AI (like RAG and Gemini) into practical applications to solve real-world problems.",
   },
 ];
 
@@ -300,7 +300,7 @@ export default function PortfolioChatbot() {
                       className={`max-w-[86%] rounded-[1.5rem] px-4 py-3 text-sm leading-relaxed shadow-lg ${
                         message.role === "user"
                           ? "rounded-br-[0.75rem] border border-[#f4d03f]/35 bg-gradient-to-br from-[#f4d03f]/95 to-[#f8e58f]/90 text-[#081121]"
-                          : "rounded-bl-[0.75rem] border border-cyan-200/12 bg-slate-900/70 text-slate-100 backdrop-blur-xl"
+                          : "rounded-bl-[0.75rem] border border-cyan-200/12 bg-slate-900/70 text-slate-100 backdrop-blur-xl whitespace-pre-wrap"
                       }`}
                     >
                       {message.text}
