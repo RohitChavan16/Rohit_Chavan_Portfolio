@@ -327,13 +327,13 @@ Covering programming languages, frameworks, databases, cloud platforms, and deve
               return (
                 <motion.article
                   key={section.title}
-                  className="skill-section rounded-4xl border border-white/10 bg-slate-950/80 p-4 shadow-[0_32px_80px_rgba(0,0,0,0.22)] backdrop-blur-xl"
+                  className="skill-section rounded-4xl border border-white/10 bg-transparent md:bg-slate-950/80 p-4 shadow-[0_32px_80px_rgba(0,0,0,0.22)] md:backdrop-blur-xl"
                   initial={{ opacity: 0, y: 36 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-120px" }}
                   transition={{ duration: 0.7, delay: sectionIndex * 0.08, ease: "easeOut" }}
                 >
-                  <div className="skill-category relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-slate-950/85 p-6 shadow-[0_28px_80px_rgba(0,0,0,0.18)]">
+                  <div className="skill-category relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-transparent md:bg-slate-950/85 p-6 md:shadow-[0_28px_80px_rgba(0,0,0,0.18)]">
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.08),transparent_40%)] opacity-70 pointer-events-none" />
                     <div className="absolute -left-12 top-4 h-24 w-24 rounded-full bg-[rgba(124,246,212,0.1)] blur-3xl" />
                     <div className="absolute right-4 top-14 h-20 w-20 rounded-full bg-[rgba(124,231,255,0.1)] blur-3xl" />
@@ -382,7 +382,7 @@ Covering programming languages, frameworks, databases, cloud platforms, and deve
                         return (
                           <motion.div
                             key={skill.name}
-                            className="skill-card group relative overflow-hidden rounded-2xl sm:rounded-3xl border border-white/10 bg-[#060b18] sm:bg-slate-950/95 p-3 sm:p-5 flex flex-col items-center sm:items-start"
+                            className="skill-card group relative overflow-hidden rounded-2xl sm:rounded-3xl border border-white/10 bg-transparent sm:bg-slate-950/95 p-3 sm:p-5 flex flex-col items-center sm:items-start"
                             style={style}
                             initial={{ opacity: 0, x: scatter.x * 0.55, y: scatter.y * 0.55, rotate: scatter.r, scale: 0.94 }}
                             whileInView={{ opacity: 1, x: 0, y: 0, rotate: 0, scale: 1 }}

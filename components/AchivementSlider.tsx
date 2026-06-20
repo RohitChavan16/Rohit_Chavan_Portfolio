@@ -98,7 +98,7 @@ export default function AchivementSlider() {
 
   return (
     <div
-      className={`group relative h-full min-h-[14rem] w-full overflow-hidden rounded-2xl border ${activeAchievement.border} bg-slate-950 transition-all duration-500 ${activeAchievement.glow}`}
+      className={`group relative h-full min-h-[14rem] w-full overflow-hidden rounded-2xl border ${activeAchievement.border} bg-transparent md:bg-slate-950 transition-all duration-500 ${activeAchievement.glow}`}
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >

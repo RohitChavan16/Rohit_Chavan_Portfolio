@@ -413,7 +413,7 @@ export default function Work() {
                 scale: 1.015,
                 transition: { duration: 0.22, ease: "easeOut" },
               }}
-              className={`group relative overflow-hidden rounded-2xl border ${project.theme.border} bg-[#0a1426]/75 backdrop-blur-sm shadow-[0_18px_48px_rgba(0,0,0,0.22)] will-change-transform`}
+              className={`group relative overflow-hidden rounded-2xl border ${project.theme.border} bg-transparent md:bg-[#0a1426]/75 md:backdrop-blur-sm md:shadow-[0_18px_48px_rgba(0,0,0,0.22)] will-change-transform`}
             >
               <div className={`pointer-events-none absolute inset-0 bg-gradient-to-br ${project.theme.glow}`} />
               <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-white/40 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />

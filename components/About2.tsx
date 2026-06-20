@@ -327,7 +327,7 @@ const nextIndex =
           <motion.div
             custom={0}
             variants={aboutBoxVariants}
-            className="group relative md:col-span-3 rounded-2xl p-[1px] text-white overflow-hidden will-change-transform min-h-[300px] md:min-h-0"
+            className="group relative md:col-span-3 rounded-2xl p-[1px] text-white overflow-hidden will-change-transform min-h-[220px] md:min-h-0"
           >
             <motion.div
               className="absolute inset-0 rounded-2xl bg-[conic-gradient(from_0deg,rgba(34,211,238,0.15),rgba(244,114,182,0.8),rgba(251,191,36,0.75),rgba(34,211,238,0.85),rgba(34,211,238,0.15))]"
@@ -342,7 +342,7 @@ const nextIndex =
               aria-hidden="true"
             />
 
-            <div className="relative z-10 flex h-full flex-col justify-between rounded-[15px] bg-slate-950/54 p-5 shadow-[0_0_42px_rgba(34,211,238,0.18)] backdrop-blur-md transition duration-300 group-hover:shadow-[0_0_62px_rgba(34,211,238,0.32)]">
+            <div className="relative z-10 flex h-full flex-col justify-between rounded-[15px] bg-transparent md:bg-slate-950/54 p-5 shadow-[0_0_42px_rgba(34,211,238,0.18)] backdrop-blur-md transition duration-300 group-hover:shadow-[0_0_62px_rgba(34,211,238,0.32)]">
               <div className="pointer-events-none absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-cyan-200 to-transparent opacity-90" />
               <motion.h2
                 initial={{ backgroundPosition: "0% 50%" }}
@@ -395,7 +395,7 @@ const nextIndex =
                 initial={{ opacity: 0, scale: 0.96, y: 12 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 transition={{ duration: 0.28, ease: "easeOut" }}
-                className="absolute inset-0 z-30 flex flex-col rounded-2xl border border-cyan-100/30 bg-slate-950/92 px-4 pt-4 pb-4 sm:pb-0 text-white shadow-[0_0_40px_rgba(34,211,238,0.35)] backdrop-blur-2xl"
+                className="absolute inset-0 z-30 flex flex-col rounded-2xl border border-cyan-100/30 bg-slate-950/92 md:bg-slate-950/92 px-4 pt-4 pb-4 sm:pb-0 text-white shadow-[0_0_40px_rgba(34,211,238,0.35)] backdrop-blur-2xl"
               >
                 <div className=" flex shrink-0 items-start justify-between gap-3 mb-2 sm:mb-0">
                   <motion.p
@@ -429,7 +429,7 @@ const nextIndex =
           <motion.div
             custom={1}
             variants={aboutBoxVariants}
-            className={`md:col-span-1 rounded-2xl p-3 sm:p-4 bg-gradient-to-br from-[#312e81] via-[#1e1b4b] to-[#020617] text-white overflow-hidden border border-white/10 shadow-lg will-change-transform min-h-[120px] md:min-h-0 flex flex-col justify-center ${activeRole.glow}`}
+            className={`md:col-span-1 rounded-2xl p-3 sm:p-4 bg-transparent md:bg-gradient-to-br md:from-[#312e81] md:via-[#1e1b4b] md:to-[#020617] text-white overflow-hidden border border-white/10 shadow-lg will-change-transform min-h-[120px] md:min-h-0 flex flex-col justify-center ${activeRole.glow}`}
           >
             <p className="text-[0.62rem] sm:text-xs text-indigo-200/90 mb-1 tracking-[0.22em] font-semibold">
               PROFILE
@@ -454,7 +454,7 @@ const nextIndex =
           <motion.div
             custom={2}
             variants={aboutBoxVariants}
-            className="group relative md:col-span-2 md:row-span-2 rounded-2xl bg-gradient-to-br from-[#0f172a] via-[#111827] to-[#020617] text-white overflow-hidden border border-white/10 shadow-lg shadow-amber-500/20 will-change-transform min-h-[250px] md:min-h-0"
+            className="group relative md:col-span-2 md:row-span-2 rounded-2xl bg-transparent md:bg-gradient-to-br md:from-[#0f172a] md:via-[#111827] md:to-[#020617] text-white overflow-hidden border border-white/10 shadow-lg shadow-amber-500/20 will-change-transform min-h-[250px] md:min-h-0"
           >
             <div className="absolute inset-x-0 top-8 z-30 px-4 pt-4 text-center transition-all duration-500 ease-out group-hover:top-0">
               <p className="text-lg sm:text-xl font-black leading-none tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-cyan-200 via-amber-200 to-fuchsia-200">
@@ -483,7 +483,7 @@ const nextIndex =
           <motion.div
             custom={3}
             variants={aboutBoxVariants}
-            className="md:col-span-2 md:row-span-3 flex h-[300px] md:h-auto md:min-h-0 flex-col rounded-2xl border border-white/10 shadow-lg shadow-cyan-500/20 bg-gradient-to-br from-[#1e1b4b] via-[#0f172a] to-[#020617] p-4 text-white overflow-hidden will-change-transform"
+            className="md:col-span-2 md:row-span-3 flex h-[300px] md:h-auto md:min-h-0 flex-col rounded-2xl border border-white/10 shadow-lg shadow-cyan-500/20 bg-transparent md:bg-gradient-to-br md:from-[#1e1b4b] md:via-[#0f172a] md:to-[#020617] p-4 text-white overflow-hidden will-change-transform"
           >
             <style>{`
               .features-scroll::-webkit-scrollbar {
@@ -525,7 +525,7 @@ const nextIndex =
           <motion.div
             custom={4}
             variants={aboutBoxVariants}
-            className="hidden md:block md:col-span-2 md:row-span-3 rounded-2xl p-4 bg-gradient-to-br from-[#020617] to-[#1e293b] text-white border border-white/10 shadow-lg shadow-rose-500/20 will-change-transform min-h-[250px] md:min-h-0"
+            className="hidden md:block md:col-span-2 md:row-span-3 rounded-2xl p-4 bg-transparent md:bg-gradient-to-br md:from-[#020617] md:to-[#1e293b] text-white border border-white/10 shadow-lg shadow-rose-500/20 will-change-transform min-h-[250px] md:min-h-0"
           >
             <ImageSlider />
           </motion.div>
@@ -534,7 +534,7 @@ const nextIndex =
           <motion.div
             custom={5}
             variants={aboutBoxVariants}
-            className="md:col-span-2 md:row-span-2 rounded-2xl bg-gradient-to-br from-[#0f172a] to-[#1e293b] text-white border border-white/10 shadow-lg shadow-fuchsia-500/20 will-change-transform h-[250px] md:h-auto md:min-h-0"
+            className="md:col-span-2 md:row-span-2 rounded-2xl bg-transparent md:bg-gradient-to-br md:from-[#0f172a] md:to-[#1e293b] text-white border border-white/10 shadow-lg shadow-fuchsia-500/20 will-change-transform h-[250px] md:h-auto md:min-h-0"
           >
             <AchivementSlider />
           </motion.div>
@@ -545,7 +545,7 @@ const nextIndex =
           <motion.div
             custom={6}
             variants={aboutBoxVariants}
-            className="md:col-span-3 rounded-2xl overflow-hidden will-change-transform bg-gradient-to-br from-[#020617] via-[#1a1a3e] to-[#0f0f1e] border border-white/10 shadow-lg shadow-purple-500/20 flex flex-col sm:flex-row h-full min-h-[300px] md:min-h-0"
+            className="md:col-span-3 rounded-2xl overflow-hidden will-change-transform bg-transparent md:bg-gradient-to-br md:from-[#020617] md:via-[#1a1a3e] md:to-[#0f0f1e] border border-white/10 shadow-lg shadow-purple-500/20 flex flex-col sm:flex-row h-full min-h-[300px] md:min-h-0"
           >
             {/* Left Section - Headline */}
             <div className="w-full sm:w-16 py-3 sm:py-0 flex items-center justify-center bg-gradient-to-r from-cyan-500/20 via-purple-500/20 to-fuchsia-500/20 sm:border-r border-b sm:border-b-0 border-white/10">

@@ -35,8 +35,15 @@ body {
 .section-shell {
   position: relative;
   border: 1px solid var(--border);
-  background: var(--surface);
-  backdrop-filter: blur(6px);
+  background: transparent;
+  backdrop-filter: none;
+}
+
+@media (min-width: 768px) {
+  .section-shell {
+    background: var(--surface);
+    backdrop-filter: blur(6px);
+  }
 }
 
 .section-title {

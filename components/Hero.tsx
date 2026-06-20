@@ -47,7 +47,7 @@ export default function Hero() {
 
       <div className="relative float-card">
         <div className="w-[320px] h-[320px] lg:w-[380px] lg:h-[380px] rounded-full border border-white/20 bg-gradient-to-br from-[#f4d03f]/25 via-[#89b2f5]/18 to-[#0f2342] flex items-center justify-center">
-          <div className="w-[280px] h-[280px] lg:w-[330px] lg:h-[330px] rounded-full bg-[#0a1324]/90 border border-white/20 flex flex-col items-center justify-center text-center p-8">
+          <div className="w-[280px] h-[280px] lg:w-[330px] lg:h-[330px] rounded-full bg-transparent md:bg-[#0a1324]/90 border border-white/20 flex flex-col items-center justify-center text-center p-8">
             <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#f4d03f] to-[#f8e58f] text-[#081121] font-black text-2xl grid place-items-center mb-5">
               RC
             </div>

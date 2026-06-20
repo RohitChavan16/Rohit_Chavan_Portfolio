@@ -36,9 +36,11 @@ export default function NeuralNetwork() {
         this.radius = Math.random() * 2 + 1;
       }
 
-      update() {
-        this.x += this.vx;
-        this.y += this.vy;
+      update(dt: number) {
+        // Cap dt to prevent massive jumps if the tab was inactive
+        const safeDt = Math.min(dt, 3);
+        this.x += this.vx * safeDt;
+        this.y += this.vy * safeDt;
 
         if (this.x < 0 || this.x > canvas!.width) this.vx = -this.vx;
         if (this.y < 0 || this.y > canvas!.height) this.vy = -this.vy;
@@ -61,11 +63,16 @@ export default function NeuralNetwork() {
       }
     };
 
-    const animate = () => {
+    let lastTime = performance.now();
+
+    const animate = (time: number) => {
+      const dt = (time - lastTime) / 16.666; // Normalize to ~60fps
+      lastTime = time;
+
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       
       for (let i = 0; i < particles.length; i++) {
-        particles[i].update();
+        particles[i].update(dt);
         particles[i].draw();
 
         for (let j = i; j < particles.length; j++) {
@@ -88,7 +95,7 @@ export default function NeuralNetwork() {
 
     window.addEventListener("resize", resize);
     resize();
-    animate();
+    animationFrameId = requestAnimationFrame(animate);
 
     return () => {
       window.removeEventListener("resize", resize);

@@ -192,7 +192,7 @@ export default function Navbar() {
                   exit={{ rotate: 90, opacity: 0 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <X size={28} />
+                  <X size={24} />
                 </motion.div>
               ) : (
                 <motion.div
@@ -202,7 +202,7 @@ export default function Navbar() {
                   exit={{ rotate: -90, opacity: 0 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <Menu size={28} />
+                  <Menu size={24} />
                 </motion.div>
               )}
             </AnimatePresence>
