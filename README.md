@@ -37,3 +37,56 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 Making of something imp.
 Rohit Chavan
+
+---
+
+## 🌟 Features
+
+- **Modern UI/UX**: Built with Next.js App Router and Framer Motion for buttery-smooth animations.
+- **Dynamic Skill Showcase**: Interactive skill cards with glowing effects and hover states.
+- **Contact Form**: Functional contact form powered by MongoDB to store inquiries.
+- **Responsive Design**: Fully responsive layout that looks great on mobile, tablet, and desktop.
+- **AI Portfolio Chatbot**: Integrated conversational AI to answer questions about the portfolio.
+
+## 💻 Tech Stack
+
+- **Framework**: Next.js 16 (App Router)
+- **Styling**: Tailwind CSS v4
+- **Animations**: Framer Motion
+- **3D Graphics**: Three.js, React Three Fiber, React Three Drei
+- **Database**: MongoDB (Mongoose/Native Driver)
+- **Icons**: Lucide React & Devicons
+- **Validation**: Zod
+- **Language**: TypeScript
+
+## 🔑 Environment Variables
+
+To run this project locally, create a `.env.local` file in the root directory and add the following variables (refer to `.env.example`):
+
+```env
+MONGODB_URI=your_mongodb_connection_string
+MONGODB_DB_NAME=portfolio
+```
+
+## 🚀 Deployment
+
+This project is fully optimized for production deployment on platforms like Vercel, Netlify, or Render.
+
+1. **Vercel (Recommended)**: 
+   - Push your code to GitHub.
+   - Import the project into Vercel.
+   - Add the Environment Variables (`MONGODB_URI`, `MONGODB_DB_NAME`).
+   - Click **Deploy**.
+
+2. **Manual Build**:
+   ```bash
+   npm run build
+   npm run start
+   ```
+
+## 🛡️ Production Readiness
+
+- Passed strict TypeScript compilation checks.
+- ESLint configured and passing.
+- Optimized images and fonts (using `next/font`).
+- Secure API routes with Zod validation and Try/Catch error handling.

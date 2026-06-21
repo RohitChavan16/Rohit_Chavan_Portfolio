@@ -39,7 +39,7 @@ export default function Footer() {
               <div className="h-[2px] w-0 bg-[var(--accent)] transition-all duration-300 group-hover:w-full" />
             </Link>
             <p className="text-[var(--muted)] text-sm max-w-sm leading-relaxed mt-2">
-              Building exceptional digital experiences with modern web technologies. Constantly learning, constantly evolving.
+              Building exceptional digital experiences with modern technologies. Constantly learning, constantly evolving.
             </p>
           </div>
 

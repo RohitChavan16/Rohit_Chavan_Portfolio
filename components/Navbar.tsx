@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState, useEffect, useMemo } from "react";
 import { Menu, X, ArrowRight } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, Variants } from "framer-motion";
 import NeuralNetwork from "@/components/animations/NeuralNetwork";
 
 export default function Navbar() {
@@ -103,7 +103,7 @@ export default function Navbar() {
   ];
 
   // Framer Motion Variants
-  const menuVariants = {
+  const menuVariants: Variants = {
     closed: {
       x: "100%",
       transition: {
@@ -126,7 +126,7 @@ export default function Navbar() {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     closed: { opacity: 0, x: 50 },
     open: { opacity: 1, x: 0 },
   };

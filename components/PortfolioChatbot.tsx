@@ -279,7 +279,7 @@ export default function PortfolioChatbot() {
                   type="button"
                   aria-label="Close portfolio chatbot"
                   onClick={() => setIsOpen(false)}
-                  className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-cyan-200/15 bg-cyan-200/10 text-cyan-100 transition hover:rotate-90 hover:border-cyan-100/70 hover:bg-cyan-100/15"
+                  className="cursor-pointer grid h-9 w-9 shrink-0 place-items-center rounded-full border border-cyan-200/15 bg-cyan-200/10 text-cyan-100 transition hover:rotate-90 hover:border-cyan-100/70 hover:bg-cyan-100/15"
                 >
                   <X className="h-4 w-4" />
                 </button>
@@ -336,7 +336,6 @@ export default function PortfolioChatbot() {
                         initial={{ opacity: 0, y: 12 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: index * 0.035 }}
-                        whileHover={{ scale: 1.06, y: -3, rotate: index % 2 === 0 ? -1.5 : 1.5 }}
                         whileTap={{ scale: 0.96 }}
                         onClick={() => handlePromptClick(card.prompt)}
                         className="group inline-flex shrink-0 cursor-pointer items-center gap-2 rounded-full border border-cyan-200/15 bg-slate-900/55 px-3 py-2 text-xs font-bold text-slate-100 shadow-[0_0_18px_rgba(34,211,238,0.08)] transition hover:border-cyan-200/30 hover:bg-cyan-500/10 hover:text-white"

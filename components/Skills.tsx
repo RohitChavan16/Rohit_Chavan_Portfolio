@@ -22,7 +22,7 @@ import {
 type Skill = {
   name: string;
   icon?: string;
-  Icon?: ComponentType<{ size?: number; strokeWidth?: number; className?: string }>;
+  Icon?: ComponentType<{ size?: number; strokeWidth?: number; className?: string; style?: CSSProperties; "aria-hidden"?: boolean | "true" | "false" }>;
   colors: {
     border: string;
     glow: string;

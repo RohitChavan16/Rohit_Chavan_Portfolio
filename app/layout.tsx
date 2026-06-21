@@ -6,6 +6,8 @@ import CursorGlow from "@/components/CursorGlow";
 import CursorParticles from "@/components/CursorParticles";
 import NeuralNetwork from "@/components/animations/NeuralNetwork";
 import { Toaster } from "react-hot-toast";
+import { Analytics } from "@vercel/analytics/react";
+import AnalyticsTracker from "@/components/AnalyticsTracker";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,9 +20,42 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Rohit Chavan | Portfolio",
+  metadataBase: new URL("https://rohitchavan.dev"), // Assuming domain, user can change this
+  title: {
+    default: "Rohit Chavan | Software Engineer Portfolio",
+    template: "%s | Rohit Chavan",
+  },
   description:
-    "Full stack portfolio of Rohit Chavan featuring projects, skills, experience, and contact.",
+    "Full stack software engineer portfolio of Rohit Chavan featuring modern web projects, skills in Next.js, React, Node.js, and MongoDB, experience, and contact information.",
+  keywords: [
+    "Rohit Chavan",
+    "Software Engineer",
+    "Full Stack Developer",
+    "Next.js Developer",
+    "React Developer",
+    "Web Development",
+    "Portfolio",
+  ],
+  authors: [{ name: "Rohit Chavan", url: "https://rohitchavan.dev" }],
+  creator: "Rohit Chavan",
+  openGraph: {
+    title: "Rohit Chavan | Software Engineer Portfolio",
+    description:
+      "Full stack software engineer portfolio of Rohit Chavan featuring modern web projects, skills, and experience.",
+    url: "https://rohitchavan.dev",
+    siteName: "Rohit Chavan Portfolio",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Rohit Chavan | Software Engineer Portfolio",
+    description:
+      "Full stack software engineer portfolio of Rohit Chavan featuring modern web projects, skills, and experience.",
+  },
+  alternates: {
+    canonical: "https://rohitchavan.dev",
+  },
 };
 
 export default function RootLayout({
@@ -48,6 +83,8 @@ export default function RootLayout({
             },
           }}
         />
+        <Analytics />
+        <AnalyticsTracker />
       </body>
     </html>
   );
