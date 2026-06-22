@@ -20,7 +20,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://rohitchavan.dev"), // Assuming domain, user can change this
+  metadataBase: new URL("https://rohit-chavan-eta.vercel.app"), // Assuming domain, user can change this
   title: {
     default: "Rohit Chavan | Software Engineer Portfolio",
     template: "%s | Rohit Chavan",
@@ -36,13 +36,13 @@ export const metadata: Metadata = {
     "Web Development",
     "Portfolio",
   ],
-  authors: [{ name: "Rohit Chavan", url: "https://rohitchavan.dev" }],
+  authors: [{ name: "Rohit Chavan", url: "https://rohit-chavan-eta.vercel.app" }],
   creator: "Rohit Chavan",
   openGraph: {
     title: "Rohit Chavan | Software Engineer Portfolio",
     description:
       "Full stack software engineer portfolio of Rohit Chavan featuring modern web projects, skills, and experience.",
-    url: "https://rohitchavan.dev",
+    url: "https://rohit-chavan-eta.vercel.app",
     siteName: "Rohit Chavan Portfolio",
     locale: "en_US",
     type: "website",
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
       "Full stack software engineer portfolio of Rohit Chavan featuring modern web projects, skills, and experience.",
   },
   alternates: {
-    canonical: "https://rohitchavan.dev",
+    canonical: "https://rohit-chavan-eta.vercel.app",
   },
 };
 
