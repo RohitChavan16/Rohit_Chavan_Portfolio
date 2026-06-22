@@ -3,7 +3,16 @@
 A modern, interactive personal portfolio website built to showcase professional experience, projects, and technical skills. It features hardware-accelerated 3D graphics, fluid animations, and a custom backend for processing contact inquiries.
 
 ## Live Demo
-*(Include deployed URL here, e.g., [https://rohitchavan.com](https://rohitchavan.com))*
+
+<p align="center">
+  <a href="https://rohit-chavan-eta.vercel.app/" target="_blank">
+    <img src="https://img.shields.io/badge/Live%20Demo-Visit-blue?style=for-the-badge&logo=vercel" alt="Live Demo"/>
+  </a>
+  <a href="https://github.com/RohitChavan16/Rohit_Chavan_Portfolio" target="_blank">
+    <img src="https://img.shields.io/badge/GitHub-Repository-black?style=for-the-badge&logo=github" alt="GitHub Repo"/>
+  </a>
+</p>
+
 
 ## About the Project
 
