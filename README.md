@@ -1,92 +1,103 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Rohit Chavan Portfolio
 
-## Getting Started
+A modern, interactive personal portfolio website built to showcase professional experience, projects, and technical skills. It features hardware-accelerated 3D graphics, fluid animations, and a custom backend for processing contact inquiries.
 
-First, run the development server:
+## Live Demo
+*(Include deployed URL here, e.g., [https://rohitchavan.com](https://rohitchavan.com))*
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## About the Project
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This portfolio was built to serve as a comprehensive, interactive resume that goes beyond static text. It solves the problem of presenting technical projects and skills in an engaging format while providing a direct, reliable channel for person to get in touch. The main user-facing functionality includes navigating through an animated experience timeline, viewing detailed project cards, interacting with 3D elements, and utilizing an embedded portfolio assistant for quick answers.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Interactive UI**: Fluid layout transitions and scroll-based reveals.
+- **Project Showcase & Experience**: Detailed sections highlighting past work and professional history.
+- **Contact Form**: Functional backend integration to securely store user inquiries.
+- **Portfolio Assistant**: A custom rule-based interactive chatbot that answers common questions about my resume and skills.
+- **Animations**: Complex declarative animations for UI elements and page transitions.
+- **Responsive Design**: Optimized layouts across mobile, tablet, and desktop viewports.
+- **3D Elements**: Interactive WebGL components integrated seamlessly into the DOM.
 
-## Learn More
+## Tech Stack
 
-To learn more about Next.js, take a look at the following resources:
+### Frontend
+- Next.js 16 (App Router)
+- React 19
+- Tailwind CSS v4
+- Framer Motion
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Backend
+- Next.js API Routes (Serverless)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Database
+- MongoDB (Native Node.js Driver)
 
-## Deploy on Vercel
+### Deployment
+- Vercel (Recommended)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Libraries & Tools
+- React Three Fiber & Drei (3D rendering)
+- Zod (Schema validation)
+- Lucide React & React Icons
+- TypeScript
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Architecture Overview
 
-Making of something imp.
-Rohit Chavan
+The application follows a standard full-stack Next.js architecture:
+- **Presentation**: The frontend is statically generated and hydrated on the client where necessary, leveraging React Server Components for performance. Client-side interactivity is handled via Framer Motion and React Three Fiber.
+- **API Layer**: The `app/api/contact` route serves as the ingestion point for the contact form, enforcing structural typing before data persistence.
+- **Data Persistence**: A singleton connection pool connects the serverless API to a MongoDB Atlas cluster to store incoming messages.
+
+## Engineering Decisions
+
+- **Why Next.js**: Chosen for its robust App Router, which simplifies routing and allows API routes to live alongside the frontend code, reducing repository complexity.
+- **Why MongoDB**: Provides a flexible, document-based schema that perfectly fits storing varied contact form submissions without requiring strict migrations.
+- **Why Zod**: Implemented at the API boundary to strictly validate incoming contact payloads, guaranteeing that malformed or malicious data never reaches the database.
+- **Why React Three Fiber**: Allows for the integration of Three.js within a declarative React paradigm, making it easier to manage 3D object state alongside standard DOM elements.
+- **TypeScript**: Adopted globally to catch errors at compile-time and enforce strict data contracts between the frontend forms and the backend API.
+
+## Project Structure
+
+- `app/` - Contains the Next.js App Router structure, including pages, layouts, and backend `api/` routes.
+- `components/` - Reusable UI components, 3D elements, and the interactive chatbot.
+- `lib/` - Core utilities, including MongoDB connection logic and Zod validation schemas.
+- `public/` - Static assets like images, fonts, and the site manifest.
+- `docs/` - System architecture and engineering documentation.
+
+## Running Locally
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/RohitChavan16/Rohit_Chavan_Portfolio.git
+   cd portfolio
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Configure environment variables**
+   Create a `.env.local` file in the root directory and add the following keys:
+   ```env
+   MONGODB_URI=your_mongodb_connection_string
+   MONGODB_DB_NAME=portfolio
+   ```
+
+4. **Start the development server**
+   ```bash
+   npm run dev
+   ```
+   Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ---
 
-## 🌟 Features
+## About the Developer
 
-- **Modern UI/UX**: Built with Next.js App Router and Framer Motion for buttery-smooth animations.
-- **Dynamic Skill Showcase**: Interactive skill cards with glowing effects and hover states.
-- **Contact Form**: Functional contact form powered by MongoDB to store inquiries.
-- **Responsive Design**: Fully responsive layout that looks great on mobile, tablet, and desktop.
-- **AI Portfolio Chatbot**: Integrated conversational AI to answer questions about the portfolio.
+**Rohit Chavan** 
 
-## 💻 Tech Stack
-
-- **Framework**: Next.js 16 (App Router)
-- **Styling**: Tailwind CSS v4
-- **Animations**: Framer Motion
-- **3D Graphics**: Three.js, React Three Fiber, React Three Drei
-- **Database**: MongoDB (Mongoose/Native Driver)
-- **Icons**: Lucide React & Devicons
-- **Validation**: Zod
-- **Language**: TypeScript
-
-## 🔑 Environment Variables
-
-To run this project locally, create a `.env.local` file in the root directory and add the following variables (refer to `.env.example`):
-
-```env
-MONGODB_URI=your_mongodb_connection_string
-MONGODB_DB_NAME=portfolio
-```
-
-## 🚀 Deployment
-
-This project is fully optimized for production deployment on platforms like Vercel, Netlify, or Render.
-
-1. **Vercel (Recommended)**: 
-   - Push your code to GitHub.
-   - Import the project into Vercel.
-   - Add the Environment Variables (`MONGODB_URI`, `MONGODB_DB_NAME`).
-   - Click **Deploy**.
-
-2. **Manual Build**:
-   ```bash
-   npm run build
-   npm run start
-   ```
-
-## 🛡️ Production Readiness
-
-- Passed strict TypeScript compilation checks.
-- ESLint configured and passing.
-- Optimized images and fonts (using `next/font`).
-- Secure API routes with Zod validation and Try/Catch error handling.
+**Links:**
+- [Portfolio](https://rohitchavan.com)
+- [GitHub](https://github.com/RohitChavan16)
+- [LinkedIn](https://linkedin.com/in/rohit-chavan16)
