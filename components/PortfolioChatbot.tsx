@@ -81,7 +81,7 @@ const responseMap = [
   {
     keys: ["project"],
     response:
-      "Rohit has built multiple high-impact systems:\n\n• SynapTalk: A unified, E2EE communication platform featuring WebRTC video calls and AI assistance.\n• BenchForge: A distributed benchmarking platform for stress-testing trading engines using Go, Docker, and PostgreSQL.\n• GeoShop Engine: A geospatial intelligence system using FastAPI and MongoDB to track business openings and closures.\n• ScreenFlow: A comprehensive movie booking suite.\n• Plus AI tools like NeuraRAG, PrepNex, and ScanLayer.",
+      "Rohit has built multiple high-impact systems:\n\n• SynapTalk: A unified, E2EE communication platform featuring WebRTC video calls and AI assistance.\n• BenchForge: A distributed benchmarking platform for stress-testing trading engines using Go, Docker, and PostgreSQL.\n• GeoShop Engine: A geospatial intelligence system using FastAPI and MongoDB to track business openings and closures.\n• ScreenFlow: A comprehensive movie booking suite.\n• PrepNex: A full-stack edtech platform for coaching management and personalized revision planning.\n• NeuraRAG: A custom RAG system with semantic retrieval and domain-aware AI responses.\n• ScanLayer: An OpenCV-powered document scanner with perspective correction and image enhancement.\n• FlightCove: A C++ airline reservation system with booking workflows and persistent ticket management.\n• NovaPortfolio: An interactive AI-powered developer portfolio with cinematic UI and intelligent navigation.",
   },
   {
     keys: ["skill"],
@@ -106,7 +106,7 @@ const responseMap = [
   {
     keys: ["achievement", "achievements"],
     response:
-      "Rohit has a strong background in competitive programming and problem-solving:\n\n• LeetCode: 1700+ rating with over 700 problems solved.\n• CodeChef: 1600+ rating (3-Star Coder).\n• Codeforces: 1200+ rating (Pupil).\n• Open Source: Successfully delivered multiple production-grade features for GSSoC.",
+      "Rohit has a strong background in competitive programming, hackathons, and open source:\n\n• Competitive Programming: Solved 1000+ DSA and algorithmic problems across leading coding platforms.\n• Code Uncode: Secured a Top 35 rank among 1000+ participants.\n• HERE Technologies Hackathon: Won 2nd Runner-Up at the Mumbai edition for GeoShop Engine.\n• FINSPARK Banking Hackathon: Received the UI/UX Excellence Award.\n• Open Source: Successfully delivered multiple production-grade features for GSSoC.",
   },
   {
     keys: ["about", "rohit"],
