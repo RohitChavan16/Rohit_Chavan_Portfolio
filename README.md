@@ -107,6 +107,6 @@ The application follows a standard full-stack Next.js architecture:
 **Rohit Chavan** 
 
 **Links:**
-- [Portfolio](https://rohitchavan.com)
+- [Portfolio](https://https://rohit-chavan-eta.vercel.app)
 - [GitHub](https://github.com/RohitChavan16)
 - [LinkedIn](https://linkedin.com/in/rohit-chavan16)
