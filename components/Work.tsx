@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 type Project = {
   id: string;
@@ -391,9 +392,9 @@ export default function Work() {
             href="https://github.com/RohitChavan16"
             target="_blank"
             rel="noopener noreferrer"
-            className="portfolio-btn portfolio-btn-secondary"
-          >
-            Explore GitHub
+            className="portfolio-btn portfolio-btn-secondary flex gap-2"
+          ><Image src="/icons/github.png" alt="GitHub" width={24} height={24} />
+            <p>Explore GitHub</p>
           </a>
         </div>
 
