@@ -33,9 +33,9 @@ export default function Hero() {
 
         <div className="mt-10 grid grid-cols-3 max-w-lg gap-4">
           {[
-            { value: "15+", label: "Production Projects" },
-            { value: "4+", label: "Years Building" },
-            { value: "900+", label: "Algorithmic Problems Solved" },
+            { value: "5+", label: "Production Projects" },
+            { value: "2+", label: "Years Building" },
+            { value: "1000+", label: "Algorithmic Problems Solved" },
           ].map((item) => (
             <div key={item.label} className="section-shell rounded-xl px-4 py-3">
               <p className="accent-text text-xl font-bold">{item.value}</p>
